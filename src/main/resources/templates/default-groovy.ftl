@@ -5,7 +5,7 @@ import ${apiModel.servicePackage}.${apiModel.apiPackage}.repository.${apiModel.a
 
 class ${apiModel.apiName}Rules {
 
-    ${apiModel.apiName}Repository repository
+    ${apiModel.apiName}Repository ${apiModel.apiName?uncap_first}Repository
 
     def beforeCreate(${apiModel.apiName}Model model) {
 
