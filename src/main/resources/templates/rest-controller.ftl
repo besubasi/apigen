@@ -1,6 +1,5 @@
 package ${packageName};
 
-import com.fasterxml.jackson.annotation.JsonView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,13 +36,11 @@ public class ${apiModel.apiName}RestController implements ${apiModel.apiName}Pub
     <#assign TAG_PAGE_MODEL = '<HvlPage<${apiModel.apiName}Model>>'>
 
     @Override
-    @JsonView(value = {LogisticLocalizedViewer.WithLocaleMap.class})
     public HvlResponse${TAG_LONG} create(@NotNull ${apiModel.apiName}Model model) {
         return new HvlResponse<>(service.create(model));
     }
 
     @Override
-    @JsonView(value = {LogisticLocalizedViewer.WithLocaleMap.class})
     public HvlResponse${TAG_MODEL} update(@NotNull ${apiModel.apiName}Model model) {
         return new HvlResponse<>(service.update(model));
     }
@@ -54,43 +51,36 @@ public class ${apiModel.apiName}RestController implements ${apiModel.apiName}Pub
     }
 
     @Override
-    @JsonView(value = {LogisticLocalizedViewer.WithLocaleFields.class})
     public HvlResponse${TAG_LIST_MODEL} queryList(@NotNull ${apiModel.apiName}QueryModel queryModel) {
         return new HvlResponse<>(service.queryList(queryModel));
     }
 
     @Override
-    @JsonView(value = {LogisticLocalizedViewer.WithLocaleFields.class})
     public HvlResponse${TAG_PAGE_MODEL} queryPage(@NotNull ${apiModel.apiName}QueryModel queryModel) {
         return new HvlResponse<>(service.queryPage(queryModel));
     }
 
     @Override
-    @JsonView(value = {LogisticLocalizedViewer.WithLocaleFields.class})
     public HvlResponse${TAG_BOOLEAN} exists(@NotNull ${apiModel.apiName}QueryModel queryModel) {
         return new HvlResponse<>(service.exists(queryModel));
     }
 
     @Override
-    @JsonView(value = {LogisticLocalizedViewer.WithLocaleFields.class})
     public HvlResponse${TAG_BOOLEAN} existsById(@NotNull Long id) {
         return new HvlResponse<>(service.existsById(id));
     }
 
     @Override
-    @JsonView(value = {LogisticLocalizedViewer.WithLocaleFields.class})
     public HvlResponse${TAG_BOOLEAN} existsByUuid(@NotBlank String uuid) {
         return new HvlResponse<>(service.existsByUuid(uuid));
     }
 
     @Override
-    @JsonView(value = {LogisticLocalizedViewer.WithLocaleFields.class})
     public HvlResponse${TAG_MODEL} getById(@NotNull Long id) {
         return new HvlResponse<>(service.getById(id));
     }
 
     @Override
-    @JsonView(value = {LogisticLocalizedViewer.WithLocaleFields.class})
     public HvlResponse${TAG_MODEL} getByUuid(@NotBlank String uuid) {
         return new HvlResponse<>(service.getByUuid(uuid));
     }

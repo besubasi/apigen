@@ -27,6 +27,8 @@ public class Templates {
     public static Template QUERY_GENERATOR;
     public static Template CONVERTER;
     public static Template CONVERTER_IMPL;
+    public static Template BASIC_CONVERTER;
+    public static Template BASIC_CONVERTER_IMPL;
     public static Template REPOSITORY;
     public static Template RULES;
     public static Template RULE_SERVICE;
@@ -57,6 +59,8 @@ public class Templates {
         QUERY_GENERATOR = configuration.getTemplate(QUERY_GENERATOR_FTL);
         CONVERTER = configuration.getTemplate(CONVERTER_FTL);
         CONVERTER_IMPL = configuration.getTemplate(CONVERTER_IMPL_FTL);
+        BASIC_CONVERTER = configuration.getTemplate(BASIC_CONVERTER_FTL);
+        BASIC_CONVERTER_IMPL = configuration.getTemplate(BASIC_CONVERTER_IMPL_FTL);
         REPOSITORY = configuration.getTemplate(REPOSITORY_FTL);
         RULES = configuration.getTemplate(RULES_FTL);
         RULE_SERVICE = configuration.getTemplate(RULE_SERVICE_FTL);

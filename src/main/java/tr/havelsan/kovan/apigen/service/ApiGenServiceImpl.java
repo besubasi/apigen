@@ -17,6 +17,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -85,6 +86,16 @@ public class ApiGenServiceImpl extends AbstractApiGenService {
     @Override
     void createConverterImpl() {
         this.createServiceFile(Templates.CONVERTER_IMPL, PACKAGE_CONVERTER, END_FIX_CONVERTER_IMPL);
+    }
+
+    @Override
+    void createBasicConverter() {
+        this.createServiceFile(Templates.BASIC_CONVERTER, PACKAGE_CONVERTER, END_FIX_CONVERTER);
+    }
+
+    @Override
+    void createBasicConverterImpl() {
+        this.createServiceFile(Templates.BASIC_CONVERTER_IMPL, PACKAGE_CONVERTER, END_FIX_CONVERTER_IMPL);
     }
 
     @Override
@@ -206,5 +217,19 @@ public class ApiGenServiceImpl extends AbstractApiGenService {
         for (Path sourcePath : sourcePathList)
             ApiGenUtil.createTarget(sourcePath, frontEndCopyModel);
 
+    }
+
+    @Override
+    public void cloneBasicConverter(FrontEndCopyModel frontEndCopyModel) throws IOException {
+        List<Path> pathList;
+        try (Stream<Path> walk = Files.walk(Paths.get(frontEndCopyModel.getSourcePath()))
+                .filter(path -> path.toString().endsWith("Converter.java") || path.toString().endsWith("ConverterImpl.java"))) {
+            pathList = walk.collect(Collectors.toList());
+        }
+
+        for (Path path : pathList){
+            Path basicPath = Paths.get(path.toString().replace("Converter", "BasicConverter"));
+            ApiGenUtil.writeFile(basicPath, ApiGenUtil.getTargetContent(path, frontEndCopyModel));
+        }
     }
 }

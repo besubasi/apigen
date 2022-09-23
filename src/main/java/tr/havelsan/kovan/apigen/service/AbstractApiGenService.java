@@ -27,6 +27,8 @@ public abstract class AbstractApiGenService implements ApiGenService {
 
         this.createConverter();
         this.createConverterImpl();
+        this.createBasicConverter();
+        this.createBasicConverterImpl();
 
         this.createRepository();
 
@@ -62,6 +64,10 @@ public abstract class AbstractApiGenService implements ApiGenService {
     abstract void createConverter() throws IOException;
 
     abstract void createConverterImpl() throws IOException;
+
+    abstract void createBasicConverter() throws IOException;
+
+    abstract void createBasicConverterImpl() throws IOException;
 
     abstract void createRepository() throws IOException;
 

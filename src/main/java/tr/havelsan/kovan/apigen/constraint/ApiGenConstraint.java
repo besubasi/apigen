@@ -46,6 +46,7 @@ public final class ApiGenConstraint {
     public static final String API_GEN = "/api-gen";
     public static final String API_GENERATE = "/generate";
     public static final String API_SAY_MY_NAME = "/sayMyName";
+    public static final String API_CLONE_BASIC_CONVERTER = "/cloneBasicConverter";
     public static final String API_COPY_BACK_END = "/copyBackEnd";
     public static final String API_COPY_FRONT_END = "/copyFrontEnd";
 }

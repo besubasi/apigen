@@ -28,6 +28,8 @@ public final class TemplateConstraint {
     public static final String QUERY_GENERATOR_FTL = "query-generator.ftl";
     public static final String CONVERTER_FTL = "converter.ftl";
     public static final String CONVERTER_IMPL_FTL = "converter-impl.ftl";
+    public static final String BASIC_CONVERTER_FTL = "basic-converter.ftl";
+    public static final String BASIC_CONVERTER_IMPL_FTL = "basic-converter-impl.ftl";
     public static final String REPOSITORY_FTL = "repository.ftl";
     public static final String RULES_FTL = "rules.ftl";
     public static final String RULE_SERVICE_FTL = "rule-service.ftl";

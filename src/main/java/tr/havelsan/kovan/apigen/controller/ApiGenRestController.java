@@ -70,5 +70,13 @@ public class ApiGenRestController {
         return result;
     }
 
+    @POST
+    @Path(ApiGenConstraint.API_CLONE_BASIC_CONVERTER)
+    @Produces(MediaType.APPLICATION_JSON)
+    public String cloneBasicConverter(FrontEndCopyModel frontEndCopyModel) throws IOException {
+        apiGenService.cloneBasicConverter(frontEndCopyModel);
+        return "Ok meeeeeeeeen";
+    }
+
 
 }

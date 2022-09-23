@@ -13,4 +13,6 @@ public interface ApiGenService {
 
     void copyFrontEnd(FrontEndCopyModel frontEndCopyModel) throws IOException;
 
+    void cloneBasicConverter(FrontEndCopyModel frontEndCopyModel) throws IOException;
+
 }
