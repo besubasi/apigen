@@ -27,6 +27,8 @@ public final class ApiGenConstraint {
     public static final String END_FIX_REPOSITORY = "Repository";
     public static final String END_FIX_CONVERTER = "Converter";
     public static final String END_FIX_CONVERTER_IMPL = "ConverterImpl";
+    public static final String END_FIX_BASIC_CONVERTER = "BasicConverter";
+    public static final String END_FIX_BASIC_CONVERTER_IMPL = "BasicConverterImpl";
     public static final String END_FIX_SERVICE = "Service";
     public static final String END_FIX_SERVICE_IMPL = "ServiceImpl";
     public static final String END_FIX_RULE_SERVICE = "RuleService";

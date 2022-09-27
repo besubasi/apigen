@@ -90,12 +90,12 @@ public class ApiGenServiceImpl extends AbstractApiGenService {
 
     @Override
     void createBasicConverter() {
-        this.createServiceFile(Templates.BASIC_CONVERTER, PACKAGE_CONVERTER, END_FIX_CONVERTER);
+        this.createServiceFile(Templates.BASIC_CONVERTER, PACKAGE_CONVERTER, END_FIX_BASIC_CONVERTER);
     }
 
     @Override
     void createBasicConverterImpl() {
-        this.createServiceFile(Templates.BASIC_CONVERTER_IMPL, PACKAGE_CONVERTER, END_FIX_CONVERTER_IMPL);
+        this.createServiceFile(Templates.BASIC_CONVERTER_IMPL, PACKAGE_CONVERTER, END_FIX_BASIC_CONVERTER_IMPL);
     }
 
     @Override
