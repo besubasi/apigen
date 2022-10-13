@@ -9,8 +9,11 @@ import org.hibernate.annotations.Cache;
 import tr.com.havelsan.javarch.domain.model.entity.HvlLocalizedEntity;
 
 import static org.hibernate.annotations.CacheConcurrencyStrategy.TRANSACTIONAL;
-import static ${apiModel.commonPackage}.constant.CommonConstants.*;
 import static ${apiModel.commonPackage}.${apiModel.apiPackage}.constraint.${apiModel.apiName}Constraint.*;
+import static ${apiModel.servicePackage}.constants.CommonConstants.*;
+import static tr.com.havelsan.kovan.logistic.core.constant.GeneralConstants.DEFINITION_MAX_SIZE;
+
+<#assign FK_DEFINITION_KEY = 'FK_${apiModel.tableName}_DEF_TO_${apiModel.tableName}'>
 
 @Entity
 @Table(schema = SCHEMA_NAME, name = DEFINITION_TABLE_NAME)
@@ -25,10 +28,10 @@ public class ${apiModel.apiName}DefEntity extends HvlLocalizedEntity {
     @NotNull
     @MapsId(ID)
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = COLUMN_ID, foreignKey = @ForeignKey(name = FK_${apiModel.apiName?upper_case}))
+    @JoinColumn(name = COLUMN_ID, foreignKey = @ForeignKey(name = ${FK_DEFINITION_KEY}))
     private ${apiModel.apiName}Entity ${apiModel.apiName?uncap_first};
 
-    /******** Getter & Setter ********/
+    /*** Getter & Setter ***/
 
     public String getDefinition() {
         return definition;

@@ -18,9 +18,8 @@ import tr.com.havelsan.javarch.dto.model.HvlModel;
 import tr.com.havelsan.kovan.logistic.core.dto.DefinitionModel;
 </#if>
 
-
 <#if apiModel.hasDefEntity>
-import static ${apiModel.commonPackage}.constant.CommonConstants.*;
+import static tr.com.havelsan.kovan.logistic.core.constant.GeneralConstants.*;
 </#if>
 
 public class ${apiModel.apiName}Model extends ${apiModel.extendedName}Model {
@@ -39,7 +38,7 @@ public class ${apiModel.apiName}Model extends ${apiModel.extendedName}Model {
     private Map${TAG_STRING_DEF_MODEL} definitionMap = new HashMap<>();
 </#if>
 
-    /** Getter & Setter **/
+    /*** Getter & Setter ***/
 <#list apiModel.propertyList as property>
 
     public ${property.type} get${property.name?cap_first}() {

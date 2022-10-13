@@ -1,12 +1,13 @@
 package ${packageName};
 
 import groovy.lang.GroovyObject;
-import org.jetbrains.annotations.NotNull;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import tr.com.havelsan.javarch.data.jpa.annotation.HvlTransactionalRollbackForCheckedException;
 import tr.com.havelsan.kovan.logistic.core.rule.GroovyBusinessRuleService;
 import ${apiModel.servicePackage}.${apiModel.apiPackage}.repository.${apiModel.apiName}Repository;
+import javax.validation.constraints.NotNull;
 
 @HvlTransactionalRollbackForCheckedException
 @Component

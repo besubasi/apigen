@@ -1,6 +1,6 @@
 package ${packageName};
 
-import static ${apiModel.commonPackage}.constant.CommonConstants.*;
+import static tr.com.havelsan.kovan.logistic.core.constant.GeneralConstants.*;
 
 public final class ${apiModel.apiName}Constraint {
 
@@ -20,9 +20,10 @@ public final class ${apiModel.apiName}Constraint {
 
 	public static final String MAPPED_BY = "${apiModel.apiName?uncap_first}";
 
-	<#if apiModel.hasDefEntity>
-	public static final String FK_${apiModel.apiName?upper_case} = FOREIGN_KEY_PREFIX + TABLE_NAME;
-	</#if>
+	<#assign FK_DEFINITION_KEY = 'FK_${apiModel.tableName}_DEF_TO_${apiModel.tableName}'>
 
+	<#if apiModel.hasDefEntity>
+	public static final String ${FK_DEFINITION_KEY} = FOREIGN_KEY_PREFIX + DEFINITION_TABLE_NAME+"_TO_"+TABLE_NAME;
+	</#if>
 
 }

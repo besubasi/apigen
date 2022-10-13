@@ -18,7 +18,6 @@ import java.util.Locale;
 import static java.util.Optional.ofNullable;
 
 <#assign TAG_QUERY_MODEL_ENTITY_QUERY = "<${apiModel.apiName}QueryModel, ${apiModel.apiName}EntityQuery>">
-
 @Component
 <#if apiModel.isView()>
 public class ${apiModel.apiName}QueryGenerator extends HvlViewQueryGenerator${TAG_QUERY_MODEL_ENTITY_QUERY} {

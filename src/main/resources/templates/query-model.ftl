@@ -17,7 +17,7 @@ public class ${apiModel.apiName}QueryModel extends ${apiModel.extendedName}Query
     private String definition;
 </#if>
 
-    /** Getter & Setter **/
+    /*** Getter & Setter ***/
 <#list apiModel.propertyList as property>
 
     public ${property.type} get${property.name?cap_first}() {

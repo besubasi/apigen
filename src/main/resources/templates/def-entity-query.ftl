@@ -11,10 +11,10 @@ import javax.annotation.Generated;
 import com.querydsl.core.types.Path;
 import com.querydsl.core.types.dsl.PathInits;
 
-<#assign TAG_ENTITY = "<${apiModel.apiName}Entity>">
+<#assign TAG_ENTITY = "<${apiModel.apiName}DefEntity>">
 
 /**
-* ${apiModel.apiName}EntityQuery is a Querydsl query type for ${apiModel.apiName}Entity
+* ${apiModel.apiName}EntityQuery is a Querydsl query type for ${apiModel.apiName}DefEntity
 */
 @Generated("com.querydsl.codegen.EntitySerializer")
 public class ${apiModel.apiName}DefEntityQuery extends EntityPathBase${TAG_ENTITY} {

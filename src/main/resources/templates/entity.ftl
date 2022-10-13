@@ -25,8 +25,11 @@ import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
-import static ${apiModel.commonPackage}.constant.CommonConstants.*;
+<#if apiModel.hasDefEntity>
+import static tr.com.havelsan.kovan.logistic.core.constant.GeneralConstants.LANGUAGE_LOCALIZED;
+</#if>
 import static ${apiModel.commonPackage}.${apiModel.apiPackage}.constraint.${apiModel.apiName}Constraint.*;
+import static ${apiModel.servicePackage}.constants.CommonConstants.SCHEMA_NAME;
 
 @Entity
 @Table(schema = SCHEMA_NAME, name = TABLE_NAME)
@@ -53,7 +56,7 @@ public class ${apiModel.apiName}Entity extends ${apiModel.extendedName}Entity {
     private Map${TAG_STRING_DEF_ENTITY} definitionMap = new HashMap<>();
 </#if>
 
-    /** Getter & Setter **/
+    /*** Getter & Setter ***/
 <#list apiModel.propertyList as property>
 
     public ${property.type} get${property.name?cap_first}() {
