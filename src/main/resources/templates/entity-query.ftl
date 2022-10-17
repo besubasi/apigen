@@ -11,7 +11,6 @@ import com.querydsl.core.types.Path;
 
 <#assign TAG_ENTITY = "<${apiModel.apiName}Entity>">
 
-
 /**
 * ${apiModel.apiName}EntityQuery is a Querydsl query type for ${apiModel.apiName}Entity
 */

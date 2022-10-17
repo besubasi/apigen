@@ -17,10 +17,11 @@ import ${apiModel.servicePackage}.${apiModel.apiPackage}.service.${apiModel.apiN
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.List;
+<#assign CONTROLLER_PATH = '{application.module.logistic.${apiModel.microServiceName}.services.${apiModel.apiPackage}.${apiModel.apiName?uncap_first}.controllerPath}'>
 
 @RestController
 @HvlActuatorService(name = "${apiModel.apiName}Service", groupName = "${apiModel.microServiceName}")
-@RequestMapping(" *** Please update this and yml file meeeeeeeen *** ")
+@RequestMapping("$${CONTROLLER_PATH}")
 public class ${apiModel.apiName}RestController implements ${apiModel.apiName}PublicRestService, ${apiModel.apiName}PrivateRestService {
 
     private final ${apiModel.apiName}Service service;

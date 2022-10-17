@@ -20,10 +20,10 @@ public final class ${apiModel.apiName}Constraint {
 
 	public static final String MAPPED_BY = "${apiModel.apiName?uncap_first}";
 
-	<#assign FK_DEFINITION_KEY = 'FK_${apiModel.tableName}_DEF_TO_${apiModel.tableName}'>
+	<#assign FK_DEFINITION_KEY = 'FK_${apiModel.tableName}_L_TO_${apiModel.tableName}'>
 
 	<#if apiModel.hasDefEntity>
-	public static final String ${FK_DEFINITION_KEY} = FOREIGN_KEY_PREFIX + DEFINITION_TABLE_NAME+"_TO_"+TABLE_NAME;
+	public static final String ${FK_DEFINITION_KEY} = "${FK_DEFINITION_KEY}";
 	</#if>
 
 }

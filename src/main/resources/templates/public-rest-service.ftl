@@ -12,11 +12,13 @@ import javax.validation.Valid;
 import java.util.List;
 
 import static org.springframework.http.MediaType.*;
+<#assign FEIGN_CLIENT_PATH = '{application.module.logistic.${apiModel.microServiceName}.services.${apiModel.apiPackage}.${apiModel.apiName?uncap_first}.path}'>
+<#assign FEIGN_CLIENT_URL = '{application.module.logistic.${apiModel.microServiceName}.services.${apiModel.apiPackage}.${apiModel.apiName?uncap_first}.url}'>
 
 @HvlPublicFeignRestService
 @FeignClient(name = "${apiModel.apiName}PublicRestService",
-        path = " *** Please update this and yml file meeeeeeeen *** ",
-        url = " *** Please update this and yml file meeeeeeeen *** ")
+            path = "$${FEIGN_CLIENT_PATH}",
+            url = "$${FEIGN_CLIENT_URL}")
 public interface ${apiModel.apiName}PublicRestService {
 
 <#assign TAG_BOOLEAN = '<Boolean>'>

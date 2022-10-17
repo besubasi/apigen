@@ -13,8 +13,7 @@ import static ${apiModel.commonPackage}.${apiModel.apiPackage}.constraint.${apiM
 import static ${apiModel.servicePackage}.constants.CommonConstants.*;
 import static tr.com.havelsan.kovan.logistic.core.constant.GeneralConstants.DEFINITION_MAX_SIZE;
 
-<#assign FK_DEFINITION_KEY = 'FK_${apiModel.tableName}_DEF_TO_${apiModel.tableName}'>
-
+<#assign FK_DEFINITION_KEY = 'FK_${apiModel.tableName}_L_TO_${apiModel.tableName}'>
 @Entity
 @Table(schema = SCHEMA_NAME, name = DEFINITION_TABLE_NAME)
 @Cache(usage = TRANSACTIONAL)

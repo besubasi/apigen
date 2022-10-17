@@ -8,11 +8,13 @@ import tr.com.havelsan.javarch.service.data.HvlResponse;
 import ${apiModel.commonPackage}.${apiModel.apiPackage}.model.${apiModel.apiName}Model;
 
 import javax.validation.Valid;
+<#assign FEIGN_CLIENT_PATH = '{application.module.logistic.${apiModel.microServiceName}.services.${apiModel.apiPackage}.${apiModel.apiName?uncap_first}.path}'>
+<#assign FEIGN_CLIENT_URL = '{application.module.logistic.${apiModel.microServiceName}.services.${apiModel.apiPackage}.${apiModel.apiName?uncap_first}.url}'>
 
 @HvlPrivateFeignRestService
 @FeignClient(name = "${apiModel.apiName}PrivateRestService",
-        path = " *** Please update this and yml file meeeeeeeen *** ",
-        url = " *** Please update this and yml file meeeeeeeen *** ")
+        path = "$${FEIGN_CLIENT_PATH}",
+        url = "$${FEIGN_CLIENT_URL}")
 public interface ${apiModel.apiName}PrivateRestService {
 
 <#assign TAG_LONG = '<Long>'>
