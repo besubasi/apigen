@@ -2,8 +2,10 @@ package tr.havelsan.kovan.apigen.controller;
 
 import tr.havelsan.kovan.apigen.constraint.ApiGenConstraint;
 import tr.havelsan.kovan.apigen.model.ApiModel;
+import tr.havelsan.kovan.apigen.model.EnumModel;
 import tr.havelsan.kovan.apigen.model.FrontEndCopyModel;
 import tr.havelsan.kovan.apigen.service.ApiGenService;
+import tr.havelsan.kovan.apigen.service.EnumGenService;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -18,6 +20,9 @@ public class ApiGenRestController {
 
     @Inject
     ApiGenService apiGenService;
+
+    @Inject
+    EnumGenService enumGenService;
 
     @GET
     @Path(ApiGenConstraint.API_SAY_MY_NAME)
@@ -66,6 +71,24 @@ public class ApiGenRestController {
             result = false;
         } finally {
             System.out.println("FrontEnd copy generate api result : " + result);
+        }
+        return result;
+    }
+
+
+    @POST
+    @Path(ApiGenConstraint.API_GENERATE_ENUM)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Boolean generateEnum(EnumModel enumModel) {
+        System.out.println("Enum generating is started for " + enumModel.getName() );
+        boolean result = true;
+        try {
+            enumGenService.generateEnum(enumModel);
+        } catch (IOException e) {
+            e.printStackTrace();
+            result = false;
+        } finally {
+            System.out.println("Enum generating is end for : " + result);
         }
         return result;
     }

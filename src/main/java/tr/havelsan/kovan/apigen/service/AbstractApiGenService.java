@@ -27,8 +27,8 @@ public abstract class AbstractApiGenService implements ApiGenService {
 
         this.createConverter();
         this.createConverterImpl();
-        this.createBasicConverter();
-        this.createBasicConverterImpl();
+        //this.createBasicConverter();
+        //this.createBasicConverterImpl();
 
         this.createRepository();
 

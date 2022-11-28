@@ -159,23 +159,6 @@ public class ApiGenServiceImpl extends AbstractApiGenService {
         var filePath = Paths.get(basePath + File.separator + packagePath + File.separator + apiModel.getApiName() + fileNameEndFix + fileType);
         ApiGenUtil.createDirectory(Paths.get(basePath + File.separator + packagePath));
         ApiGenUtil.writeFile(filePath, this.getContentFromTemplate(template, this.prepareTemplateParameters(packagePath, packageName, fileNameEndFix)));
-
-/*
-        try {
-            Files.createDirectories(Paths.get( basePath + File.separator + packagePath));
-            Files.createFile(filePath);
-        } catch (IOException e) {
-            if (!(e instanceof FileAlreadyExistsException))
-                e.printStackTrace();
-        }
-
-        Map<String, Object> templateParameters = this.prepareTemplateParameters(packagePath, packageName, fileNameEndFix);
-        try {
-            Files.write(filePath, this.getContentFromTemplate(template, templateParameters));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-*/
     }
 
     private Map<String, Object> prepareTemplateParameters(String packagePath, String packageName, String fileNameEndFix) {

@@ -37,6 +37,11 @@ public class Templates {
     public static Template PUBLIC_REST_SERVICE;
     public static Template PRIVATE_REST_SERVICE;
     public static Template REST_CONTROLLER;
+    public static Template ENUM;
+    public static Template ENUM_CONVERTER;
+    public static Template ENUM_TS;
+    public static Template ENUM_JSON_TR;
+    public static Template ENUM_JSON_EN;
 
     public static void initTemplates() throws IOException {
 
@@ -69,6 +74,11 @@ public class Templates {
         PUBLIC_REST_SERVICE = configuration.getTemplate(PUBLIC_REST_SERVICE_FTL);
         PRIVATE_REST_SERVICE = configuration.getTemplate(PRIVATE_REST_SERVICE_FTL);
         REST_CONTROLLER = configuration.getTemplate(REST_CONTROLLER_FTL);
+        ENUM = configuration.getTemplate(ENUM_FTL);
+        ENUM_CONVERTER = configuration.getTemplate(ENUM_CONVERTER_FTL);
+        ENUM_TS = configuration.getTemplate(ENUM_TS_FTL);
+        ENUM_JSON_TR = configuration.getTemplate(ENUM_JSON_TR_FTL);
+        ENUM_JSON_EN = configuration.getTemplate(ENUM_JSON_EN_FTL);
     }
 
 }

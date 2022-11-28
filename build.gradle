@@ -14,7 +14,7 @@ dependencies {
     implementation 'io.quarkus:quarkus-resteasy-reactive'
     implementation 'io.quarkus:quarkus-resteasy-reactive-jackson'
 
-    implementation group: 'org.freemarker', name: 'freemarker', version: '2.3.14'
+    implementation group: 'org.freemarker', name: 'freemarker', version: '2.3.31'
 
     testImplementation 'io.quarkus:quarkus-junit5'
     testImplementation 'io.rest-assured:rest-assured'

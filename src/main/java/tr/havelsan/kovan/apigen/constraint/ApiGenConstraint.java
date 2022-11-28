@@ -39,10 +39,13 @@ public final class ApiGenConstraint {
 
     public static final String FILE_JAVA = ".java";
     public static final String FILE_GROOVY = ".groovy";
+    public static final String FILE_TYPE_SCRIPT = ".ts";
+    public static final String FILE_JSON = ".json";
 
     public static final String ENV_COMMON_PATH = "common.path";
     public static final String ENV_SERVICE_PATH = "service.path";
     public static final String ENV_GROOVY_PATH = "groovy.path";
+    public static final String ENV_FRONTEND_PATH = "frontend.path";
 
 
     public static final String API_GEN = "/api-gen";
@@ -51,4 +54,5 @@ public final class ApiGenConstraint {
     public static final String API_CLONE_BASIC_CONVERTER = "/cloneBasicConverter";
     public static final String API_COPY_BACK_END = "/copyBackEnd";
     public static final String API_COPY_FRONT_END = "/copyFrontEnd";
+    public static final String API_GENERATE_ENUM = "/generate-enum";
 }

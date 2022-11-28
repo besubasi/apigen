@@ -41,6 +41,9 @@ public class ${apiModel.apiName}Entity extends ${apiModel.extendedName}Entity {
     @NotNull
     </#if>
     @Column(name = COLUMN_${property.dbName})
+    <#if property.type?starts_with("Enum")  >
+    @Convert(converter = ${property.type}Converter.class)
+    </#if>
     private ${property.type} ${property.name};
 
 </#list>
