@@ -43,6 +43,7 @@ public class Templates {
     public static Template ENUM_JSON_TR;
     public static Template ENUM_JSON_EN;
     public static Template MENU_SCRIPT;
+    public static Template MENU_CHANGE_SET;
 
     public static void initTemplates() throws IOException {
 
@@ -81,6 +82,7 @@ public class Templates {
         ENUM_JSON_TR = configuration.getTemplate(ENUM_JSON_TR_FTL);
         ENUM_JSON_EN = configuration.getTemplate(ENUM_JSON_EN_FTL);
         MENU_SCRIPT = configuration.getTemplate(MENU_SCRIPT_FTL);
+        MENU_CHANGE_SET = configuration.getTemplate(MENU_CHANGE_SET_FTL);
     }
 
 }

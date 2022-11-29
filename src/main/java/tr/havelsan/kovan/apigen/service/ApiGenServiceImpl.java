@@ -5,6 +5,7 @@ import freemarker.template.TemplateException;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import tr.havelsan.kovan.apigen.config.freemarker.Templates;
 import tr.havelsan.kovan.apigen.model.FrontEndCopyModel;
+import tr.havelsan.kovan.apigen.model.MenuChangeSetModel;
 import tr.havelsan.kovan.apigen.model.MenuScriptModel;
 import tr.havelsan.kovan.apigen.util.ApiGenUtil;
 
@@ -18,6 +19,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -194,6 +196,11 @@ public class ApiGenServiceImpl extends AbstractApiGenService {
     @Override
     public String generateMenuScript(MenuScriptModel menuScriptModel) {
         return new String(this.getContentFromTemplate(Templates.MENU_SCRIPT, Map.of(MENU_SCRIPT_MODEL, menuScriptModel)));
+    }
+
+    @Override
+    public String generateMenuChangeSet(MenuChangeSetModel menuChangeSetModel) {
+        return new String(this.getContentFromTemplate(Templates.MENU_CHANGE_SET, Map.of(MODEL, menuChangeSetModel, ID, UUID.randomUUID())));
     }
 
     @Override

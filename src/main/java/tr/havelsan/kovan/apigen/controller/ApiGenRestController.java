@@ -1,10 +1,7 @@
 package tr.havelsan.kovan.apigen.controller;
 
 import tr.havelsan.kovan.apigen.constraint.ApiGenConstraint;
-import tr.havelsan.kovan.apigen.model.ApiModel;
-import tr.havelsan.kovan.apigen.model.EnumModel;
-import tr.havelsan.kovan.apigen.model.FrontEndCopyModel;
-import tr.havelsan.kovan.apigen.model.MenuScriptModel;
+import tr.havelsan.kovan.apigen.model.*;
 import tr.havelsan.kovan.apigen.service.ApiGenService;
 import tr.havelsan.kovan.apigen.service.EnumGenService;
 
@@ -107,6 +104,23 @@ public class ApiGenRestController {
             e.printStackTrace();
         } finally {
             System.out.println("Menu script generating is end for : " + result);
+        }
+        return result;
+    }
+
+
+    @POST
+    @Path(ApiGenConstraint.API_GENERATE_MENU_CHANGE_SET)
+    @Produces(MediaType.APPLICATION_JSON)
+    public String generateMenuChangeSet(MenuChangeSetModel menuChangeSetModel) {
+        System.out.println("Menu change set generating is started for " + menuChangeSetModel.getMenuLabel() );
+        String result = null;
+        try {
+            return apiGenService.generateMenuChangeSet(menuChangeSetModel);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            System.out.println("Menu change set generating is end for : " + result);
         }
         return result;
     }
