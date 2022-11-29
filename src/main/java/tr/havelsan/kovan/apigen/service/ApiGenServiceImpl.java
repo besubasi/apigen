@@ -5,6 +5,7 @@ import freemarker.template.TemplateException;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import tr.havelsan.kovan.apigen.config.freemarker.Templates;
 import tr.havelsan.kovan.apigen.model.FrontEndCopyModel;
+import tr.havelsan.kovan.apigen.model.MenuScriptModel;
 import tr.havelsan.kovan.apigen.util.ApiGenUtil;
 
 import javax.inject.Singleton;
@@ -17,7 +18,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -190,6 +190,11 @@ public class ApiGenServiceImpl extends AbstractApiGenService {
         return stringWriter.toString().getBytes(StandardCharsets.UTF_8);
     }
 
+
+    @Override
+    public String generateMenuScript(MenuScriptModel menuScriptModel) {
+        return new String(this.getContentFromTemplate(Templates.MENU_SCRIPT, Map.of(MENU_SCRIPT_MODEL, menuScriptModel)));
+    }
 
     @Override
     public void copyFrontEnd(FrontEndCopyModel frontEndCopyModel) throws IOException {

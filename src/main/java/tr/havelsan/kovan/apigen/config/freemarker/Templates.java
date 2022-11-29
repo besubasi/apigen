@@ -42,6 +42,7 @@ public class Templates {
     public static Template ENUM_TS;
     public static Template ENUM_JSON_TR;
     public static Template ENUM_JSON_EN;
+    public static Template MENU_SCRIPT;
 
     public static void initTemplates() throws IOException {
 
@@ -79,6 +80,7 @@ public class Templates {
         ENUM_TS = configuration.getTemplate(ENUM_TS_FTL);
         ENUM_JSON_TR = configuration.getTemplate(ENUM_JSON_TR_FTL);
         ENUM_JSON_EN = configuration.getTemplate(ENUM_JSON_EN_FTL);
+        MENU_SCRIPT = configuration.getTemplate(MENU_SCRIPT_FTL);
     }
 
 }

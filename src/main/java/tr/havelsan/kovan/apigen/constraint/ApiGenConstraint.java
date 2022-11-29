@@ -55,4 +55,5 @@ public final class ApiGenConstraint {
     public static final String API_COPY_BACK_END = "/copyBackEnd";
     public static final String API_COPY_FRONT_END = "/copyFrontEnd";
     public static final String API_GENERATE_ENUM = "/generate-enum";
+    public static final String API_GENERATE_MENU_SCRIPT = "/generate-menu-script";
 }

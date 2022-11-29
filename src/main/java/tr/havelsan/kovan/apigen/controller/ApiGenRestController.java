@@ -4,6 +4,7 @@ import tr.havelsan.kovan.apigen.constraint.ApiGenConstraint;
 import tr.havelsan.kovan.apigen.model.ApiModel;
 import tr.havelsan.kovan.apigen.model.EnumModel;
 import tr.havelsan.kovan.apigen.model.FrontEndCopyModel;
+import tr.havelsan.kovan.apigen.model.MenuScriptModel;
 import tr.havelsan.kovan.apigen.service.ApiGenService;
 import tr.havelsan.kovan.apigen.service.EnumGenService;
 
@@ -92,6 +93,24 @@ public class ApiGenRestController {
         }
         return result;
     }
+
+
+    @POST
+    @Path(ApiGenConstraint.API_GENERATE_MENU_SCRIPT)
+    @Produces(MediaType.APPLICATION_JSON)
+    public String generateMenuScript(MenuScriptModel menuScriptModel) {
+        System.out.println("Menu script generating is started for " + menuScriptModel.getMenuLabel() );
+        String result = null;
+        try {
+            return apiGenService.generateMenuScript(menuScriptModel);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            System.out.println("Menu script generating is end for : " + result);
+        }
+        return result;
+    }
+
 
     @POST
     @Path(ApiGenConstraint.API_CLONE_BASIC_CONVERTER)

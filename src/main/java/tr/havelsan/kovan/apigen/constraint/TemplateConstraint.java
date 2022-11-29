@@ -7,6 +7,7 @@ public final class TemplateConstraint {
 
     public static final String API_MODEL = "apiModel";
     public static final String ENUM_MODEL = "enumModel";
+    public static final String MENU_SCRIPT_MODEL = "menuScriptModel";
     public static final String FRONTEND_PATH = "frontendPath";
     public static final String COMMON_PATH = "commonPath";
     public static final String SERVICE_PATH = "servicePath";
@@ -45,4 +46,5 @@ public final class TemplateConstraint {
     public static final String ENUM_TS_FTL = "/frontend/enum-ts.ftl";
     public static final String ENUM_JSON_TR_FTL = "/frontend/enum-json-tr.ftl";
     public static final String ENUM_JSON_EN_FTL = "/frontend/enum-json-en.ftl";
+    public static final String MENU_SCRIPT_FTL = "/menu/menu-script.ftl";
 }
