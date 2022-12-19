@@ -8,34 +8,34 @@ import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 import tr.com.havelsan.javarch.data.commons.pageable.HvlPage;
 
-import ${apiModel.commonPackage}.${apiModel.apiPackage}.model.${apiModel.apiName}Model;
-import ${apiModel.servicePackage}.${apiModel.apiPackage}.entity.${apiModel.apiName}Entity;
+import ${model.commonPackage}.${model.apiPackage}.model.${model.apiName}Model;
+import ${model.servicePackage}.${model.apiPackage}.entity.${model.apiName}Entity;
 
 @Generated(
 value = "org.mapstruct.ap.MappingProcessor"
 )
 @Component
-public class ${apiModel.apiName}ConverterImpl implements ${apiModel.apiName}Converter {
-    <#assign TAG_ENTITY = '<${apiModel.apiName}Entity>'>
-    <#assign TAG_MODEL = '<${apiModel.apiName}Model>'>
+public class ${model.apiName}ConverterImpl implements ${model.apiName}Converter {
+    <#assign TAG_ENTITY = '<${model.apiName}Entity>'>
+    <#assign TAG_MODEL = '<${model.apiName}Model>'>
 
     @Override
-    public ${apiModel.apiName}Model convertToModel(${apiModel.apiName}Entity entity) {
+    public ${model.apiName}Model convertToModel(${model.apiName}Entity entity) {
         if (entity == null) {
             return null;
         }
         
-        ${apiModel.apiName}Model ${apiModel.apiName?uncap_first}Model = new ${apiModel.apiName}Model();
+        ${model.apiName}Model ${model.apiName?uncap_first}Model = new ${model.apiName}Model();
 
-        ${apiModel.apiName?uncap_first}Model.setId(entity.getId());
-        ${apiModel.apiName?uncap_first}Model.setUuid(entity.getUuid());
-        ${apiModel.apiName?uncap_first}Model.setVersion(entity.getVersion());
-        ${apiModel.apiName?uncap_first}Model.setDateCreated(entity.getDateCreated());
-        ${apiModel.apiName?uncap_first}Model.setDateUpdated(entity.getDateUpdated());
-        ${apiModel.apiName?uncap_first}Model.setCreatedBy(entity.getCreatedBy());
-        ${apiModel.apiName?uncap_first}Model.setUpdatedBy(entity.getUpdatedBy());
+        ${model.apiName?uncap_first}Model.setId(entity.getId());
+        ${model.apiName?uncap_first}Model.setUuid(entity.getUuid());
+        ${model.apiName?uncap_first}Model.setVersion(entity.getVersion());
+        ${model.apiName?uncap_first}Model.setDateCreated(entity.getDateCreated());
+        ${model.apiName?uncap_first}Model.setDateUpdated(entity.getDateUpdated());
+        ${model.apiName?uncap_first}Model.setCreatedBy(entity.getCreatedBy());
+        ${model.apiName?uncap_first}Model.setUpdatedBy(entity.getUpdatedBy());
 
-        return ${apiModel.apiName?uncap_first}Model;
+        return ${model.apiName?uncap_first}Model;
     }
     
     @Override
@@ -45,8 +45,8 @@ public class ${apiModel.apiName}ConverterImpl implements ${apiModel.apiName}Conv
         }
         
         List${TAG_MODEL} list = new ArrayList${TAG_MODEL}(entities.size());
-            for (${apiModel.apiName}Entity ${apiModel.apiName?uncap_first}Entity : entities) {
-            list.add(convertToModel(${apiModel.apiName?uncap_first}Entity));
+            for (${model.apiName}Entity ${model.apiName?uncap_first}Entity : entities) {
+            list.add(convertToModel(${model.apiName?uncap_first}Entity));
         }
         
         return list;
@@ -59,8 +59,8 @@ public class ${apiModel.apiName}ConverterImpl implements ${apiModel.apiName}Conv
         }
         
         Set${TAG_MODEL} set = new HashSet${TAG_MODEL}(Math.max((int) (entities.size() / .75f) + 1, 16));
-            for (${apiModel.apiName}Entity ${apiModel.apiName?uncap_first}Entity : entities) {
-            set.add(convertToModel(${apiModel.apiName?uncap_first}Entity));
+            for (${model.apiName}Entity ${model.apiName?uncap_first}Entity : entities) {
+            set.add(convertToModel(${model.apiName?uncap_first}Entity));
         }
         
         return set;
@@ -83,22 +83,22 @@ public class ${apiModel.apiName}ConverterImpl implements ${apiModel.apiName}Conv
     }
     
     @Override
-    public ${apiModel.apiName}Entity convertToEntity(${apiModel.apiName}Model model) {
+    public ${model.apiName}Entity convertToEntity(${model.apiName}Model model) {
         if (model == null) {
             return null;
         }
         
-        ${apiModel.apiName}Entity ${apiModel.apiName?uncap_first}Entity = new ${apiModel.apiName}Entity();
+        ${model.apiName}Entity ${model.apiName?uncap_first}Entity = new ${model.apiName}Entity();
         
-        ${apiModel.apiName?uncap_first}Entity.setUuid(model.getUuid());
-        ${apiModel.apiName?uncap_first}Entity.setVersion(model.getVersion());
-        ${apiModel.apiName?uncap_first}Entity.setDateCreated(model.getDateCreated());
-        ${apiModel.apiName?uncap_first}Entity.setDateUpdated(model.getDateUpdated());
-        ${apiModel.apiName?uncap_first}Entity.setCreatedBy(model.getCreatedBy());
-        ${apiModel.apiName?uncap_first}Entity.setUpdatedBy(model.getUpdatedBy());
-        ${apiModel.apiName?uncap_first}Entity.setId(model.getId());
+        ${model.apiName?uncap_first}Entity.setUuid(model.getUuid());
+        ${model.apiName?uncap_first}Entity.setVersion(model.getVersion());
+        ${model.apiName?uncap_first}Entity.setDateCreated(model.getDateCreated());
+        ${model.apiName?uncap_first}Entity.setDateUpdated(model.getDateUpdated());
+        ${model.apiName?uncap_first}Entity.setCreatedBy(model.getCreatedBy());
+        ${model.apiName?uncap_first}Entity.setUpdatedBy(model.getUpdatedBy());
+        ${model.apiName?uncap_first}Entity.setId(model.getId());
 
-        return ${apiModel.apiName?uncap_first}Entity;
+        return ${model.apiName?uncap_first}Entity;
     }
     
     @Override
@@ -108,8 +108,8 @@ public class ${apiModel.apiName}ConverterImpl implements ${apiModel.apiName}Conv
         }
         
         List${TAG_ENTITY} list = new ArrayList${TAG_ENTITY}(model.size());
-        for (${apiModel.apiName}Model ${apiModel.apiName?uncap_first}Model : model) {
-            list.add(convertToEntity(${apiModel.apiName?uncap_first}Model));
+        for (${model.apiName}Model ${model.apiName?uncap_first}Model : model) {
+            list.add(convertToEntity(${model.apiName?uncap_first}Model));
         }
         
         return list;
@@ -122,8 +122,8 @@ public class ${apiModel.apiName}ConverterImpl implements ${apiModel.apiName}Conv
         }
         
         Set${TAG_ENTITY} set = new HashSet${TAG_ENTITY}(Math.max((int) (model.size() / .75f) + 1, 16));
-        for (${apiModel.apiName}Model ${apiModel.apiName?uncap_first}Model : model) {
-            set.add(convertToEntity(${apiModel.apiName?uncap_first}Model));
+        for (${model.apiName}Model ${model.apiName?uncap_first}Model : model) {
+            set.add(convertToEntity(${model.apiName?uncap_first}Model));
         }
         
         return set;

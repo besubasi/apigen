@@ -1,4 +1,4 @@
-package tr.havelsan.kovan.apigen.model;
+package tr.havelsan.kovan.apigen.generator.api.model;
 
 public class JoinPropertyModel {
 

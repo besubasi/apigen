@@ -2,11 +2,11 @@ package ${packageName};
 
 import org.springframework.stereotype.Repository;
 import tr.com.havelsan.javarch.data.jpa.repository.HvlJpaRepository;
-import ${apiModel.servicePackage}.${apiModel.apiPackage}.entity.${apiModel.apiName}Entity;
+import ${model.servicePackage}.${model.apiPackage}.entity.${model.apiName}Entity;
 
-<#assign TAG_ENTITY = "<${apiModel.apiName}Entity>">
+<#assign TAG_ENTITY = "<${model.apiName}Entity>">
 
 @Repository
-public interface ${apiModel.apiName}Repository extends HvlJpaRepository${TAG_ENTITY} {
+public interface ${model.apiName}Repository extends HvlJpaRepository${TAG_ENTITY} {
 
 }

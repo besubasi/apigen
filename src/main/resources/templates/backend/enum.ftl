@@ -6,9 +6,9 @@ import tr.com.havelsan.javarch.data.converter.enumeration.HvlEnumerationConverte
 import java.util.Arrays;
 
 <#assign TAG_HVL_ENUMERATION_CONVERTER = 'HvlEnumerationConverter<Integer>'>
-public enum ${enumModel.name} implements ${TAG_HVL_ENUMERATION_CONVERTER}, HvlEnumeration {
+public enum ${model.name} implements ${TAG_HVL_ENUMERATION_CONVERTER}, HvlEnumeration {
 
-<#list enumModel.keyList as enumKey>
+<#list model.keyList as enumKey>
     <#if enumKey?is_last >
     ${enumKey.key}("", ${enumKey?counter});
     <#else >
@@ -19,12 +19,12 @@ public enum ${enumModel.name} implements ${TAG_HVL_ENUMERATION_CONVERTER}, HvlEn
     private String label;
     private int code;
 
-    ${enumModel.name}(String label, int code) {
+    ${model.name}(String label, int code) {
         this.label = label;
         this.code = code;
     }
 
-    public static ${enumModel.name} fromDbValue(Integer code) {
+    public static ${model.name} fromDbValue(Integer code) {
         if (code == null)
             return null;
         return Arrays.stream(values()).filter(enumValue -> code == enumValue.code()).findFirst()

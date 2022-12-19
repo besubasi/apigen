@@ -1,6 +1,6 @@
-package tr.havelsan.kovan.apigen.model;
+package tr.havelsan.kovan.apigen.generator.menu.model;
 
-public class MenuScriptModel {
+public class MenuSqlScriptModel {
     // Menu
     String menuUuid;
     String menuLabel;

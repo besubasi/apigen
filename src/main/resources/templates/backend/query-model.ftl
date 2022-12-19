@@ -2,23 +2,23 @@ package ${packageName};
 
 import java.time.OffsetDateTime;
 
-<#if apiModel.extendedName == 'KovanActivable'>
+<#if model.extendedName == 'KovanActivable'>
 import tr.com.havelsan.kovan.logistic.core.activibility.dto.KovanActivableQueryModel;
 <#else >
 import tr.com.havelsan.javarch.dto.model.query.HvlQueryModel;
 </#if>
 
-public class ${apiModel.apiName}QueryModel extends ${apiModel.extendedName}QueryModel {
+public class ${model.apiName}QueryModel extends ${model.extendedName}QueryModel {
 
-<#list apiModel.propertyList as property>
+<#list model.propertyList as property>
     private ${property.type} ${property.name};
 </#list>
-<#if apiModel.hasDefEntity>
+<#if model.hasDefEntity>
     private String definition;
 </#if>
 
     /*** Getter & Setter ***/
-<#list apiModel.propertyList as property>
+<#list model.propertyList as property>
 
     public ${property.type} get${property.name?cap_first}() {
         return ${property.name};
@@ -29,7 +29,7 @@ public class ${apiModel.apiName}QueryModel extends ${apiModel.extendedName}Query
     }
 </#list>
 
-<#if apiModel.hasDefEntity>
+<#if model.hasDefEntity>
     public String getDefinition() {
         return definition;
     }

@@ -1,6 +1,6 @@
-export enum ${enumModel.name} {
+export enum ${model.name} {
 
-<#list enumModel.keyList as enumKey>
+<#list model.keyList as enumKey>
     ${enumKey.key} = '${enumKey.key}',
 </#list>
 }

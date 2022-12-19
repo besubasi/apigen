@@ -1,7 +1,7 @@
 package ${packageName};
 
 import static com.querydsl.core.types.PathMetadataFactory.*;
-import ${apiModel.servicePackage}.${apiModel.apiPackage}.entity.${apiModel.apiName}DefEntity;
+import ${model.servicePackage}.${model.apiPackage}.entity.${model.apiName}DefEntity;
 
 
 import com.querydsl.core.types.dsl.*;
@@ -11,19 +11,19 @@ import javax.annotation.Generated;
 import com.querydsl.core.types.Path;
 import com.querydsl.core.types.dsl.PathInits;
 
-<#assign TAG_ENTITY = "<${apiModel.apiName}DefEntity>">
+<#assign TAG_ENTITY = "<${model.apiName}DefEntity>">
 
 /**
-* ${apiModel.apiName}EntityQuery is a Querydsl query type for ${apiModel.apiName}DefEntity
+* ${model.apiName}EntityQuery is a Querydsl query type for ${model.apiName}DefEntity
 */
 @Generated("com.querydsl.codegen.EntitySerializer")
-public class ${apiModel.apiName}DefEntityQuery extends EntityPathBase${TAG_ENTITY} {
+public class ${model.apiName}DefEntityQuery extends EntityPathBase${TAG_ENTITY} {
 
     private static final long serialVersionUID = 14532022L;
 
     private static final PathInits INITS = PathInits.DIRECT2;
 
-    public static final ${apiModel.apiName}DefEntityQuery ${apiModel.apiName?uncap_first}DefEntityQuery = new ${apiModel.apiName}DefEntityQuery("${apiModel.apiName?uncap_first}DefEntity");
+    public static final ${model.apiName}DefEntityQuery ${model.apiName?uncap_first}DefEntityQuery = new ${model.apiName}DefEntityQuery("${model.apiName?uncap_first}DefEntity");
 
     public final tr.com.havelsan.javarch.domain.model.entity.query.HvlLocalizedEntityQuery _super;
 
@@ -32,29 +32,29 @@ public class ${apiModel.apiName}DefEntityQuery extends EntityPathBase${TAG_ENTIT
     // inherited
     public final tr.com.havelsan.javarch.domain.model.entity.query.HvlLocalizedIdQuery localizedId;
 
-    public final ${apiModel.apiName}EntityQuery ${apiModel.apiName?uncap_first};
+    public final ${model.apiName}EntityQuery ${model.apiName?uncap_first};
 
-    public ${apiModel.apiName}DefEntityQuery(String variable) {
-        this(${apiModel.apiName}DefEntity.class, forVariable(variable), INITS);
+    public ${model.apiName}DefEntityQuery(String variable) {
+        this(${model.apiName}DefEntity.class, forVariable(variable), INITS);
     }
 
-    public ${apiModel.apiName}DefEntityQuery(Path< ? extends ${apiModel.apiName}DefEntity> path) {
+    public ${model.apiName}DefEntityQuery(Path< ? extends ${model.apiName}DefEntity> path) {
         this(path.getType(), path.getMetadata(), PathInits.getFor(path.getMetadata(), INITS));
     }
 
-    public ${apiModel.apiName}DefEntityQuery(PathMetadata metadata) {
+    public ${model.apiName}DefEntityQuery(PathMetadata metadata) {
         this(metadata, PathInits.getFor(metadata, INITS));
     }
 
-    public ${apiModel.apiName}DefEntityQuery(PathMetadata metadata, PathInits inits) {
-        this(${apiModel.apiName}DefEntity.class, metadata, inits);
+    public ${model.apiName}DefEntityQuery(PathMetadata metadata, PathInits inits) {
+        this(${model.apiName}DefEntity.class, metadata, inits);
     }
 
-    public ${apiModel.apiName}DefEntityQuery(Class< ? extends ${apiModel.apiName}DefEntity> type, PathMetadata metadata, PathInits inits) {
+    public ${model.apiName}DefEntityQuery(Class< ? extends ${model.apiName}DefEntity> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
         this._super = new tr.com.havelsan.javarch.domain.model.entity.query.HvlLocalizedEntityQuery(type, metadata, inits);
         this.localizedId = _super.localizedId;
-        this.${apiModel.apiName?uncap_first} = inits.isInitialized("${apiModel.apiName?uncap_first}") ? new ${apiModel.apiName}EntityQuery(forProperty("${apiModel.apiName?uncap_first} ")) : null;
+        this.${model.apiName?uncap_first} = inits.isInitialized("${model.apiName?uncap_first}") ? new ${model.apiName}EntityQuery(forProperty("${model.apiName?uncap_first} ")) : null;
     }
 
 }

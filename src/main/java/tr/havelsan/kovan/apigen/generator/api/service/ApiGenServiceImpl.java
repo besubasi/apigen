@@ -1,44 +1,31 @@
-package tr.havelsan.kovan.apigen.service;
+package tr.havelsan.kovan.apigen.generator.api.service;
 
 import freemarker.template.Template;
-import freemarker.template.TemplateException;
-import org.eclipse.microprofile.config.inject.ConfigProperty;
 import tr.havelsan.kovan.apigen.config.freemarker.Templates;
-import tr.havelsan.kovan.apigen.model.FrontEndCopyModel;
-import tr.havelsan.kovan.apigen.model.MenuChangeSetModel;
-import tr.havelsan.kovan.apigen.model.MenuScriptModel;
+import tr.havelsan.kovan.apigen.generator.api.model.FrontEndCopyModel;
 import tr.havelsan.kovan.apigen.util.ApiGenUtil;
+import tr.havelsan.kovan.apigen.util.PathUtil;
 
 import javax.inject.Singleton;
 import java.io.File;
 import java.io.IOException;
-import java.io.StringWriter;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static tr.havelsan.kovan.apigen.constraint.ApiGenConstraint.*;
 import static tr.havelsan.kovan.apigen.constraint.TemplateConstraint.*;
+import static tr.havelsan.kovan.apigen.util.ApiGenUtil.createDirectory;
+import static tr.havelsan.kovan.apigen.util.ApiGenUtil.writeFile;
+import static tr.havelsan.kovan.apigen.util.PathUtil.*;
+import static tr.havelsan.kovan.apigen.util.TemplateUtil.getContent;
 
 @Singleton
 public class ApiGenServiceImpl extends AbstractApiGenService {
-
-    @ConfigProperty(name = ENV_COMMON_PATH)
-    String commonPath;
-
-    @ConfigProperty(name = ENV_SERVICE_PATH)
-    String servicePath;
-
-    @ConfigProperty(name = ENV_GROOVY_PATH)
-    String groovyPath;
-
-    final StringWriter stringWriter = new StringWriter();
 
     @Override
     void createConstraint() {
@@ -142,65 +129,43 @@ public class ApiGenServiceImpl extends AbstractApiGenService {
 
 
     private void createCommonFile(Template template, String subPackage, String fileNameEndFix) {
-        this.writeFile(template, commonPath, subPackage, fileNameEndFix, FILE_JAVA);
+        String directoryPath = getCommonPackagePath(apiModel)+ File.separator+subPackage;
+        createDirectory(Paths.get(directoryPath));
+        String filePath = directoryPath + File.separator + apiModel.getApiName() + fileNameEndFix + FILE_JAVA;
+        writeFile(Paths.get(filePath), getContent(template, getTemplateParameters(getCommonPackage(apiModel.getMicroservice()))));
     }
 
     private void createServiceFile(Template template, String subPackage, String fileNameEndFix) {
-        this.writeFile(template, servicePath, subPackage, fileNameEndFix, FILE_JAVA);
+        String directoryPath = getServicePackagePath(apiModel)+ File.separator+subPackage;
+        createDirectory(Paths.get(directoryPath));
+        String filePath = directoryPath + File.separator + apiModel.getApiName() + fileNameEndFix + FILE_JAVA;
+        writeFile(Paths.get(filePath), getContent(template, getTemplateParameters(getCommonPackage(apiModel.getMicroservice()))));
     }
 
     private void createGroovyFile(Template template) {
-        this.writeFile(template, groovyPath, PACKAGE_RULE, END_FIX_RULES, FILE_GROOVY);
+        String directoryPath = getGroovyPackagePath(apiModel)+ File.separator+PACKAGE_RULE;
+        createDirectory(Paths.get(directoryPath));
+        String filePath = directoryPath + File.separator + apiModel.getApiName() + END_FIX_RULES + FILE_GROOVY;
+        writeFile(Paths.get(filePath), getContent(template, getTemplateParameters(getCommonPackage(apiModel.getMicroservice()))));
     }
 
-    private void writeFile(Template template, String basePath, String subPackage, String fileNameEndFix, String fileType) {
-        var packageName = (groovyPath.equals(basePath) ? apiModel.getGroovyPackage() : commonPath.equals(basePath) ? apiModel.getCommonPackage() : apiModel.getServicePackage())
-                + "." + apiModel.getApiPackage() + "." + subPackage;
+//    private void writeFilexxx(Template template, String basePath, String subPackage, String fileNameEndFix, String fileType) {
+//        var packageName = (groovyPath.equals(basePath) ? apiModel.getGroovyPackage() : commonPath.equals(basePath) ? apiModel.getCommonPackage() : apiModel.getServicePackage())
+//                + "." + apiModel.getApiPackage() + "." + subPackage;
+//
+//        String packagePath = packageName.replaceAll("\\.", "\\" + File.separator);
+//        var filePath = Paths.get(basePath + File.separator + packagePath + File.separator + apiModel.getApiName() + fileNameEndFix + fileType);
+//        ApiGenUtil.createDirectory(Paths.get(basePath + File.separator + packagePath));
+//        ApiGenUtil.writeFile(filePath, TemplateUtil.getContent(template, this.prepareTemplateParameters(packagePath, packageName, fileNameEndFix)));
+//    }
 
-        String packagePath = packageName.replaceAll("\\.", "\\" + File.separator);
-        var filePath = Paths.get(basePath + File.separator + packagePath + File.separator + apiModel.getApiName() + fileNameEndFix + fileType);
-        ApiGenUtil.createDirectory(Paths.get(basePath + File.separator + packagePath));
-        ApiGenUtil.writeFile(filePath, this.getContentFromTemplate(template, this.prepareTemplateParameters(packagePath, packageName, fileNameEndFix)));
-    }
-
-    private Map<String, Object> prepareTemplateParameters(String packagePath, String packageName, String fileNameEndFix) {
+    private Map<String, Object> getTemplateParameters(String packageName) {
         return Map.of(
-                API_MODEL, apiModel,
-                COMMON_PATH, commonPath,
-                SERVICE_PATH, servicePath,
-                GROOVY_PATH, groovyPath,
-                PACKAGE_PATH, packagePath,
-                PACKAGE_NAME, packageName,
-                FILE_NAME_END_FIX, fileNameEndFix);
-    }
-
-    private byte[] getContentFromTemplate(Template template, Map<String, Object> parameterMap) {
-        stringWriter.getBuffer().setLength(0);
-        try {
-            template.process(parameterMap, stringWriter);
-        } catch (TemplateException | IOException e) {
-            stringWriter.getBuffer().setLength(0);
-            var defaultTemplate = FILE_GROOVY.equals(parameterMap.get(FILE_TYPE)) ? Templates.DEFAULT_GROOVY : Templates.DEFAULT_JAVA;
-            try {
-                defaultTemplate.process(parameterMap, stringWriter);
-            } catch (TemplateException | IOException e2) {
-                e.printStackTrace();
-                System.out.println(" ******************************* ");
-                e2.printStackTrace();
-            }
-        }
-        return stringWriter.toString().getBytes(StandardCharsets.UTF_8);
-    }
-
-
-    @Override
-    public String generateMenuScript(MenuScriptModel menuScriptModel) {
-        return new String(this.getContentFromTemplate(Templates.MENU_SCRIPT, Map.of(MENU_SCRIPT_MODEL, menuScriptModel)));
-    }
-
-    @Override
-    public String generateMenuChangeSet(MenuChangeSetModel menuChangeSetModel) {
-        return new String(this.getContentFromTemplate(Templates.MENU_CHANGE_SET, Map.of(MODEL, menuChangeSetModel, ID, UUID.randomUUID())));
+                MODEL, apiModel,
+                COMMON_PATH, PathUtil.getCommonPath(apiModel.getMicroservice()),
+                SERVICE_PATH, PathUtil.getServicePath(apiModel.getMicroservice()),
+                GROOVY_PATH, PathUtil.getGroovyPath(apiModel.getMicroservice()),
+                PACKAGE_NAME, packageName);
     }
 
     @Override
@@ -222,7 +187,7 @@ public class ApiGenServiceImpl extends AbstractApiGenService {
             pathList = walk.collect(Collectors.toList());
         }
 
-        for (Path path : pathList){
+        for (Path path : pathList) {
             Path basicPath = Paths.get(path.toString().replace("Converter", "BasicConverter"));
             ApiGenUtil.writeFile(basicPath, ApiGenUtil.getTargetContent(path, frontEndCopyModel));
         }

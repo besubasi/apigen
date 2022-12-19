@@ -1,7 +1,7 @@
 package ${packageName};
 
 import javax.validation.constraints.NotNull;
-<#if apiModel.hasDefEntity>
+<#if model.hasDefEntity>
 import java.util.HashMap;
 import java.util.Map;
 import javax.validation.constraints.Size;
@@ -9,22 +9,22 @@ import javax.validation.constraints.Size;
 
 import java.time.OffsetDateTime;
 
-<#if apiModel.extendedName == 'KovanActivable'>
+<#if model.extendedName == 'KovanActivable'>
 import tr.com.havelsan.kovan.logistic.core.activibility.dto.KovanActivableModel;
 <#else >
-import tr.com.havelsan.javarch.dto.model.HvlModel;
+import tr.com.havelsan.javarch.dto.model.${model.extendedName}Model;
 </#if>
-<#if apiModel.hasDefEntity>
+<#if model.hasDefEntity>
 import tr.com.havelsan.kovan.logistic.core.dto.DefinitionModel;
 </#if>
 
-<#if apiModel.hasDefEntity>
+<#if model.hasDefEntity>
 import static tr.com.havelsan.kovan.logistic.core.constant.GeneralConstants.*;
 </#if>
 
-public class ${apiModel.apiName}Model extends ${apiModel.extendedName}Model {
+public class ${model.apiName}Model extends ${model.extendedName}Model {
 
-<#list apiModel.propertyList as property>
+<#list model.propertyList as property>
     <#if property.notNull>
     @NotNull
     </#if>
@@ -32,14 +32,14 @@ public class ${apiModel.apiName}Model extends ${apiModel.extendedName}Model {
 </#list>
 
 <#assign TAG_STRING_DEF_MODEL = '<String, DefinitionModel>'>
-<#if apiModel.hasDefEntity>
+<#if model.hasDefEntity>
     @Size(max = DEFINITION_MAX_SIZE)
     private String definition;
     private Map${TAG_STRING_DEF_MODEL} definitionMap = new HashMap<>();
 </#if>
 
     /*** Getter & Setter ***/
-<#list apiModel.propertyList as property>
+<#list model.propertyList as property>
 
     public ${property.type} get${property.name?cap_first}() {
         return ${property.name};
@@ -50,7 +50,7 @@ public class ${apiModel.apiName}Model extends ${apiModel.extendedName}Model {
     }
 </#list>
 
-<#if apiModel.hasDefEntity>
+<#if model.hasDefEntity>
     public String getDefinition() {
         return definition;
     }

@@ -9,15 +9,15 @@ import org.hibernate.annotations.Cache;
 import tr.com.havelsan.javarch.domain.model.entity.HvlLocalizedEntity;
 
 import static org.hibernate.annotations.CacheConcurrencyStrategy.TRANSACTIONAL;
-import static ${apiModel.commonPackage}.${apiModel.apiPackage}.constraint.${apiModel.apiName}Constraint.*;
-import static ${apiModel.servicePackage}.constants.CommonConstants.*;
+import static ${model.commonPackage}.${model.apiPackage}.constraint.${model.apiName}Constraint.*;
+import static ${model.servicePackage}.constants.CommonConstants.*;
 import static tr.com.havelsan.kovan.logistic.core.constant.GeneralConstants.DEFINITION_MAX_SIZE;
 
-<#assign FK_DEFINITION_KEY = 'FK_${apiModel.tableName}_L_TO_${apiModel.tableName}'>
+<#assign FK_DEFINITION_KEY = 'FK_${model.tableName}_L_TO_${model.tableName}'>
 @Entity
 @Table(schema = SCHEMA_NAME, name = DEFINITION_TABLE_NAME)
 @Cache(usage = TRANSACTIONAL)
-public class ${apiModel.apiName}DefEntity extends HvlLocalizedEntity {
+public class ${model.apiName}DefEntity extends HvlLocalizedEntity {
 
     @NotBlank
     @Size(max = DEFINITION_MAX_SIZE)
@@ -28,7 +28,7 @@ public class ${apiModel.apiName}DefEntity extends HvlLocalizedEntity {
     @MapsId(ID)
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = COLUMN_ID, foreignKey = @ForeignKey(name = ${FK_DEFINITION_KEY}))
-    private ${apiModel.apiName}Entity ${apiModel.apiName?uncap_first};
+    private ${model.apiName}Entity ${model.apiName?uncap_first};
 
     /*** Getter & Setter ***/
 
@@ -40,11 +40,11 @@ public class ${apiModel.apiName}DefEntity extends HvlLocalizedEntity {
         this.definition = definition;
     }
 
-    public ${apiModel.apiName}Entity get${apiModel.apiName}() {
-        return ${apiModel.apiName?uncap_first};
+    public ${model.apiName}Entity get${model.apiName}() {
+        return ${model.apiName?uncap_first};
     }
 
-    public void set${apiModel.apiName}(${apiModel.apiName}Entity ${apiModel.apiName?uncap_first}) {
-        this.${apiModel.apiName?uncap_first} = ${apiModel.apiName?uncap_first};
+    public void set${model.apiName}(${model.apiName}Entity ${model.apiName?uncap_first}) {
+        this.${model.apiName?uncap_first} = ${model.apiName?uncap_first};
     }
 }

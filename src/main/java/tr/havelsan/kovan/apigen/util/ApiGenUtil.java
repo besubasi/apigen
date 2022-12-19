@@ -1,6 +1,6 @@
 package tr.havelsan.kovan.apigen.util;
 
-import tr.havelsan.kovan.apigen.model.FrontEndCopyModel;
+import tr.havelsan.kovan.apigen.generator.api.model.FrontEndCopyModel;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -9,6 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Map;
+
 
 public class ApiGenUtil {
 
@@ -35,9 +36,9 @@ public class ApiGenUtil {
             Files.createFile(path);
             System.out.println("File created : " + path);
         } catch (IOException e) {
-            if (e instanceof FileAlreadyExistsException){
+            if (e instanceof FileAlreadyExistsException) {
                 System.out.println("File updated : " + path);
-            }else{
+            } else {
                 e.printStackTrace();
             }
         }
@@ -62,7 +63,7 @@ public class ApiGenUtil {
 
     public static byte[] getTargetContent(Path path, FrontEndCopyModel frontEndCopyModel) throws IOException {
         var content = Files.readString(path);
-        for (Map.Entry<String,String> entry : frontEndCopyModel.getKeyMap().entrySet())
+        for (Map.Entry<String, String> entry : frontEndCopyModel.getKeyMap().entrySet())
             content = content.replaceAll(entry.getKey(), entry.getValue());
 
         return content.getBytes(StandardCharsets.UTF_8);

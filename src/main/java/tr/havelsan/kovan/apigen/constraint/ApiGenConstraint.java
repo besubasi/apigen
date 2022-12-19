@@ -42,19 +42,15 @@ public final class ApiGenConstraint {
     public static final String FILE_TYPE_SCRIPT = ".ts";
     public static final String FILE_JSON = ".json";
 
-    public static final String ENV_COMMON_PATH = "common.path";
-    public static final String ENV_SERVICE_PATH = "service.path";
-    public static final String ENV_GROOVY_PATH = "groovy.path";
-    public static final String ENV_FRONTEND_PATH = "frontend.path";
+    public static final String ENV_REPOSITORY_PATH = "repository.path";
 
 
-    public static final String API_GEN = "/api-gen";
-    public static final String API_GENERATE = "/generate";
+    public static final String PATH_API_GEN = "/api-gen/api";
+    public static final String PATH_ENUM_GEN = "/api-gen/enum";
+    public static final String PATH_MENU_GEN = "/api-gen/menu";
+
     public static final String API_SAY_MY_NAME = "/sayMyName";
     public static final String API_CLONE_BASIC_CONVERTER = "/cloneBasicConverter";
     public static final String API_COPY_BACK_END = "/copyBackEnd";
     public static final String API_COPY_FRONT_END = "/copyFrontEnd";
-    public static final String API_GENERATE_ENUM = "/generate/enum";
-    public static final String API_GENERATE_MENU_SCRIPT = "/generate/menu-script";
-    public static final String API_GENERATE_MENU_CHANGE_SET = "/generate/menu-change-set";
 }
