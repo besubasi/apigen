@@ -24,6 +24,7 @@ public class ApiGenApplication {
     void onStart(@Observes StartupEvent ev) throws IOException {
         Templates.initTemplates();
         PathUtil.setRepositoryPath(repositoryPath);
+        System.out.println("Repository Path : " + repositoryPath);
     }
 
     void onStop(@Observes ShutdownEvent ev) {
