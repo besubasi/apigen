@@ -1,7 +1,7 @@
-package ${apiModel.servicePackage}.${apiModel.apiPackage}.entity.query;
+package ${model.servicePackage}.${model.apiPackage}.entity.query;
 
 import static com.querydsl.core.types.PathMetadataFactory.*;
-import ${apiModel.servicePackage}.${apiModel.apiPackage}.entity.${apiModel.apiName}Entity;
+import ${model.servicePackage}.${model.apiPackage}.entity.${model.apiName}Entity;
 
 import com.querydsl.core.types.dsl.*;
 
@@ -9,25 +9,25 @@ import com.querydsl.core.types.PathMetadata;
 import javax.annotation.Generated;
 import com.querydsl.core.types.Path;
 
-<#assign TAG_ENTITY = "<${apiModel.apiName}Entity>">
+<#assign TAG_ENTITY = "<${model.apiName}Entity>">
 
 /**
-* ${apiModel.apiName}EntityQuery is a Querydsl query type for ${apiModel.apiName}Entity
+* ${model.apiName}EntityQuery is a Querydsl query type for ${model.apiName}Entity
 */
 @Generated("com.querydsl.codegen.EntitySerializer")
-public class ${apiModel.apiName}EntityQuery extends EntityPathBase${TAG_ENTITY} {
+public class ${model.apiName}EntityQuery extends EntityPathBase${TAG_ENTITY} {
 
     private static final long serialVersionUID = -1453L;
 
-    public static final ${apiModel.apiName}EntityQuery ${apiModel.apiName?uncap_first}Entity = new ${apiModel.apiName}EntityQuery("${apiModel.apiName?uncap_first}Entity");
+    public static final ${model.apiName}EntityQuery ${model.apiName?uncap_first}Entity = new ${model.apiName}EntityQuery("${model.apiName?uncap_first}Entity");
 
-    <#if apiModel.extendedName == 'KovanActivable'>
+    <#if model.extendedName == 'KovanActivable'>
     public final tr.com.havelsan.kovan.logistic.core.activibility.entity.query.KovanActivableEntityQuery _super = new tr.com.havelsan.kovan.logistic.core.activibility.entity.query.KovanActivableEntityQuery(this);
 
     //inherited
     public final BooleanPath active = _super.active;
-    <#elseif apiModel.extendedName?starts_with("Hvl")>
-    public final tr.com.havelsan.javarch.domain.model.entity.query.${apiModel.extendedName}EntityQuery _super = new tr.com.havelsan.javarch.domain.model.entity.query.${apiModel.extendedName}EntityQuery(this);
+    <#elseif model.extendedName?starts_with("Hvl")>
+    public final tr.com.havelsan.javarch.domain.model.entity.query.${model.extendedName}EntityQuery _super = new tr.com.havelsan.javarch.domain.model.entity.query.${model.extendedName}EntityQuery(this);
     </#if>
 
     //inherited
@@ -39,8 +39,8 @@ public class ${apiModel.apiName}EntityQuery extends EntityPathBase${TAG_ENTITY} 
     //inherited
     public final DateTimePath< java.time.OffsetDateTime> dateUpdated = _super.dateUpdated;
 
-    <#if apiModel.hasDefEntity>
-    public final MapPath< String, ${apiModel.servicePackage}.${apiModel.apiPackage}.entity.${apiModel.apiName}DefEntity, ${apiModel.apiName}DefEntityQuery> definitionMap = this.< String, ${apiModel.servicePackage}.${apiModel.apiPackage}.entity.${apiModel.apiName}DefEntity, ${apiModel.apiName}DefEntityQuery>createMap("definitionMap", String.class, ${apiModel.servicePackage}.${apiModel.apiPackage}.entity.${apiModel.apiName}DefEntity.class, ${apiModel.apiName}DefEntityQuery.class);
+    <#if model.hasDefEntity>
+    public final MapPath< String, ${model.servicePackage}.${model.apiPackage}.entity.${model.apiName}DefEntity, ${model.apiName}DefEntityQuery> definitionMap = this.< String, ${model.servicePackage}.${model.apiPackage}.entity.${model.apiName}DefEntity, ${model.apiName}DefEntityQuery>createMap("definitionMap", String.class, ${model.servicePackage}.${model.apiPackage}.entity.${model.apiName}DefEntity.class, ${model.apiName}DefEntityQuery.class);
     </#if>
 
     //inherited
@@ -55,16 +55,16 @@ public class ${apiModel.apiName}EntityQuery extends EntityPathBase${TAG_ENTITY} 
     //inherited
     public final NumberPath< Integer> version = _super.version;
 
-    public ${apiModel.apiName}EntityQuery(String variable) {
-        super(${apiModel.apiName}Entity.class, forVariable(variable));
+    public ${model.apiName}EntityQuery(String variable) {
+        super(${model.apiName}Entity.class, forVariable(variable));
     }
 
-    public ${apiModel.apiName}EntityQuery(Path< ? extends ${apiModel.apiName}Entity> path) {
+    public ${model.apiName}EntityQuery(Path< ? extends ${model.apiName}Entity> path) {
         super(path.getType(), path.getMetadata());
     }
 
-    public ${apiModel.apiName}EntityQuery(PathMetadata metadata) {
-        super(${apiModel.apiName}Entity.class, metadata);
+    public ${model.apiName}EntityQuery(PathMetadata metadata) {
+        super(${model.apiName}Entity.class, metadata);
     }
 
 }

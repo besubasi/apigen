@@ -15,8 +15,6 @@ import static tr.havelsan.kovan.apigen.constraint.TemplateConstraint.*;
 @Singleton
 public class Templates {
 
-    public static Template DEFAULT_JAVA;
-    public static Template DEFAULT_GROOVY;
     public static Template CONSTRAINT;
     public static Template ENTITY;
     public static Template ENTITY_QUERY;
@@ -42,7 +40,7 @@ public class Templates {
     public static Template ENUM_TS;
     public static Template ENUM_JSON_TR;
     public static Template ENUM_JSON_EN;
-    public static Template MENU_SCRIPT;
+    public static Template MENU_SQL_SCRIPT;
     public static Template MENU_CHANGE_SET;
 
     public static void initTemplates() throws IOException {
@@ -52,9 +50,6 @@ public class Templates {
         configuration.setDirectoryForTemplateLoading(templatesFile);
         configuration.setDefaultEncoding(StandardCharsets.UTF_8.name());
         configuration.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
-
-        DEFAULT_JAVA = configuration.getTemplate(DEFAULT_JAVA_FTL);
-        DEFAULT_GROOVY = configuration.getTemplate(DEFAULT_GROOVY_FTL);
 
         CONSTRAINT = configuration.getTemplate(CONSTRAINT_FTL);
         ENTITY = configuration.getTemplate(ENTITY_FTL);
@@ -81,7 +76,7 @@ public class Templates {
         ENUM_TS = configuration.getTemplate(ENUM_TS_FTL);
         ENUM_JSON_TR = configuration.getTemplate(ENUM_JSON_TR_FTL);
         ENUM_JSON_EN = configuration.getTemplate(ENUM_JSON_EN_FTL);
-        MENU_SCRIPT = configuration.getTemplate(MENU_SCRIPT_FTL);
+        MENU_SQL_SCRIPT = configuration.getTemplate(MENU_SQL_SCRIPT_FTL);
         MENU_CHANGE_SET = configuration.getTemplate(MENU_CHANGE_SET_FTL);
     }
 

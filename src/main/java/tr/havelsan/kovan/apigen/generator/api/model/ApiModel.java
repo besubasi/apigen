@@ -1,13 +1,16 @@
-package tr.havelsan.kovan.apigen.model;
+package tr.havelsan.kovan.apigen.generator.api.model;
+
+import tr.havelsan.kovan.apigen.enums.EnumMicroservice;
 
 import java.util.List;
 
 public class ApiModel {
 
-    private String microServiceName;
-    private String servicePackage;
-    private String commonPackage;
-    private String groovyPackage;
+    private EnumMicroservice microservice;
+//    private String microServiceName;// yml da
+//    private String servicePackage;
+//    private String commonPackage;
+//    private String groovyPackage;
     private String apiPackage;
 
     private String apiName;
@@ -22,20 +25,12 @@ public class ApiModel {
     private List<PropertyModel> propertyList;
     private List<JoinPropertyModel> joinPropertyList;
 
-    public String getServicePackage() {
-        return servicePackage;
+    public EnumMicroservice getMicroservice() {
+        return microservice;
     }
 
-    public void setServicePackage(String servicePackage) {
-        this.servicePackage = servicePackage;
-    }
-
-    public String getCommonPackage() {
-        return commonPackage;
-    }
-
-    public void setCommonPackage(String commonPackage) {
-        this.commonPackage = commonPackage;
+    public void setMicroservice(EnumMicroservice microservice) {
+        this.microservice = microservice;
     }
 
     public String getApiPackage() {
@@ -44,22 +39,6 @@ public class ApiModel {
 
     public void setApiPackage(String apiPackage) {
         this.apiPackage = apiPackage;
-    }
-
-    public String getGroovyPackage() {
-        return groovyPackage;
-    }
-
-    public void setGroovyPackage(String groovyPackage) {
-        this.groovyPackage = groovyPackage;
-    }
-
-    public String getMicroServiceName() {
-        return microServiceName;
-    }
-
-    public void setMicroServiceName(String microServiceName) {
-        this.microServiceName = microServiceName;
     }
 
     public String getApiName() {

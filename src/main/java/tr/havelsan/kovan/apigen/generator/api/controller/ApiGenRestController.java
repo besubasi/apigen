@@ -1,9 +1,9 @@
-package tr.havelsan.kovan.apigen.controller;
+package tr.havelsan.kovan.apigen.generator.api.controller;
 
 import tr.havelsan.kovan.apigen.constraint.ApiGenConstraint;
-import tr.havelsan.kovan.apigen.model.*;
-import tr.havelsan.kovan.apigen.service.ApiGenService;
-import tr.havelsan.kovan.apigen.service.EnumGenService;
+import tr.havelsan.kovan.apigen.generator.api.model.ApiModel;
+import tr.havelsan.kovan.apigen.generator.api.model.FrontEndCopyModel;
+import tr.havelsan.kovan.apigen.generator.api.service.ApiGenService;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -13,14 +13,13 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.io.IOException;
 
-@Path(ApiGenConstraint.API_GEN)
+@Path(ApiGenConstraint.PATH_API_GEN)
 public class ApiGenRestController {
+
+    public static final String GENERATE = "/generate";
 
     @Inject
     ApiGenService apiGenService;
-
-    @Inject
-    EnumGenService enumGenService;
 
     @GET
     @Path(ApiGenConstraint.API_SAY_MY_NAME)
@@ -31,7 +30,7 @@ public class ApiGenRestController {
 
 
     @POST
-    @Path(ApiGenConstraint.API_GENERATE)
+    @Path(GENERATE)
     @Produces(MediaType.APPLICATION_JSON)
     public Boolean generateApi(ApiModel apiModel) {
         System.out.println("\"" + apiModel.getApiName() + "\" api generating");
@@ -69,58 +68,6 @@ public class ApiGenRestController {
             result = false;
         } finally {
             System.out.println("FrontEnd copy generate api result : " + result);
-        }
-        return result;
-    }
-
-
-    @POST
-    @Path(ApiGenConstraint.API_GENERATE_ENUM)
-    @Produces(MediaType.APPLICATION_JSON)
-    public Boolean generateEnum(EnumModel enumModel) {
-        System.out.println("Enum generating is started for " + enumModel.getName() );
-        boolean result = true;
-        try {
-            enumGenService.generateEnum(enumModel);
-        } catch (IOException e) {
-            e.printStackTrace();
-            result = false;
-        } finally {
-            System.out.println("Enum generating is end for : " + result);
-        }
-        return result;
-    }
-
-
-    @POST
-    @Path(ApiGenConstraint.API_GENERATE_MENU_SCRIPT)
-    @Produces(MediaType.APPLICATION_JSON)
-    public String generateMenuScript(MenuScriptModel menuScriptModel) {
-        System.out.println("Menu script generating is started for " + menuScriptModel.getMenuLabel() );
-        String result = null;
-        try {
-            return apiGenService.generateMenuScript(menuScriptModel);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            System.out.println("Menu script generating is end for : " + result);
-        }
-        return result;
-    }
-
-
-    @POST
-    @Path(ApiGenConstraint.API_GENERATE_MENU_CHANGE_SET)
-    @Produces(MediaType.APPLICATION_JSON)
-    public String generateMenuChangeSet(MenuChangeSetModel menuChangeSetModel) {
-        System.out.println("Menu change set generating is started for " + menuChangeSetModel.getMenuLabel() );
-        String result = null;
-        try {
-            return apiGenService.generateMenuChangeSet(menuChangeSetModel);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            System.out.println("Menu change set generating is end for : " + result);
         }
         return result;
     }

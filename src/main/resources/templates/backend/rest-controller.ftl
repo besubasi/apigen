@@ -8,41 +8,41 @@ import tr.com.havelsan.javarch.actuator.annotation.HvlActuatorService;
 import tr.com.havelsan.javarch.data.commons.pageable.HvlPage;
 import tr.com.havelsan.javarch.service.data.HvlResponse;
 import tr.com.havelsan.kovan.logistic.core.constant.LogisticLocalizedViewer;
-import ${apiModel.commonPackage}.${apiModel.apiPackage}.model.${apiModel.apiName}Model;
-import ${apiModel.commonPackage}.${apiModel.apiPackage}.model.${apiModel.apiName}QueryModel;
-import ${apiModel.commonPackage}.${apiModel.apiPackage}.service.${apiModel.apiName}PrivateRestService;
-import ${apiModel.commonPackage}.${apiModel.apiPackage}.service.${apiModel.apiName}PublicRestService;
-import ${apiModel.servicePackage}.${apiModel.apiPackage}.service.${apiModel.apiName}Service;
+import ${model.commonPackage}.${model.apiPackage}.model.${model.apiName}Model;
+import ${model.commonPackage}.${model.apiPackage}.model.${model.apiName}QueryModel;
+import ${model.commonPackage}.${model.apiPackage}.service.${model.apiName}PrivateRestService;
+import ${model.commonPackage}.${model.apiPackage}.service.${model.apiName}PublicRestService;
+import ${model.servicePackage}.${model.apiPackage}.service.${model.apiName}Service;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.List;
-<#assign CONTROLLER_PATH = '{application.module.logistic.${apiModel.microServiceName}.services.${apiModel.apiPackage}.${apiModel.apiName?uncap_first}.controllerPath}'>
+<#assign CONTROLLER_PATH = '{application.module.logistic.${model.microServiceName}.services.${model.apiPackage}.${model.apiName?uncap_first}.controllerPath}'>
 
 @RestController
-@HvlActuatorService(name = "${apiModel.apiName}Service", groupName = "${apiModel.microServiceName}")
+@HvlActuatorService(name = "${model.apiName}Service", groupName = "${model.microServiceName}")
 @RequestMapping("$${CONTROLLER_PATH}")
-public class ${apiModel.apiName}RestController implements ${apiModel.apiName}PublicRestService, ${apiModel.apiName}PrivateRestService {
+public class ${model.apiName}RestController implements ${model.apiName}PublicRestService, ${model.apiName}PrivateRestService {
 
-    private final ${apiModel.apiName}Service service;
+    private final ${model.apiName}Service service;
 
     @Autowired
-    public ${apiModel.apiName}RestController(${apiModel.apiName}Service service) {
+    public ${model.apiName}RestController(${model.apiName}Service service) {
         this.service = service;
     }
     <#assign TAG_LONG = '<Long>'>
     <#assign TAG_BOOLEAN = '<Boolean>'>
-    <#assign TAG_MODEL = '<${apiModel.apiName}Model>'>
-    <#assign TAG_LIST_MODEL = '<List<${apiModel.apiName}Model>>'>
-    <#assign TAG_PAGE_MODEL = '<HvlPage<${apiModel.apiName}Model>>'>
+    <#assign TAG_MODEL = '<${model.apiName}Model>'>
+    <#assign TAG_LIST_MODEL = '<List<${model.apiName}Model>>'>
+    <#assign TAG_PAGE_MODEL = '<HvlPage<${model.apiName}Model>>'>
 
     @Override
-    public HvlResponse${TAG_LONG} create(@NotNull ${apiModel.apiName}Model model) {
+    public HvlResponse${TAG_LONG} create(@NotNull ${model.apiName}Model model) {
         return new HvlResponse<>(service.create(model));
     }
 
     @Override
-    public HvlResponse${TAG_MODEL} update(@NotNull ${apiModel.apiName}Model model) {
+    public HvlResponse${TAG_MODEL} update(@NotNull ${model.apiName}Model model) {
         return new HvlResponse<>(service.update(model));
     }
 
@@ -52,17 +52,17 @@ public class ${apiModel.apiName}RestController implements ${apiModel.apiName}Pub
     }
 
     @Override
-    public HvlResponse${TAG_LIST_MODEL} queryList(@NotNull ${apiModel.apiName}QueryModel queryModel) {
+    public HvlResponse${TAG_LIST_MODEL} queryList(@NotNull ${model.apiName}QueryModel queryModel) {
         return new HvlResponse<>(service.queryList(queryModel));
     }
 
     @Override
-    public HvlResponse${TAG_PAGE_MODEL} queryPage(@NotNull ${apiModel.apiName}QueryModel queryModel) {
+    public HvlResponse${TAG_PAGE_MODEL} queryPage(@NotNull ${model.apiName}QueryModel queryModel) {
         return new HvlResponse<>(service.queryPage(queryModel));
     }
 
     @Override
-    public HvlResponse${TAG_BOOLEAN} exists(@NotNull ${apiModel.apiName}QueryModel queryModel) {
+    public HvlResponse${TAG_BOOLEAN} exists(@NotNull ${model.apiName}QueryModel queryModel) {
         return new HvlResponse<>(service.exists(queryModel));
     }
 

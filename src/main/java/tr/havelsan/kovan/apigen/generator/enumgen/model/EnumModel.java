@@ -1,4 +1,6 @@
-package tr.havelsan.kovan.apigen.model;
+package tr.havelsan.kovan.apigen.generator.enumgen.model;
+
+import tr.havelsan.kovan.apigen.enums.EnumMicroservice;
 
 import java.util.List;
 
@@ -7,8 +9,8 @@ public class EnumModel {
     private String name;
     private List<EnumKeyModel> keyList;
 
+    private EnumMicroservice microservice;
     private String commonPackage;
-    private String sharedName;
     private String sharedPackage;
 
     public String getName() {
@@ -35,12 +37,12 @@ public class EnumModel {
         this.commonPackage = commonPackage;
     }
 
-    public String getSharedName() {
-        return sharedName;
+    public EnumMicroservice getMicroservice() {
+        return microservice;
     }
 
-    public void setSharedName(String sharedName) {
-        this.sharedName = sharedName;
+    public void setMicroservice(EnumMicroservice microservice) {
+        this.microservice = microservice;
     }
 
     public String getSharedPackage() {

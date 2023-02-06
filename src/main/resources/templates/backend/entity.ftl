@@ -1,16 +1,16 @@
 package ${packageName};
 
 import org.hibernate.annotations.CacheConcurrencyStrategy;
-<#if apiModel.hasDefEntity>
+<#if model.hasDefEntity>
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 </#if>
 
-<#if apiModel.extendedName == 'KovanActivable'>
+<#if model.extendedName == 'KovanActivable'>
 import tr.com.havelsan.kovan.logistic.core.activibility.entity.KovanActivableEntity;
 <#else >
-import tr.com.havelsan.javarch.domain.model.entity.HvlEntity;
+import tr.com.havelsan.javarch.domain.model.entity.${model.extendedName}Entity;
 </#if>
 
 
@@ -25,18 +25,18 @@ import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
-<#if apiModel.hasDefEntity>
+<#if model.hasDefEntity>
 import static tr.com.havelsan.kovan.logistic.core.constant.GeneralConstants.LANGUAGE_LOCALIZED;
 </#if>
-import static ${apiModel.commonPackage}.${apiModel.apiPackage}.constraint.${apiModel.apiName}Constraint.*;
-import static ${apiModel.servicePackage}.constants.CommonConstants.SCHEMA_NAME;
+import static ${model.commonPackage}.${model.apiPackage}.constraint.${model.apiName}Constraint.*;
+import static ${model.servicePackage}.constants.CommonConstants.SCHEMA_NAME;
 
 @Entity
 @Table(schema = SCHEMA_NAME, name = TABLE_NAME)
 @HvlEntitySequence(name = TABLE_SEQ_NAME)
-public class ${apiModel.apiName}Entity extends ${apiModel.extendedName}Entity {
+public class ${model.apiName}Entity extends ${model.extendedName}Entity {
 
-<#list apiModel.propertyList as property>
+<#list model.propertyList as property>
     <#if property.notNull>
     @NotNull
     </#if>
@@ -48,8 +48,8 @@ public class ${apiModel.apiName}Entity extends ${apiModel.extendedName}Entity {
 
 </#list>
 
-<#assign TAG_STRING_DEF_ENTITY = '<String, ${apiModel.apiName}DefEntity>'>
-<#if apiModel.hasDefEntity>
+<#assign TAG_STRING_DEF_ENTITY = '<String, ${model.apiName}DefEntity>'>
+<#if model.hasDefEntity>
     @NotEmpty
     @Valid
     @OneToMany(mappedBy = MAPPED_BY, orphanRemoval = true, cascade = CascadeType.ALL)
@@ -60,7 +60,7 @@ public class ${apiModel.apiName}Entity extends ${apiModel.extendedName}Entity {
 </#if>
 
     /*** Getter & Setter ***/
-<#list apiModel.propertyList as property>
+<#list model.propertyList as property>
 
     public ${property.type} get${property.name?cap_first}() {
         return ${property.name};
@@ -71,7 +71,7 @@ public class ${apiModel.apiName}Entity extends ${apiModel.extendedName}Entity {
     }
 </#list>
 
-<#if apiModel.hasDefEntity>
+<#if model.hasDefEntity>
     public Map${TAG_STRING_DEF_ENTITY} getDefinitionMap() {
         return definitionMap;
     }

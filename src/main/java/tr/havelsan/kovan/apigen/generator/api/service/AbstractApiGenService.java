@@ -1,6 +1,6 @@
-package tr.havelsan.kovan.apigen.service;
+package tr.havelsan.kovan.apigen.generator.api.service;
 
-import tr.havelsan.kovan.apigen.model.ApiModel;
+import tr.havelsan.kovan.apigen.generator.api.model.ApiModel;
 
 import java.io.IOException;
 
