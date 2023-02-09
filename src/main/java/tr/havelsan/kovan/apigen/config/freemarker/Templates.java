@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
-import static tr.havelsan.kovan.apigen.constraint.TemplateConstraint.*;
+import static tr.havelsan.kovan.apigen.common.constraint.TemplateConstraint.*;
 
 @Singleton
 public class Templates {

@@ -5,13 +5,13 @@ import io.quarkus.runtime.StartupEvent;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.jboss.logging.Logger;
 import tr.havelsan.kovan.apigen.config.freemarker.Templates;
-import tr.havelsan.kovan.apigen.util.PathUtil;
+import tr.havelsan.kovan.apigen.common.util.PathUtil;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Observes;
 import java.io.IOException;
 
-import static tr.havelsan.kovan.apigen.constraint.ApiGenConstraint.ENV_REPOSITORY_PATH;
+import static tr.havelsan.kovan.apigen.common.constraint.ApiGenConstraint.ENV_REPOSITORY_PATH;
 
 @ApplicationScoped
 public class ApiGenApplication {
