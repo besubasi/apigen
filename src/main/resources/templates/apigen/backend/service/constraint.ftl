@@ -1,4 +1,4 @@
-package ${conf.servicePackage}.${model.modulePackage}.${model.apiPackage};
+package ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage};
 
 import static tr.com.havelsan.kovan.logistic.core.constant.GeneralConstants.*;
 

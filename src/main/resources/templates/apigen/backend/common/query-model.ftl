@@ -1,4 +1,4 @@
-package ${conf.commonPackage}.${model.modulePackage}.${model.apiPackage};
+package ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage};
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;

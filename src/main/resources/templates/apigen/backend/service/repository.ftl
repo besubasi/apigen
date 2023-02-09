@@ -1,4 +1,4 @@
-package ${conf.servicePackage}.${model.modulePackage}.${model.apiPackage};
+package ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage};
 
 import org.springframework.stereotype.Repository;
 import tr.com.havelsan.javarch.data.jpa.repository.HvlJpaRepository;

@@ -1,4 +1,4 @@
-package ${conf.servicePackage}.${model.modulePackage}.${model.apiPackage};
+package ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage};
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RestController;
 import tr.com.havelsan.javarch.actuator.annotation.HvlActuatorService;
 import tr.com.havelsan.javarch.data.commons.pageable.HvlPage;
 import tr.com.havelsan.javarch.service.data.HvlResponse;
-import ${conf.commonPackage}.${model.modulePackage}.${model.apiPackage}.${model.apiName}Model;
-import ${conf.commonPackage}.${model.modulePackage}.${model.apiPackage}.${model.apiName}QueryModel;
-import ${conf.commonPackage}.${model.modulePackage}.${model.apiPackage}.${model.apiName}PrivateRestService;
-import ${conf.commonPackage}.${model.modulePackage}.${model.apiPackage}.${model.apiName}PublicRestService;
+import ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.${model.apiName}Model;
+import ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.${model.apiName}QueryModel;
+import ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.${model.apiName}PrivateRestService;
+import ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.${model.apiName}PublicRestService;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;

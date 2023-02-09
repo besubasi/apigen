@@ -1,4 +1,4 @@
-package ${conf.commonPackage}.${model.modulePackage}.${model.apiPackage};
+package ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage};
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;

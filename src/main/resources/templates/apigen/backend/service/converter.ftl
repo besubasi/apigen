@@ -1,4 +1,4 @@
-package ${conf.servicePackage}.${model.modulePackage}.${model.apiPackage};
+package ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage};
 
 <#if model.hasDefEntity>
 import org.apache.commons.collections4.MapUtils;
@@ -8,7 +8,7 @@ import org.mapstruct.MappingTarget;
 import tr.com.havelsan.javarch.data.model.mapper.HvlGenericMapStructMapper;
 import tr.com.havelsan.javarch.domain.model.entity.HvlLocalizedId;
 import tr.com.havelsan.javarch.session.context.HvlSessionContextHolder;
-import ${conf.commonPackage}.${model.modulePackage}.${model.apiPackage}.${model.apiName}Model;
+import ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.${model.apiName}Model;
 
 import java.util.Map;
 <#else >
