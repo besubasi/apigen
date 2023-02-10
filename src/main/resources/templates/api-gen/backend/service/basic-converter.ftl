@@ -8,7 +8,9 @@ import org.mapstruct.MappingTarget;
 import tr.com.havelsan.javarch.data.model.mapper.HvlGenericMapStructMapper;
 import tr.com.havelsan.javarch.domain.model.entity.HvlLocalizedId;
 import tr.com.havelsan.javarch.session.context.HvlSessionContextHolder;
-import ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.${model.apiName}Model;
+import ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.model.${model.apiName}Model;
+import ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.entity.${model.apiName}Entity;
+import ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.entity.${model.apiName}DefEntity;
 
 import java.util.Map;
 <#else >
@@ -20,7 +22,7 @@ import ${conf.servicePackage}.${model.apiPackage}.entity.${model.apiName}Entity;
 
 <#assign TAG_MODEL_ENTITY = "<${model.apiName}Model, ${model.apiName}Entity>">
 @Mapper
-public interface ${model.apiName}Converter extends HvlGenericMapStructMapper${TAG_MODEL_ENTITY} {
+public interface ${model.apiName}BasicConverter extends HvlGenericMapStructMapper${TAG_MODEL_ENTITY} {
 
 <#if model.hasDefEntity>
     @AfterMapping

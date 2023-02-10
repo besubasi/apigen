@@ -8,8 +8,8 @@ import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 import tr.com.havelsan.javarch.data.commons.pageable.HvlPage;
 
-import ${conf.commonPackage}.${model.apiPackage}.model.${model.apiName}Model;
-import ${conf.servicePackage}.${model.apiPackage}.entity.${model.apiName}Entity;
+import ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.model.${model.apiName}Model;
+import ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.entity.${model.apiName}Entity;
 
 @Generated(
 value = "org.mapstruct.ap.MappingProcessor"

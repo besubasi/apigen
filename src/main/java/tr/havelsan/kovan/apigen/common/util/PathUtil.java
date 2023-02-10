@@ -102,24 +102,26 @@ public class PathUtil {
     }
 
 
-    public static String getCommonPackagePath(ApiModel apiModel) {
-        return getCommonPath(apiModel.getMicroservice()) +File.separator+
+    public static String getCommonPackagePath(ApiModel apiModel, String subPackage) {
+        return getCommonPath(apiModel.getMicroservice()) + File.separator+
                 convertPackageToPath(getCommonPackage(apiModel.getMicroservice())
-                        + File.separator + getConfigurationConstant(apiModel.getMicroservice())
-                        + File.separator + apiModel.getApiPackage());
+                        + File.separator + getModuleName(apiModel.getModule())
+                        + File.separator + apiModel.getApiPackage()
+                        + File.separator + subPackage);
     }
 
-    public static String getServicePackagePath(ApiModel apiModel) {
-        return getServicePath(apiModel.getMicroservice()) +File.separator+
+    public static String getServicePackagePath(ApiModel apiModel, String subPackage) {
+        return getServicePath(apiModel.getMicroservice()) + File.separator +
                 convertPackageToPath(getServicePackage(apiModel.getMicroservice())
-                        + File.separator + getConfigurationConstant(apiModel.getMicroservice())
-                        + File.separator + apiModel.getApiPackage());
+                        + File.separator + getModuleName(apiModel.getModule())
+                        + File.separator + apiModel.getApiPackage()
+                        + File.separator + subPackage);
     }
 
     public static String getGroovyPackagePath(ApiModel apiModel) {
-        return getGroovyPath(apiModel.getMicroservice()) +File.separator +
+        return getGroovyPath(apiModel.getMicroservice()) + File.separator +
                 convertPackageToPath(getGroovyPackage(apiModel.getMicroservice())
-                        + File.separator + getConfigurationConstant(apiModel.getMicroservice())
+                        + File.separator + getModuleName(apiModel.getModule())
                         + File.separator + apiModel.getApiPackage());
     }
 

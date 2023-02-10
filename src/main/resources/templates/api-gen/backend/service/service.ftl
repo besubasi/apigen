@@ -1,9 +1,9 @@
-package ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage};
+package ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.service;
 
 import org.springframework.validation.annotation.Validated;
 import tr.com.havelsan.javarch.data.commons.pageable.HvlPage;
-import ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.${model.apiName}Model;
-import ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.${model.apiName}QueryModel;
+import ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.model.${model.apiName}Model;
+import ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.model.${model.apiName}QueryModel;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;

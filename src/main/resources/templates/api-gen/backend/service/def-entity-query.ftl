@@ -1,7 +1,7 @@
-package ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.query;
+package ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.entity.query;
 
 import static com.querydsl.core.types.PathMetadataFactory.*;
-import ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.${model.apiName}DefEntity;
+import ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.entity.${model.apiName}DefEntity;
 
 
 import com.querydsl.core.types.dsl.*;

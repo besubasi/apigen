@@ -8,6 +8,7 @@ public final class ApiGenConstraint {
     public static final String PACKAGE_CONSTRAINT = "constraint";
     public static final String PACKAGE_ENTITY = "entity";
     public static final String PACKAGE_QUERY = "query";
+    public static final String PACKAGE_ENTITY_QUERY = "entity.query";
     public static final String PACKAGE_MODEL = "model";
     public static final String PACKAGE_GENERATOR = "generator";
     public static final String PACKAGE_REPOSITORY = "repository";

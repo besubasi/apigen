@@ -1,4 +1,4 @@
-package ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage};
+package ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,15 +7,16 @@ import org.springframework.web.bind.annotation.RestController;
 import tr.com.havelsan.javarch.actuator.annotation.HvlActuatorService;
 import tr.com.havelsan.javarch.data.commons.pageable.HvlPage;
 import tr.com.havelsan.javarch.service.data.HvlResponse;
-import ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.${model.apiName}Model;
-import ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.${model.apiName}QueryModel;
-import ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.${model.apiName}PrivateRestService;
-import ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.${model.apiName}PublicRestService;
+import ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.model.${model.apiName}Model;
+import ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.model.${model.apiName}QueryModel;
+import ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.service.${model.apiName}PrivateRestService;
+import ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.service.${model.apiName}PublicRestService;
+import ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.service.${model.apiName}Service;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.List;
-<#assign CONTROLLER_PATH = '{application.module.logistic.${conf.microServiceName}.services.${model.apiPackage}.${model.apiName?uncap_first}.controllerPath}'>
+<#assign CONTROLLER_PATH = '{application.module.logistic.${conf.microServiceName}.services.${conf.moduleName}.${model.apiName?uncap_first}.controllerPath}'>
 
 @RestController
 @HvlActuatorService(name = "${model.apiName}Service", groupName = "${conf.microServiceName}")

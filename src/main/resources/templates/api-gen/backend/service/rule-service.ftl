@@ -1,4 +1,4 @@
-package ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage};
+package ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.service;
 
 import groovy.lang.GroovyObject;
 
@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import tr.com.havelsan.javarch.data.jpa.annotation.HvlTransactionalRollbackForCheckedException;
 import tr.com.havelsan.kovan.logistic.core.rule.GroovyBusinessRuleService;
+import ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.repository.${model.apiName}Repository;
+
 import javax.validation.constraints.NotNull;
 
 import static ${conf.servicePackage}.constants.${conf.configurationConstant}.${conf.groovyPathConstant};
