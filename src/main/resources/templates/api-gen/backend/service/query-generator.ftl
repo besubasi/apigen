@@ -1,4 +1,4 @@
-package ${conf.servicePackage}.${model.modulePackage}.${model.apiPackage};
+package ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.generator;
 
 import com.querydsl.core.BooleanBuilder;
 import org.apache.commons.lang3.StringUtils;
@@ -8,10 +8,9 @@ import tr.com.havelsan.javarch.data.jpa.query.generator.HvlViewQueryGenerator;
 <#else >
 import tr.com.havelsan.javarch.data.jpa.query.generator.HvlEntityQueryGenerator;
 </#if>
-
 import tr.com.havelsan.javarch.session.context.HvlSessionContextHolder;
-import ${conf.commonPackage}.${model.modulePackage}.${model.apiPackage}.${model.apiName}QueryModel;
-import ${conf.servicePackage}.${model.modulePackage}.${model.apiPackage}.query.${model.apiName}EntityQuery;
+import ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.model.${model.apiName}QueryModel;
+import ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.entity.query.${model.apiName}EntityQuery;
 
 import java.util.Locale;
 

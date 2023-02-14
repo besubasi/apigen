@@ -1,4 +1,4 @@
-package ${conf.servicePackage}.${model.modulePackage}.${model.apiPackage};
+package ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.entity;
 
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 <#if model.hasDefEntity>
@@ -28,7 +28,7 @@ import java.util.Map;
 <#if model.hasDefEntity>
 import static tr.com.havelsan.kovan.logistic.core.constant.GeneralConstants.LANGUAGE_LOCALIZED;
 </#if>
-import static ${conf.servicePackage}.${model.modulePackage}.${model.apiPackage}.${model.apiName}Constraint.*;
+import static ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.entity.${model.apiName}Constraint.*;
 import static ${conf.servicePackage}.constants.CommonConstants.SCHEMA_NAME;
 
 @Entity

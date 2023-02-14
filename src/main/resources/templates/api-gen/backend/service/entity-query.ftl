@@ -1,9 +1,9 @@
-package ${conf.servicePackage}.${model.modulePackage}.${model.apiPackage}.query;
+package ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.entity.query;
 
 import static com.querydsl.core.types.PathMetadataFactory.*;
-import ${conf.servicePackage}.${model.modulePackage}.${model.apiPackage}.${model.apiName}Entity;
+import ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.entity.${model.apiName}Entity;
 <#if model.hasDefEntity>
-import ${conf.servicePackage}.${model.modulePackage}.${model.apiPackage}.${model.apiName}DefEntity;
+import ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.entity.${model.apiName}DefEntity;
 </#if>
 
 import com.querydsl.core.types.dsl.*;

@@ -1,14 +1,15 @@
-package ${conf.commonPackage}.${model.modulePackage}.${model.apiPackage};
+package ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.service;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import tr.com.havelsan.javarch.cloud.service.annotation.HvlPrivateFeignRestService;
 import tr.com.havelsan.javarch.service.data.HvlResponse;
+import ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.model.${model.apiName}Model;
 
 import javax.validation.Valid;
-<#assign FEIGN_CLIENT_PATH = '{application.module.logistic.${conf.microServiceName}.services.${model.apiPackage}.${model.apiName?uncap_first}.path}'>
-<#assign FEIGN_CLIENT_URL = '{application.module.logistic.${conf.microServiceName}.services.${model.apiPackage}.${model.apiName?uncap_first}.url}'>
+<#assign FEIGN_CLIENT_PATH = '{application.module.logistic.${conf.microServiceName}.services.${conf.moduleName}.${model.apiName?uncap_first}.path}'>
+<#assign FEIGN_CLIENT_URL = '{application.module.logistic.${conf.microServiceName}.services.${conf.moduleName}.${model.apiName?uncap_first}.url}'>
 
 @HvlPrivateFeignRestService
 @FeignClient(name = "${model.apiName}PrivateRestService",

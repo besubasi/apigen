@@ -1,4 +1,4 @@
-package ${conf.servicePackage}.${model.modulePackage}.${model.apiPackage};
+package ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.service;
 
 import com.querydsl.core.types.Predicate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,9 +8,13 @@ import tr.com.havelsan.javarch.data.jpa.annotation.HvlTransactionalRollbackForCh
 import tr.com.havelsan.kovan.logistic.core.exception.LogisticNotFoundException;
 import tr.com.havelsan.kovan.logistic.core.rule.BusinessRuleService;
 import tr.com.havelsan.kovan.logistic.core.util.SortUtil;
-import ${conf.commonPackage}.${model.modulePackage}.${model.apiPackage}.${model.apiName}Model;
-import ${conf.commonPackage}.${model.modulePackage}.${model.apiPackage}.${model.apiName}QueryModel;
-import ${conf.servicePackage}.${model.modulePackage}.${model.apiPackage}.query.${model.apiName}EntityQuery;
+import ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.model.${model.apiName}Model;
+import ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.model.${model.apiName}QueryModel;
+import ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.converter.${model.apiName}Converter;
+import ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.entity.${model.apiName}Entity;
+import ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.entity.query.${model.apiName}EntityQuery;
+import ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.generator.${model.apiName}QueryGenerator;
+import ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.repository.${model.apiName}Repository;
 
 import java.util.List;
 

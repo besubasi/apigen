@@ -1,10 +1,12 @@
-package ${conf.commonPackage}.${model.modulePackage}.${model.apiPackage};
+package ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.service;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 import tr.com.havelsan.javarch.cloud.service.annotation.HvlPublicFeignRestService;
 import tr.com.havelsan.javarch.data.commons.pageable.HvlPage;
 import tr.com.havelsan.javarch.service.data.HvlResponse;
+import ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.model.${model.apiName}Model;
+import ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.model.${model.apiName}QueryModel;
 
 import javax.validation.Valid;
 import java.util.List;

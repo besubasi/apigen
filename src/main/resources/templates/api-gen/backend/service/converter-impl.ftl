@@ -1,4 +1,4 @@
-package ${conf.servicePackage}.${model.modulePackage}.${model.apiPackage};
+package ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.converter;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -8,7 +8,8 @@ import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 import tr.com.havelsan.javarch.data.commons.pageable.HvlPage;
 
-import ${conf.commonPackage}.${model.modulePackage}.${model.apiPackage}.${model.apiName}Model;
+import ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.model.${model.apiName}Model;
+import ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.entity.${model.apiName}Entity;
 
 @Generated(
 value = "org.mapstruct.ap.MappingProcessor"

@@ -1,13 +1,14 @@
 package tr.havelsan.kovan.apigen.generator.apigenerator.model;
 
 import tr.havelsan.kovan.apigen.common.enums.EnumMicroservice;
+import tr.havelsan.kovan.apigen.common.enums.EnumModule;
 
 import java.util.List;
 
 public class ApiModel {
 
     private EnumMicroservice microservice;
-    private String modulePackage;
+    private EnumModule module;
     private String apiPackage;
     private String apiName;
     private String tableName;
@@ -27,12 +28,12 @@ public class ApiModel {
         this.microservice = microservice;
     }
 
-    public String getModulePackage() {
-        return modulePackage;
+    public EnumModule getModule() {
+        return module;
     }
 
-    public void setModulePackage(String modulePackage) {
-        this.modulePackage = modulePackage;
+    public void setModule(EnumModule module) {
+        this.module = module;
     }
 
     public String getApiPackage() {

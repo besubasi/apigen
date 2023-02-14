@@ -2,6 +2,7 @@ package tr.havelsan.kovan.apigen.common.util;
 
 import tr.havelsan.kovan.apigen.common.constraint.PathConstraint;
 import tr.havelsan.kovan.apigen.common.enums.EnumMicroservice;
+import tr.havelsan.kovan.apigen.common.enums.EnumModule;
 import tr.havelsan.kovan.apigen.generator.apigenerator.model.ApiModel;
 
 import java.io.File;
@@ -101,24 +102,26 @@ public class PathUtil {
     }
 
 
-    public static String getCommonPackagePath(ApiModel apiModel) {
-        return getCommonPath(apiModel.getMicroservice()) +File.separator+
+    public static String getCommonPackagePath(ApiModel apiModel, String subPackage) {
+        return getCommonPath(apiModel.getMicroservice()) + File.separator+
                 convertPackageToPath(getCommonPackage(apiModel.getMicroservice())
-                        + File.separator + apiModel.getModulePackage()
-                        + File.separator + apiModel.getApiPackage());
+                        + File.separator + getModuleName(apiModel.getModule())
+                        + File.separator + apiModel.getApiPackage()
+                        + File.separator + subPackage);
     }
 
-    public static String getServicePackagePath(ApiModel apiModel) {
-        return getServicePath(apiModel.getMicroservice()) +File.separator+
+    public static String getServicePackagePath(ApiModel apiModel, String subPackage) {
+        return getServicePath(apiModel.getMicroservice()) + File.separator +
                 convertPackageToPath(getServicePackage(apiModel.getMicroservice())
-                        + File.separator + apiModel.getModulePackage()
-                        + File.separator + apiModel.getApiPackage());
+                        + File.separator + getModuleName(apiModel.getModule())
+                        + File.separator + apiModel.getApiPackage()
+                        + File.separator + subPackage);
     }
 
     public static String getGroovyPackagePath(ApiModel apiModel) {
-        return getGroovyPath(apiModel.getMicroservice()) +File.separator +
+        return getGroovyPath(apiModel.getMicroservice()) + File.separator +
                 convertPackageToPath(getGroovyPackage(apiModel.getMicroservice())
-                        + File.separator + apiModel.getModulePackage()
+                        + File.separator + getModuleName(apiModel.getModule())
                         + File.separator + apiModel.getApiPackage());
     }
 
@@ -151,6 +154,87 @@ public class PathUtil {
             return PathConstraint.MATERIAL_MANAGEMENT_GROOVY_PACKAGE;
         else if (EnumMicroservice.MAINTENANCE_MANAGEMENT == microservice)
             return PathConstraint.MAINTENANCE_MANAGEMENT_GROOVY_PACKAGE;
+
+        return "";
+    }
+
+    public static String getModuleName(EnumModule module) {
+        if (EnumModule.CONDITION == module)
+            return PathConstraint.LOGISTIC_GENERAL_MODULE_CONDITION;
+        else if (EnumModule.GENERAL == module)
+            return PathConstraint.LOGISTIC_GENERAL_MODULE_GENERAL;
+        else if (EnumModule.GENERAL_ADDRESS == module)
+            return PathConstraint.LOGISTIC_GENERAL_MODULE_GENERAL_ADDRESS;
+        else if (EnumModule.INTEGRATIONS == module)
+            return PathConstraint.LOGISTIC_GENERAL_MODULE_INTEGRATIONS;
+        else if (EnumModule.ORGANIZATION == module)
+            return PathConstraint.LOGISTIC_GENERAL_MODULE_ORGANIZATION;
+        else if (EnumModule.PARAMETERS == module)
+            return PathConstraint.LOGISTIC_GENERAL_MODULE_PARAMETERS;
+        else if (EnumModule.MATERIAL_IDENTIFICATION == module)
+            return PathConstraint.MATERIAL_MANAGEMENT_MODULE_MATERIAL_IDENTIFICATION;
+        else if (EnumModule.PURCHASING == module)
+            return PathConstraint.MATERIAL_MANAGEMENT_MODULE_PURCHASING;
+        else if (EnumModule.STOCK == module)
+            return PathConstraint.MATERIAL_MANAGEMENT_MODULE_STOCK;
+        else if (EnumModule.WAREHOUSE == module)
+            return PathConstraint.MATERIAL_MANAGEMENT_MODULE_WAREHOUSE;
+        else if (EnumModule.CONFIGURATION_MANAGEMENT == module)
+            return PathConstraint.MAINTENANCE_MANAGEMENT_MODULE_CONFIGURATION_MANAGEMENT;
+        else if (EnumModule.ENGINEERING == module)
+            return PathConstraint.MAINTENANCE_MANAGEMENT_MODULE_ENGINEERING;
+        else if (EnumModule.MAINTENANCE_ASSETS_MANAGEMENT == module)
+            return PathConstraint.MAINTENANCE_MANAGEMENT_MODULE_MAINTENANCE_ASSETS_MANAGEMENT;
+        else if (EnumModule.MAINTENANCE_REPAIR_APPLICATION == module)
+            return PathConstraint.MAINTENANCE_MANAGEMENT_MODULE_MAINTENANCE_REPAIR_APPLICATION;
+        else if (EnumModule.PREVENTIVE_MAINTENANCE == module)
+            return PathConstraint.MAINTENANCE_MANAGEMENT_MODULE_PREVENTIVE_MAINTENANCE;
+
+        return "";
+    }
+
+    public static String getGroovyPathConstant(EnumModule module) {
+        if (EnumModule.CONDITION == module)
+            return PathConstraint.CONTROL_CLASS_LOGISTIC_GENERAL_PATH;
+        else if (EnumModule.GENERAL == module)
+            return null;
+        else if (EnumModule.GENERAL_ADDRESS == module)
+            return null;
+        else if (EnumModule.INTEGRATIONS == module)
+            return null;
+        else if (EnumModule.ORGANIZATION == module)
+            return PathConstraint.CONTROL_CLASS_ORGANIZATION_PATH;
+        else if (EnumModule.PARAMETERS == module)
+            return null;
+        else if (EnumModule.MATERIAL_IDENTIFICATION == module)
+            return PathConstraint.CONTROL_CLASS_MATERIAL_IDENTIFICATION_PATH;
+        else if (EnumModule.PURCHASING == module)
+            return PathConstraint.CONTROL_CLASS_PURCHASING_PATH;
+        else if (EnumModule.STOCK == module)
+            return PathConstraint.CONTROL_CLASS_STOCK_PATH;
+        else if (EnumModule.WAREHOUSE == module)
+            return null;
+        else if (EnumModule.CONFIGURATION_MANAGEMENT == module)
+            return PathConstraint.CONTROL_CLASS_CONFIGURATION_MANAGEMENT_PATH;
+        else if (EnumModule.ENGINEERING == module)
+            return PathConstraint.CONTROL_CLASS_MAINTENANCE_ENGINEERING_PATH;
+        else if (EnumModule.MAINTENANCE_ASSETS_MANAGEMENT == module)
+            return PathConstraint.CONTROL_CLASS_MAINTENANCE_ASSETS_MANAGEMENT_PATH;
+        else if (EnumModule.MAINTENANCE_REPAIR_APPLICATION == module)
+            return PathConstraint.CONTROL_CLASS_MAINTENANCE_REPAIR_APPLICATION_PATH;
+        else if (EnumModule.PREVENTIVE_MAINTENANCE == module)
+            return PathConstraint.CONTROL_CLASS_PREVENTIVE_MAINTENANCE_PATH;
+
+        return "";
+    }
+
+    public static String getConfigurationConstant(EnumMicroservice microservice) {
+        if (EnumMicroservice.LOGISTIC_GENERAL == microservice)
+            return PathConstraint.LOGISTIC_GENERAL_CONFIGURATION_CONSTANT;
+        else if (EnumMicroservice.MATERIAL_MANAGEMENT == microservice)
+            return PathConstraint.MATERIAL_MANAGEMENT_CONFIGURATION_CONSTANTS;
+        else if (EnumMicroservice.MAINTENANCE_MANAGEMENT == microservice)
+            return PathConstraint.MAINTENANCE_MANAGEMENT_CONFIGURATION_CONSTANTS;
 
         return "";
     }

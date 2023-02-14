@@ -1,4 +1,4 @@
-package ${conf.commonPackage}.${model.modulePackage}.${model.apiPackage};
+package ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.model;
 
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
