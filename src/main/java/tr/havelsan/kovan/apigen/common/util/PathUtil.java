@@ -103,7 +103,7 @@ public class PathUtil {
 
 
     public static String getCommonPackagePath(ApiModel apiModel, String subPackage) {
-        return getCommonPath(apiModel.getMicroservice()) + File.separator+
+        return getCommonPath(apiModel.getMicroservice()) + File.separator +
                 convertPackageToPath(getCommonPackage(apiModel.getMicroservice())
                         + File.separator + getModuleName(apiModel.getModule())
                         + File.separator + apiModel.getApiPackage()
@@ -239,7 +239,7 @@ public class PathUtil {
         return "";
     }
 
-    public static String convertPackageToPath(String packageName){
+    public static String convertPackageToPath(String packageName) {
         return packageName.replaceAll("\\.", "\\" + File.separator);
     }
 

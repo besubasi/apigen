@@ -13,6 +13,7 @@ public abstract class AbstractApiGenService implements ApiGenService {
     @Override
     public void generate(ApiModel apiModel) throws IOException {
         this.apiModel = apiModel;
+        this.apiModel.setApiPackage(apiModel.getApiName().toLowerCase());
         this.confModel = new ConfModel(apiModel.getMicroservice(), apiModel.getModule());
 
         this.createConstraint();
