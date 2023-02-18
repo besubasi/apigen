@@ -1,6 +1,7 @@
 package tr.havelsan.kovan.apigen.generator.apigenerator.service;
 
 import freemarker.template.Template;
+import tr.havelsan.kovan.apigen.common.util.TemplateUtil;
 import tr.havelsan.kovan.apigen.config.freemarker.Templates;
 import tr.havelsan.kovan.apigen.generator.apigenerator.model.FrontEndCopyModel;
 import tr.havelsan.kovan.apigen.common.util.ApiGenUtil;
@@ -8,6 +9,7 @@ import tr.havelsan.kovan.apigen.common.util.ApiGenUtil;
 import javax.inject.Singleton;
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -126,6 +128,14 @@ public class ApiGenServiceImpl extends AbstractApiGenService {
         this.createServiceFile(Templates.REST_CONTROLLER, PACKAGE_CONTROLLER, END_FIX_REST_CONTROLLER);
     }
 
+    @Override
+    void updateYml() throws IOException {
+        Path ymlPath = Paths.get(getYmlPath(apiModel.getMicroservice()));
+        String yml = Files.readString(ymlPath);
+        String apiYml = TemplateUtil.getString(Templates.YML_UPDATE, Map.of(MODEL, apiModel, CONF, confModel));
+        yml = yml.replace(confModel.getModuleName() + ":", apiYml);
+        writeFile(ymlPath, yml.getBytes(StandardCharsets.UTF_8));
+    }
 
     private void createCommonFile(Template template, String subPackage, String fileNameEndFix) {
         String directoryPath = getCommonPackagePath(apiModel, subPackage);

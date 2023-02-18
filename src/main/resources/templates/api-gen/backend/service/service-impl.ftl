@@ -78,13 +78,13 @@ public class ${model.apiName}ServiceImpl implements ${model.apiName}Service {
     }
 
     public List${TAG_MODEL} queryList(${model.apiName}QueryModel queryModel) {
-        SortUtil.checkUnsorted(queryModel, SortUtil.ASC_CODE);
+        SortUtil.checkUnsorted(queryModel, SortUtil.DESC_DATE_CREATED);
         Predicate predicate = queryGenerator.generate(queryModel, ${model.apiName}EntityQuery.${model.apiName?uncap_first}Entity);
         return this.converter.convertToModelList(repository.findAll(predicate, queryModel.getPageable().getSort()));
     }
 
     public HvlPage${TAG_MODEL} queryPage(${model.apiName}QueryModel queryModel) {
-        SortUtil.checkUnsorted(queryModel, SortUtil.ASC_CODE);
+        SortUtil.checkUnsorted(queryModel, SortUtil.DESC_DATE_CREATED);
         Predicate predicate = this.queryGenerator.generate(queryModel, ${model.apiName}EntityQuery.${model.apiName?uncap_first}Entity);
         return converter.convertToHvlPageModel(this.repository.findAll(predicate, queryModel.getPageable()));
     }

@@ -35,6 +35,7 @@ public class Templates {
     public static Template PUBLIC_REST_SERVICE;
     public static Template PRIVATE_REST_SERVICE;
     public static Template REST_CONTROLLER;
+    public static Template YML_UPDATE;
     public static Template ENUM;
     public static Template ENUM_CONVERTER;
     public static Template ENUM_TS;
@@ -71,6 +72,7 @@ public class Templates {
         PUBLIC_REST_SERVICE = configuration.getTemplate(PUBLIC_REST_SERVICE_FTL);
         PRIVATE_REST_SERVICE = configuration.getTemplate(PRIVATE_REST_SERVICE_FTL);
         REST_CONTROLLER = configuration.getTemplate(REST_CONTROLLER_FTL);
+        YML_UPDATE = configuration.getTemplate(YML_UPDATE_FTL);
         ENUM = configuration.getTemplate(ENUM_FTL);
         ENUM_CONVERTER = configuration.getTemplate(ENUM_CONVERTER_FTL);
         ENUM_TS = configuration.getTemplate(ENUM_TS_FTL);

@@ -9,6 +9,7 @@ public class PathConstraint {
     public static final String LOGISTIC_GENERAL_MODULE_INTEGRATIONS = "integrations";
     public static final String LOGISTIC_GENERAL_MODULE_ORGANIZATION = "organization";
     public static final String LOGISTIC_GENERAL_MODULE_PARAMETERS = "parameters";
+    public static final String LOGISTIC_GENERAL_YML_PATH = "/hvl-kovan-logistic/resources/configuration/modules/general-application.yml";
     public static final String LOGISTIC_GENERAL_COMMON_PATH = "/hvl-kovan-logistic/modules/logistic-general/common/src/main/java";
     public static final String LOGISTIC_GENERAL_COMMON_PACKAGE = "tr.com.havelsan.kovan.logistic.general.common";
     public static final String LOGISTIC_GENERAL_SERVICE_PATH = "/hvl-kovan-logistic/modules/logistic-general/service/src/main/java";
@@ -26,6 +27,7 @@ public class PathConstraint {
     public static final String MATERIAL_MANAGEMENT_MODULE_PURCHASING = "purchasing";
     public static final String MATERIAL_MANAGEMENT_MODULE_STOCK = "stock";
     public static final String MATERIAL_MANAGEMENT_MODULE_WAREHOUSE = "warehouse";
+    public static final String MATERIAL_MANAGEMENT_YML_PATH = "/hvl-kovan-logistic/resources/configuration/modules/material-management-application.yml";
     public static final String MATERIAL_MANAGEMENT_COMMON_PATH = "/hvl-kovan-logistic/modules/material-management/common/src/main/java";
     public static final String MATERIAL_MANAGEMENT_COMMON_PACKAGE = "tr.com.havelsan.kovan.logistic.materialManagement.common";
     public static final String MATERIAL_MANAGEMENT_SERVICE_PATH = "/hvl-kovan-logistic/modules/material-management/service/src/main/java";
@@ -45,6 +47,7 @@ public class PathConstraint {
     public static final String MAINTENANCE_MANAGEMENT_MODULE_MAINTENANCE_ASSETS_MANAGEMENT = "maintenanceAssetsManagement";
     public static final String MAINTENANCE_MANAGEMENT_MODULE_MAINTENANCE_REPAIR_APPLICATION = "maintenanceRepairApplication";
     public static final String MAINTENANCE_MANAGEMENT_MODULE_PREVENTIVE_MAINTENANCE = "preventiveMaintenance";
+    public static final String MAINTENANCE_MANAGEMENT_YML_PATH = "/hvl-kovan-logistic/resources/configuration/modules/maintenance-management-application.yml";
     public static final String MAINTENANCE_MANAGEMENT_COMMON_PATH = "/hvl-kovan-logistic/modules/maintenance-management/client/src/main/java";
     public static final String MAINTENANCE_MANAGEMENT_COMMON_PACKAGE = "tr.com.havelsan.kovan.logistic.maintenanceManagement.client";
     public static final String MAINTENANCE_MANAGEMENT_SERVICE_PATH = "/hvl-kovan-logistic/modules/maintenance-management/service/src/main/java";

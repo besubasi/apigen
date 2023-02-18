@@ -56,6 +56,16 @@ public class PathUtil {
         return getFrontendSharedPath(microservice) + PathConstraint.PUBLIC_API_TS;
     }
 
+    public static String getYmlPath(EnumMicroservice microservice) {
+        if (EnumMicroservice.LOGISTIC_GENERAL == microservice)
+            return repositoryPath + PathConstraint.LOGISTIC_GENERAL_YML_PATH;
+        else if (EnumMicroservice.MATERIAL_MANAGEMENT == microservice)
+            return repositoryPath + PathConstraint.MATERIAL_MANAGEMENT_YML_PATH;
+        else if (EnumMicroservice.MAINTENANCE_MANAGEMENT == microservice)
+            return repositoryPath + PathConstraint.MAINTENANCE_MANAGEMENT_YML_PATH;
+
+        return "";
+    }
 
     public static String getCommonPath(EnumMicroservice microservice) {
         if (EnumMicroservice.LOGISTIC_GENERAL == microservice)

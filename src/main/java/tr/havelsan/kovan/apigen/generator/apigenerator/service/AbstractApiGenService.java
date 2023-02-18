@@ -47,6 +47,8 @@ public abstract class AbstractApiGenService implements ApiGenService {
         this.createPrivateRestService();
         this.createPublicRestService();
         this.createRestController();
+
+        this.updateYml();
     }
 
     abstract void createConstraint() throws IOException;
@@ -88,6 +90,8 @@ public abstract class AbstractApiGenService implements ApiGenService {
     abstract void createPublicRestService() throws IOException;
 
     abstract void createRestController() throws IOException;
+
+    abstract void updateYml() throws IOException;
 
 
 }

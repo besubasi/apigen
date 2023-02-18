@@ -32,6 +32,7 @@ public final class TemplateConstraint {
     public static final String PUBLIC_REST_SERVICE_FTL = "/api-gen/backend/common/public-rest-service.ftl";
     public static final String PRIVATE_REST_SERVICE_FTL = "/api-gen/backend/common/private-rest-service.ftl";
     public static final String REST_CONTROLLER_FTL = "/api-gen/backend/service/rest-controller.ftl";
+    public static final String YML_UPDATE_FTL = "/api-gen/backend/yml-update.ftl";
 
     public static final String ENUM_FTL = "/enum-gen/backend/enum.ftl";
     public static final String ENUM_CONVERTER_FTL = "/enum-gen/backend/enum-converter.ftl";
