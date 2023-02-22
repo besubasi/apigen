@@ -5,7 +5,7 @@ import tr.havelsan.kovan.apigen.common.enums.EnumModule;
 
 import java.util.List;
 
-public class ApiModel {
+public class ApiGeneratorModel {
 
     private EnumMicroservice microservice;
     private EnumModule module;

@@ -11,7 +11,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Observes;
 import java.io.IOException;
 
-import static tr.havelsan.kovan.apigen.common.constraint.ApiGenConstraint.ENV_REPOSITORY_PATH;
+import static tr.havelsan.kovan.apigen.generator.apigenerator.constant.ApiGeneratorConstant.ENV_REPOSITORY_PATH;
 
 @ApplicationScoped
 public class ApiGenApplication {
@@ -24,7 +24,7 @@ public class ApiGenApplication {
     void onStart(@Observes StartupEvent ev) throws IOException {
         Templates.initTemplates();
         PathUtil.setRepositoryPath(repositoryPath);
-        System.out.println("Repository Path : " + repositoryPath);
+        LOGGER.info("Repository Path : " + repositoryPath);
     }
 
     void onStop(@Observes ShutdownEvent ev) {

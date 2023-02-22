@@ -3,7 +3,7 @@ package tr.havelsan.kovan.apigen;
 import io.quarkus.test.junit.QuarkusIntegrationTest;
 
 @QuarkusIntegrationTest
-public class ApiGenRestControllerIT extends ApiGenRestControllerTest {
+public class ApiGeneratorRestControllerIT extends ApiGeneratorRestControllerTest {
 
     // Execute the same tests but in native mode.
 }

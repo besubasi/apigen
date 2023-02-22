@@ -9,7 +9,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import static tr.havelsan.kovan.apigen.common.constraint.ApiGenConstraint.*;
+import static tr.havelsan.kovan.apigen.generator.apigenerator.constant.ApiGeneratorConstant.*;
 import static tr.havelsan.kovan.apigen.common.util.ApiGenUtil.createDirectory;
 import static tr.havelsan.kovan.apigen.common.util.ApiGenUtil.writeFile;
 import static tr.havelsan.kovan.apigen.common.util.PathUtil.*;
@@ -19,7 +19,7 @@ import static tr.havelsan.kovan.apigen.common.util.TemplateUtil.getContent;
 public class EnumGenServiceImpl extends AbstractEnumGenService {
 
     @Override
-    void createBackendEnum() {
+    void createBackendEnum() throws IOException {
         String directoryPath = getCommonPath(enumModel.getMicroservice()) + File.separator + convertPackageToPath(enumModel.getCommonPackage());
         createDirectory(Paths.get(directoryPath));
         String filePath = directoryPath + File.separator + enumModel.getName() + FILE_JAVA;
@@ -27,7 +27,7 @@ public class EnumGenServiceImpl extends AbstractEnumGenService {
     }
 
     @Override
-    void createBackendEnumConverter() {
+    void createBackendEnumConverter() throws IOException {
         String directoryPath = getCommonPath(enumModel.getMicroservice()) + File.separator + convertPackageToPath(enumModel.getCommonPackage()) + File.separator + PACKAGE_CONVERTER;
         createDirectory(Paths.get(directoryPath));
         String filePath = directoryPath + File.separator + enumModel.getName() + END_FIX_CONVERTER + FILE_JAVA;
@@ -35,7 +35,7 @@ public class EnumGenServiceImpl extends AbstractEnumGenService {
     }
 
     @Override
-    void createFrontendEnum() {
+    void createFrontendEnum() throws IOException {
         String directoryPath = getFrontendSharedSrcLibPath(enumModel.getMicroservice()) + File.separator + convertPackageToPath(enumModel.getSharedPackage());
         createDirectory(Paths.get(directoryPath));
         String filePath = directoryPath + File.separator + this.getTsFileName() + FILE_TYPE_SCRIPT;
@@ -43,13 +43,13 @@ public class EnumGenServiceImpl extends AbstractEnumGenService {
     }
 
     @Override
-    void createFrontendEnumJsonTr() {
+    void createFrontendEnumJsonTr() throws IOException {
         String filePath = geti18nTrPath(enumModel.getMicroservice()) + File.separator + this.getTsFileName() + FILE_JSON;
         writeFile(Paths.get(filePath), getContent(Templates.ENUM_JSON_TR, map));
     }
 
     @Override
-    void createFrontendEnumJsonEn() {
+    void createFrontendEnumJsonEn() throws IOException {
         String filePath = geti18nEnPath(enumModel.getMicroservice()) + File.separator + this.getTsFileName() + FILE_JSON;
         writeFile(Paths.get(filePath), getContent(Templates.ENUM_JSON_EN, map));
     }
@@ -60,7 +60,7 @@ public class EnumGenServiceImpl extends AbstractEnumGenService {
         var content = Files.readString(publicApiTsPath);
         String exportLine = "export * from './lib/" + convertPackageToPath(enumModel.getSharedPackage()) + File.separator + this.getTsFileName() + "';";
         String updatedContent = content + System.lineSeparator() + System.lineSeparator() + exportLine;
-        writeFile(publicApiTsPath, updatedContent.getBytes(StandardCharsets.UTF_8));
+        writeFile(publicApiTsPath, updatedContent);
     }
 
     private String getTsFileName() {

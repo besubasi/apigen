@@ -1,26 +1,26 @@
 package tr.havelsan.kovan.apigen.generator.apigenerator.service;
 
 import tr.havelsan.kovan.apigen.common.model.ConfModel;
-import tr.havelsan.kovan.apigen.generator.apigenerator.model.ApiModel;
+import tr.havelsan.kovan.apigen.generator.apigenerator.model.ApiGeneratorModel;
 
 import java.io.IOException;
 
-public abstract class AbstractApiGenService implements ApiGenService {
+public abstract class AbstractApiGeneratorService implements ApiGeneratorService {
 
-    protected ApiModel apiModel;
+    protected ApiGeneratorModel apiGeneratorModel;
     protected ConfModel confModel;
 
     @Override
-    public void generate(ApiModel apiModel) throws IOException {
-        this.apiModel = apiModel;
-        this.apiModel.setApiPackage(apiModel.getApiName().toLowerCase());
-        this.confModel = new ConfModel(apiModel.getMicroservice(), apiModel.getModule());
+    public Boolean generate(ApiGeneratorModel apiGeneratorModel) throws IOException {
+        this.apiGeneratorModel = apiGeneratorModel;
+        this.apiGeneratorModel.setApiPackage(apiGeneratorModel.getApiName().toLowerCase());
+        this.confModel = new ConfModel(apiGeneratorModel.getMicroservice(), apiGeneratorModel.getModule());
 
         this.createConstraint();
         this.createEntity();
         this.createEntityQuery();
 
-        if (Boolean.TRUE.equals(this.apiModel.isHasDefEntity())) {
+        if (Boolean.TRUE.equals(this.apiGeneratorModel.isHasDefEntity())) {
             this.createDefEntity();
             this.createDefEntityQuery();
         }
@@ -31,12 +31,12 @@ public abstract class AbstractApiGenService implements ApiGenService {
 
         this.createConverter();
         this.createConverterImpl();
-        //this.createBasicConverter();
-        //this.createBasicConverterImpl();
+        this.createBasicConverter();
+        this.createBasicConverterImpl();
 
         this.createRepository();
 
-        if (Boolean.TRUE.equals(this.apiModel.isHasBusinessRule())) {
+        if (Boolean.TRUE.equals(this.apiGeneratorModel.isHasBusinessRule())) {
             this.createRules();
             this.createRuleService();
         }
@@ -49,6 +49,8 @@ public abstract class AbstractApiGenService implements ApiGenService {
         this.createRestController();
 
         this.updateYml();
+
+        return Boolean.TRUE;
     }
 
     abstract void createConstraint() throws IOException;

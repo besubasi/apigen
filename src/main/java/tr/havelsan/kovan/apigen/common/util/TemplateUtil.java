@@ -11,7 +11,7 @@ import java.util.Map;
 public class TemplateUtil {
 
 
-    public static String getString(Template template, Map<String, Object> parameterMap) {
+    public static String getContent(Template template, Map<String, Object> parameterMap) {
         final StringWriter stringWriter = new StringWriter();
         try {
             template.process(parameterMap, stringWriter);
@@ -19,10 +19,6 @@ public class TemplateUtil {
             stringWriter.getBuffer().setLength(0);
         }
         return stringWriter.toString();
-    }
-
-    public static byte[] getContent(Template template, Map<String, Object> parameterMap) {
-        return TemplateUtil.getString(template, parameterMap).getBytes(StandardCharsets.UTF_8);
     }
 
 }

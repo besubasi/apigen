@@ -7,6 +7,6 @@ import java.io.IOException;
 public interface EnumGenService {
 
 
-    void generateEnum(EnumModel enumModel) throws IOException;
+    Boolean generateEnum(EnumModel enumModel) throws IOException;
 
 }
