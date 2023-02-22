@@ -13,6 +13,15 @@ public class ConfModel {
     private String microServiceName, commonPackage, servicePackage, groovyPackage;
     private String moduleName, configurationConstant, groovyPathConstant;
 
+    public ConfModel(EnumMicroservice microservice) {
+        this.microServiceName = PathUtil.getMicroserviceName(microservice);
+        this.commonPackage = PathUtil.getCommonPackage(microservice);
+        this.servicePackage = PathUtil.getServicePackage(microservice);
+        this.groovyPackage = PathUtil.getGroovyPackage(microservice);
+
+        this.configurationConstant = PathUtil.getConfigurationConstant(microservice);
+    }
+
     public ConfModel(EnumMicroservice microservice, EnumModule module) {
         this.microServiceName = PathUtil.getMicroserviceName(microservice);
         this.commonPackage = PathUtil.getCommonPackage(microservice);

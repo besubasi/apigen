@@ -1,4 +1,4 @@
-package ${packageName};
+package ${conf.commonPackage}.${model.commonSubPackage};
 
 import tr.com.havelsan.javarch.core.enumeration.HvlEnumeration;
 import tr.com.havelsan.javarch.data.converter.enumeration.HvlEnumerationConverter;

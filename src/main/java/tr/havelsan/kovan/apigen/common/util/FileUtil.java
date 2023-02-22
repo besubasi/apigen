@@ -9,6 +9,17 @@ import java.util.stream.Stream;
 
 public class FileUtil {
 
+    public static void createDirectory(Path path) throws IOException {
+        if (Files.notExists(path))
+            Files.createDirectories(path);
+    }
+
+    public static void writeFile(Path path, String content) throws IOException {
+        if (Files.notExists(path))
+            Files.createFile(path);
+
+        Files.writeString(path, content);
+    }
 
     public static List<Path> listFiles(Path path) throws IOException {
         List<Path> result;

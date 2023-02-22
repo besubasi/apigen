@@ -1,5 +1,6 @@
 package tr.havelsan.kovan.apigen.generator.changesetgenerator.service;
 
+import tr.havelsan.kovan.apigen.common.util.FileUtil;
 import tr.havelsan.kovan.apigen.common.util.TemplateUtil;
 import tr.havelsan.kovan.apigen.config.freemarker.Templates;
 import tr.havelsan.kovan.apigen.generator.changesetgenerator.model.HelperModel;
@@ -15,7 +16,6 @@ import java.util.Map;
 
 import static tr.havelsan.kovan.apigen.common.constant.TemplateConstant.HELPER;
 import static tr.havelsan.kovan.apigen.common.constant.TemplateConstant.MODEL;
-import static tr.havelsan.kovan.apigen.common.util.ApiGenUtil.writeFile;
 import static tr.havelsan.kovan.apigen.common.util.PathUtil.getMenuChangeLogPath;
 import static tr.havelsan.kovan.apigen.common.util.PathUtil.getOauthChangeLogPath;
 
@@ -32,7 +32,7 @@ public class ChangesetGeneratorServiceImpl implements ChangesetGeneratorService 
         String content = Files.readString(path);
         content = content.replace(DATABASE_CHANGE_LOG_CLOSE_TAG, oauthChangeSet + DATABASE_CHANGE_LOG_CLOSE_TAG);
 
-        writeFile(path, content);
+        FileUtil.writeFile(path, content);
         return oauthChangeSet;
     }
 
@@ -44,7 +44,7 @@ public class ChangesetGeneratorServiceImpl implements ChangesetGeneratorService 
         String content = Files.readString(path);
         content = content.replace(DATABASE_CHANGE_LOG_CLOSE_TAG, menuChangeSet + DATABASE_CHANGE_LOG_CLOSE_TAG);
 
-        writeFile(path, content);
+        FileUtil.writeFile(path, content);
         return menuChangeSet;
     }
 

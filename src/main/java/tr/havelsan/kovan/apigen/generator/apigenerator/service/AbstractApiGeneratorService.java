@@ -4,17 +4,23 @@ import tr.havelsan.kovan.apigen.common.model.ConfModel;
 import tr.havelsan.kovan.apigen.generator.apigenerator.model.ApiGeneratorModel;
 
 import java.io.IOException;
+import java.util.Map;
+
+import static tr.havelsan.kovan.apigen.common.constant.TemplateConstant.*;
 
 public abstract class AbstractApiGeneratorService implements ApiGeneratorService {
 
     protected ApiGeneratorModel apiGeneratorModel;
     protected ConfModel confModel;
+    protected Map<String, Object> map;
 
     @Override
     public Boolean generate(ApiGeneratorModel apiGeneratorModel) throws IOException {
         this.apiGeneratorModel = apiGeneratorModel;
         this.apiGeneratorModel.setApiPackage(apiGeneratorModel.getApiName().toLowerCase());
         this.confModel = new ConfModel(apiGeneratorModel.getMicroservice(), apiGeneratorModel.getModule());
+
+        this.map = Map.of(MODEL, apiGeneratorModel, CONF, confModel);
 
         this.createConstraint();
         this.createEntity();

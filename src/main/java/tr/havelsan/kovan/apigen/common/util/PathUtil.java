@@ -3,7 +3,6 @@ package tr.havelsan.kovan.apigen.common.util;
 import tr.havelsan.kovan.apigen.common.constant.PathConstant;
 import tr.havelsan.kovan.apigen.common.enums.EnumMicroservice;
 import tr.havelsan.kovan.apigen.common.enums.EnumModule;
-import tr.havelsan.kovan.apigen.generator.apigenerator.model.ApiGeneratorModel;
 
 import java.io.File;
 
@@ -111,28 +110,16 @@ public class PathUtil {
         return "";
     }
 
-
-    public static String getCommonPackagePath(ApiGeneratorModel apiGeneratorModel, String subPackage) {
-        return getCommonPath(apiGeneratorModel.getMicroservice()) + File.separator +
-                convertPackageToPath(getCommonPackage(apiGeneratorModel.getMicroservice())
-                        + File.separator + getModuleName(apiGeneratorModel.getModule())
-                        + File.separator + apiGeneratorModel.getApiPackage()
-                        + File.separator + subPackage);
+    public static String getCommonPackagePath(EnumMicroservice microservice) {
+        return getCommonPath(microservice) + File.separator + convertPackageToPath(getCommonPackage(microservice));
     }
 
-    public static String getServicePackagePath(ApiGeneratorModel apiGeneratorModel, String subPackage) {
-        return getServicePath(apiGeneratorModel.getMicroservice()) + File.separator +
-                convertPackageToPath(getServicePackage(apiGeneratorModel.getMicroservice())
-                        + File.separator + getModuleName(apiGeneratorModel.getModule())
-                        + File.separator + apiGeneratorModel.getApiPackage()
-                        + File.separator + subPackage);
+    public static String getServicePackagePath(EnumMicroservice microservice) {
+        return getServicePath(microservice) + File.separator + convertPackageToPath(getServicePackage(microservice));
     }
 
-    public static String getGroovyPackagePath(ApiGeneratorModel apiGeneratorModel) {
-        return getGroovyPath(apiGeneratorModel.getMicroservice()) + File.separator +
-                convertPackageToPath(getGroovyPackage(apiGeneratorModel.getMicroservice())
-                        + File.separator + getModuleName(apiGeneratorModel.getModule())
-                        + File.separator + apiGeneratorModel.getApiPackage());
+    public static String getGroovyPackagePath(EnumMicroservice microservice) {
+        return getGroovyPath(microservice) + File.separator + convertPackageToPath(getGroovyPackage(microservice));
     }
 
     public static String getCommonPackage(EnumMicroservice microservice) {

@@ -13,6 +13,6 @@ import java.util.List;
 public class EnumGeneratorModel {
 
     private EnumMicroservice microservice;
-    private String name, commonPackage, sharedPackage;
+    private String name, commonSubPackage, sharedPackage;
     private List<EnumKeyModel> keyList;
 }
