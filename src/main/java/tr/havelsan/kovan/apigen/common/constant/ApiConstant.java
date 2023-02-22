@@ -1,7 +1,7 @@
 package tr.havelsan.kovan.apigen.common.constant;
 
 public interface ApiConstant {
-    String BASE_PATH = "/api-gen";
+    String BASE_PATH = "/apigen";
     String API_GENERATOR_PATH = BASE_PATH + "/api";
     String ENUM_GENERATOR_PATH = BASE_PATH + "/enum";
     String CHANGESET_GENERATOR_PATH = BASE_PATH + "/changeset";

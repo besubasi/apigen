@@ -1,7 +1,7 @@
 package tr.havelsan.kovan.apigen.generator.enumgenerator.service;
 
 import io.quarkus.runtime.util.StringUtil;
-import tr.havelsan.kovan.apigen.generator.enumgenerator.model.EnumModel;
+import tr.havelsan.kovan.apigen.generator.enumgenerator.model.EnumGeneratorModel;
 
 import java.io.IOException;
 import java.util.Map;
@@ -9,21 +9,21 @@ import java.util.Map;
 import static tr.havelsan.kovan.apigen.common.constant.TemplateConstant.MODEL;
 import static tr.havelsan.kovan.apigen.common.constant.TemplateConstant.PACKAGE_NAME;
 
-public abstract class AbstractEnumGenService implements EnumGenService {
+public abstract class AbstractEnumGeneratorService implements EnumGeneratorService {
 
-    protected EnumModel enumModel;
+    protected EnumGeneratorModel enumGeneratorModel;
     protected Map<String, Object> map;
 
     @Override
-    public Boolean generateEnum(EnumModel enumModel) throws IOException {
-        this.enumModel = enumModel;
-        this.map = Map.of(MODEL, enumModel, PACKAGE_NAME, enumModel.getCommonPackage());
+    public Boolean generateEnum(EnumGeneratorModel enumGeneratorModel) throws IOException {
+        this.enumGeneratorModel = enumGeneratorModel;
+        this.map = Map.of(MODEL, enumGeneratorModel, PACKAGE_NAME, enumGeneratorModel.getCommonPackage());
 
-        if (!StringUtil.isNullOrEmpty(enumModel.getCommonPackage())) {
+        if (!StringUtil.isNullOrEmpty(enumGeneratorModel.getCommonPackage())) {
             this.createBackendEnum();
             this.createBackendEnumConverter();
         }
-        if (!StringUtil.isNullOrEmpty(enumModel.getSharedPackage())) {
+        if (!StringUtil.isNullOrEmpty(enumGeneratorModel.getSharedPackage())) {
             this.createFrontendEnum();
             this.createFrontendEnumJsonTr();
             this.createFrontendEnumJsonEn();

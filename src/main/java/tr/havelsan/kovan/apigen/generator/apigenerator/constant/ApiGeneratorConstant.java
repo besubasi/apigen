@@ -11,7 +11,7 @@ public interface ApiGeneratorConstant {
     String PACKAGE_SERVICE = "service";
     String PACKAGE_CONTROLLER = "controller";
 
-    String END_FIX_CONSTRAINT = "Constraint";
+    String END_FIX_CONSTANT = "Constant";
     String END_FIX_ENTITY = "Entity";
     String END_FIX_ENTITY_QUERY = "EntityQuery";
     String END_FIX_DEF_ENTITY = "DefEntity";

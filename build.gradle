@@ -16,6 +16,9 @@ dependencies {
 
     implementation group: 'org.freemarker', name: 'freemarker', version: '2.3.32'
 
+    compileOnly 'org.projectlombok:lombok:1.18.26'
+    annotationProcessor 'org.projectlombok:lombok:1.18.26'
+
     testImplementation 'io.quarkus:quarkus-junit5'
     testImplementation 'io.rest-assured:rest-assured'
 }

@@ -1,32 +1,13 @@
 package tr.havelsan.kovan.apigen.generator.enumgenerator.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class EnumKeyModel {
 
-    String key;
-    String tr;
-    String en;
-
-    public String getKey() {
-        return key;
-    }
-
-    public void setKey(String key) {
-        this.key = key;
-    }
-
-    public String getTr() {
-        return tr;
-    }
-
-    public void setTr(String tr) {
-        this.tr = tr;
-    }
-
-    public String getEn() {
-        return en;
-    }
-
-    public void setEn(String en) {
-        this.en = en;
-    }
+    String key, tr, en;
 }

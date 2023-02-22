@@ -17,7 +17,7 @@ import static tr.havelsan.kovan.apigen.common.constant.TemplateConstant.*;
 @Singleton
 public class Templates {
 
-    public static Template CONSTRAINT;
+    public static Template CONSTANT;
     public static Template ENTITY;
     public static Template ENTITY_QUERY;
     public static Template DEF_ENTITY;
@@ -59,7 +59,7 @@ public class Templates {
         BeansWrapper objectWrapper = (BeansWrapper) configuration.getObjectWrapper();
         configuration.setSharedVariable(STATICS, objectWrapper.getStaticModels());
 
-        CONSTRAINT = configuration.getTemplate(CONSTRAINT_FTL);
+        CONSTANT = configuration.getTemplate(CONSTANT_FTL);
         ENTITY = configuration.getTemplate(ENTITY_FTL);
         ENTITY_QUERY = configuration.getTemplate(ENTITY_QUERY_FTL);
         DEF_ENTITY = configuration.getTemplate(DEF_ENTITY_FTL);

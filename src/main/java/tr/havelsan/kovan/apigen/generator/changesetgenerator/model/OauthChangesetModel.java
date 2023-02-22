@@ -1,34 +1,16 @@
 package tr.havelsan.kovan.apigen.generator.changesetgenerator.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.List;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class OauthChangesetModel {
 
-    String code;
-    String label;
+    String code, label;
     List<String> roleCodeList;
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public String getLabel() {
-        return label;
-    }
-
-    public void setLabel(String label) {
-        this.label = label;
-    }
-
-    public List<String> getRoleCodeList() {
-        return roleCodeList;
-    }
-
-    public void setRoleCodeList(List<String> roleCodeList) {
-        this.roleCodeList = roleCodeList;
-    }
 }

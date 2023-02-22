@@ -9,7 +9,7 @@ import org.hibernate.annotations.Cache;
 import tr.com.havelsan.javarch.domain.model.entity.HvlLocalizedEntity;
 
 import static org.hibernate.annotations.CacheConcurrencyStrategy.TRANSACTIONAL;
-import static ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.entity.${model.apiName}Constraint.*;
+import static ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.entity.${model.apiName}Constant.*;
 import static ${conf.servicePackage}.constants.CommonConstants.*;
 import static tr.com.havelsan.kovan.logistic.core.constant.GeneralConstants.DEFINITION_MAX_SIZE;
 

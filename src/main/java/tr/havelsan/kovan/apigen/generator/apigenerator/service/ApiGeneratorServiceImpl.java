@@ -9,7 +9,6 @@ import tr.havelsan.kovan.apigen.common.util.ApiGenUtil;
 import javax.inject.Singleton;
 import java.io.File;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -30,7 +29,7 @@ public class ApiGeneratorServiceImpl extends AbstractApiGeneratorService {
 
     @Override
     void createConstraint() throws IOException {
-        this.createServiceFile(Templates.CONSTRAINT, PACKAGE_ENTITY, END_FIX_CONSTRAINT);
+        this.createServiceFile(Templates.CONSTANT, PACKAGE_ENTITY, END_FIX_CONSTANT);
     }
 
     @Override
