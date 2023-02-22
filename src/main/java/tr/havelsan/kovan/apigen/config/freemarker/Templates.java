@@ -1,5 +1,6 @@
 package tr.havelsan.kovan.apigen.config.freemarker;
 
+import freemarker.ext.beans.BeansWrapper;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateExceptionHandler;
@@ -9,6 +10,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
+import java.util.TimeZone;
 
 import static tr.havelsan.kovan.apigen.common.constant.TemplateConstant.*;
 
@@ -46,11 +48,16 @@ public class Templates {
 
     public static void initTemplates() throws IOException {
 
-        var templatesFile = new File(Objects.requireNonNull(Templates.class.getClassLoader().getResource(TEMPLATE_DIRECTORY)).getFile());
-        var configuration = new Configuration();
-        configuration.setDirectoryForTemplateLoading(templatesFile);
+        Configuration configuration = new Configuration(Configuration.VERSION_2_3_32);
+        configuration.setDirectoryForTemplateLoading(new File(Objects.requireNonNull(Templates.class.getClassLoader().getResource(TEMPLATE_DIRECTORY)).getFile()));
         configuration.setDefaultEncoding(StandardCharsets.UTF_8.name());
         configuration.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
+        configuration.setWrapUncheckedExceptions(true);
+        configuration.setFallbackOnNullLoopVariable(false);
+        configuration.setSQLDateAndTimeTimeZone(TimeZone.getDefault());
+
+        BeansWrapper objectWrapper = (BeansWrapper) configuration.getObjectWrapper();
+        configuration.setSharedVariable(STATICS, objectWrapper.getStaticModels());
 
         CONSTRAINT = configuration.getTemplate(CONSTRAINT_FTL);
         ENTITY = configuration.getTemplate(ENTITY_FTL);

@@ -1,6 +1,5 @@
 package tr.havelsan.kovan.apigen.generator.changesetgenerator.service;
 
-import freemarker.ext.beans.BeansWrapper;
 import tr.havelsan.kovan.apigen.common.util.TemplateUtil;
 import tr.havelsan.kovan.apigen.config.freemarker.Templates;
 import tr.havelsan.kovan.apigen.generator.changesetgenerator.model.HelperModel;
@@ -9,13 +8,13 @@ import tr.havelsan.kovan.apigen.generator.changesetgenerator.model.OauthChangese
 
 import javax.inject.Singleton;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Map;
 
-import static tr.havelsan.kovan.apigen.common.constant.TemplateConstant.*;
+import static tr.havelsan.kovan.apigen.common.constant.TemplateConstant.HELPER;
+import static tr.havelsan.kovan.apigen.common.constant.TemplateConstant.MODEL;
 import static tr.havelsan.kovan.apigen.common.util.ApiGenUtil.writeFile;
 import static tr.havelsan.kovan.apigen.common.util.PathUtil.getMenuChangeLogPath;
 import static tr.havelsan.kovan.apigen.common.util.PathUtil.getOauthChangeLogPath;
@@ -27,8 +26,7 @@ public class ChangesetGeneratorServiceImpl implements ChangesetGeneratorService 
 
     @Override
     public String generateOauthChangeset(OauthChangesetModel oauthChangesetModel) throws IOException {
-        String oauthChangeSet = TemplateUtil.getContent(Templates.OAUTH_CHANGESET,
-                Map.of(MODEL, oauthChangesetModel, HELPER, new HelperModel(), STATICS, BeansWrapper.getDefaultInstance().getStaticModels()));
+        String oauthChangeSet = TemplateUtil.getContent(Templates.OAUTH_CHANGESET, Map.of(MODEL, oauthChangesetModel, HELPER, new HelperModel()));
 
         Path path = Paths.get(getOauthChangeLogPath());
         String content = Files.readString(path);
@@ -40,8 +38,7 @@ public class ChangesetGeneratorServiceImpl implements ChangesetGeneratorService 
 
     @Override
     public String generateMenuChangeset(MenuChangesetModel menuChangesetModel) throws IOException {
-        String menuChangeSet = TemplateUtil.getContent(Templates.MENU_CHANGESET,
-                Map.of(MODEL, menuChangesetModel, HELPER, new HelperModel()));
+        String menuChangeSet = TemplateUtil.getContent(Templates.MENU_CHANGESET, Map.of(MODEL, menuChangesetModel, HELPER, new HelperModel()));
 
         Path path = Paths.get(getMenuChangeLogPath());
         String content = Files.readString(path);
