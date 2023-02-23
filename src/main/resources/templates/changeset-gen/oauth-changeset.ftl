@@ -14,6 +14,7 @@
             <column name="description"/>
             <column name="label" value="${model.label}"/>
         </insert>
+        <#if model.roleCodeList?has_content>
         <#list model.roleCodeList as roleCode>
         <insert schemaName="oauth" tableName="kys_role_authority_rel">
             <column name="id" valueSequenceNext="kys_role_authority_rel_seq"/>
@@ -31,5 +32,6 @@
                     valueComputed="(select t.id from OAUTH.kys_role t where t.code = '${roleCode}')"/>
         </insert>
         </#list>
+        </#if>
     </changeSet>
 
