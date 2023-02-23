@@ -10,7 +10,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.io.IOException;
 
-@Path(ApiConstant.API_GENERATOR_PATH)
+@Path(ApiConstant.APIGEN_API)
 public class ApiGeneratorRestController {
 
 
@@ -18,7 +18,7 @@ public class ApiGeneratorRestController {
     ApiGeneratorService apiGeneratorService;
 
     @GET
-    @Path(ApiConstant.SAY_MY_NAME_PATH)
+    @Path(ApiConstant.SAY_MY_NAME)
     @Produces(MediaType.TEXT_PLAIN)
     public String sayMyName() {
         return "Walter White";
@@ -26,7 +26,7 @@ public class ApiGeneratorRestController {
 
 
     @POST
-    @Path(ApiConstant.GENERATE_PATH)
+    @Path(ApiConstant.GENERATE)
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Boolean generate(ApiGeneratorModel apiGeneratorModel) throws IOException {
@@ -35,7 +35,7 @@ public class ApiGeneratorRestController {
 
 
     @POST
-    @Path(ApiConstant.COPY_FRONT_END_PATH)
+    @Path(ApiConstant.COPY_FRONT_END)
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Boolean copyFrontEndApi(FrontEndCopyModel frontEndCopyModel) throws IOException {
@@ -44,7 +44,7 @@ public class ApiGeneratorRestController {
 
 
     @POST
-    @Path(ApiConstant.CLONE_BASIC_CONVERTER_PATH)
+    @Path(ApiConstant.CLONE_BASIC_CONVERTER)
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public String cloneBasicConverter(FrontEndCopyModel frontEndCopyModel) throws IOException {

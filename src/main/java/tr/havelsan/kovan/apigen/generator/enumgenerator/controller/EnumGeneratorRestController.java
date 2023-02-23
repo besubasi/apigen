@@ -9,14 +9,14 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.io.IOException;
 
-@Path(ApiConstant.ENUM_GENERATOR_PATH)
+@Path(ApiConstant.APIGEN_ENUM)
 public class EnumGeneratorRestController {
 
     @Inject
     EnumGeneratorService enumGeneratorService;
 
     @GET
-    @Path(ApiConstant.SAY_MY_NAME_PATH)
+    @Path(ApiConstant.SAY_MY_NAME)
     @Produces(MediaType.TEXT_PLAIN)
     public String sayMyName() {
         return "Walter White";
@@ -24,7 +24,7 @@ public class EnumGeneratorRestController {
 
 
     @POST
-    @Path(ApiConstant.GENERATE_PATH)
+    @Path(ApiConstant.GENERATE)
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Boolean generate(EnumGeneratorModel enumGeneratorModel) throws IOException {

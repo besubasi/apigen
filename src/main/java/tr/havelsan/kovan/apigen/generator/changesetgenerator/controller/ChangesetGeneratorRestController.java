@@ -10,7 +10,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.io.IOException;
 
-@Path(ApiConstant.CHANGESET_GENERATOR_PATH)
+@Path(ApiConstant.APIGEN_CHANGESET)
 public class ChangesetGeneratorRestController {
 
 
@@ -18,14 +18,14 @@ public class ChangesetGeneratorRestController {
     ChangesetGeneratorService changeSetGeneratorService;
 
     @GET
-    @Path(ApiConstant.SAY_MY_NAME_PATH)
+    @Path(ApiConstant.SAY_MY_NAME)
     @Produces(MediaType.TEXT_PLAIN)
     public String sayMyName() {
         return "Walter White";
     }
 
     @POST
-    @Path(ApiConstant.GENERATOR_OAUTH_PATH)
+    @Path(ApiConstant.GENERATE_OAUTH)
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public String generateOauthChangeset(OauthChangesetModel oauthChangesetModel) throws IOException {
@@ -33,7 +33,7 @@ public class ChangesetGeneratorRestController {
     }
 
     @POST
-    @Path(ApiConstant.GENERATOR_MENU_PATH)
+    @Path(ApiConstant.GENERATE_MENU)
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public String generateMenuChangeset(MenuChangesetModel menuChangesetModel) throws IOException {

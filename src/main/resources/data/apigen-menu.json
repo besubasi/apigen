@@ -1,0 +1,61 @@
+{
+  "body": [
+    {
+      "id": 100,
+      "order": 100,
+      "label": "ApiGen",
+      "icon": "baby_changing_station",
+      "pathType": "RELATIVE",
+      "appName": "APIGEN"
+    }, {
+      "id": 110,
+      "order": 110,
+      "parentId": 100,
+      "label": "Api Generator",
+      "path": "/apigen/api/generate",
+      "pathType": "RELATIVE",
+      "appName": "APIGEN"
+    },
+    {
+      "id": 120,
+      "order": 120,
+      "parentId": 100,
+      "label": "Enum Generator",
+      "path": "/apigen/enum/generate",
+      "pathType": "RELATIVE",
+      "appName": "APIGEN"
+    },
+    {
+      "id": 130,
+      "order": 130,
+      "parentId": 100,
+      "label": "Menu Changeset Generator",
+      "path": "/apigen/changeset/generate/menu",
+      "pathType": "RELATIVE",
+      "appName": "APIGEN"
+    },{
+      "id": 140,
+      "order": 140,
+      "parentId": 100,
+      "label": "Authority Changeset Generator",
+      "path": "/apigen/changeset/generate/oauth",
+      "pathType": "RELATIVE",
+      "appName": "APIGEN"
+    },{
+      "id": 200,
+      "order": 200,
+      "label": "Front End",
+      "icon": "agriculture",
+      "pathType": "RELATIVE",
+      "appName": "LOJ"
+    }, {
+      "id": 210,
+      "order": 210,
+      "parentId": 200,
+      "label": "Frontend Sayfa Kopyala",
+      "path": "/apigen/frontend/copy",
+      "pathType": "RELATIVE",
+      "appName": "LOJ"
+    }
+  ]
+}
