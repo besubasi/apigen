@@ -236,12 +236,26 @@ public class PathUtil {
         return "";
     }
 
-    public static String getMenuChangeLogPath() {
-        return repositoryPath + PathConstant.LOGISTIC_GENERAL_MENU_CHANGELOG_PATH;
+    public static String getMenuChangeLogPath(EnumMicroservice microservice) {
+        if (EnumMicroservice.LOGISTIC_GENERAL == microservice)
+            return repositoryPath + PathConstant.LOGISTIC_GENERAL_MENU_CHANGELOG_PATH;
+        else if (EnumMicroservice.MATERIAL_MANAGEMENT == microservice)
+            return repositoryPath + PathConstant.MATERIAL_MANAGEMENT_MENU_CHANGELOG_PATH;
+        else if (EnumMicroservice.MAINTENANCE_MANAGEMENT == microservice)
+            return repositoryPath + PathConstant.MAINTENANCE_MANAGEMENT_MENU_CHANGELOG_PATH;
+
+        return "";
     }
 
-    public static String getOauthChangeLogPath() {
-        return repositoryPath + PathConstant.LOGISTIC_GENERAL_OAUTH_CHANGELOG_PATH;
+    public static String getOauthChangeLogPath(EnumMicroservice microservice) {
+        if (EnumMicroservice.LOGISTIC_GENERAL == microservice)
+            return repositoryPath + PathConstant.LOGISTIC_GENERAL_OAUTH_CHANGELOG_PATH;
+        else if (EnumMicroservice.MATERIAL_MANAGEMENT == microservice)
+            return repositoryPath + PathConstant.MATERIAL_MANAGEMENT_OAUTH_CHANGELOG_PATH;
+        else if (EnumMicroservice.MAINTENANCE_MANAGEMENT == microservice)
+            return repositoryPath + PathConstant.MAINTENANCE_MANAGEMENT_OAUTH_CHANGELOG_PATH;
+
+        return "";
     }
 
 

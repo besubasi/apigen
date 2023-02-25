@@ -4,7 +4,7 @@
       "id": 100,
       "order": 100,
       "label": "ApiGen",
-      "icon": "baby_changing_station",
+      "icon": "agriculture",
       "pathType": "RELATIVE",
       "appName": "APIGEN"
     }, {
@@ -45,7 +45,7 @@
       "id": 200,
       "order": 200,
       "label": "Front End",
-      "icon": "agriculture",
+      "icon": "baby_changing_station",
       "pathType": "RELATIVE",
       "appName": "LOJ"
     }, {

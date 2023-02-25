@@ -1,6 +1,7 @@
 package tr.havelsan.kovan.apigen.generator.apigenerator.controller;
 
 import tr.havelsan.kovan.apigen.common.constant.ApiConstant;
+import tr.havelsan.kovan.apigen.common.model.ApiGenResponse;
 import tr.havelsan.kovan.apigen.generator.apigenerator.model.ApiGeneratorModel;
 import tr.havelsan.kovan.apigen.generator.apigenerator.model.FrontEndCopyModel;
 import tr.havelsan.kovan.apigen.generator.apigenerator.service.ApiGeneratorService;
@@ -29,8 +30,8 @@ public class ApiGeneratorRestController {
     @Path(ApiConstant.GENERATE)
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Boolean generate(ApiGeneratorModel apiGeneratorModel) throws IOException {
-        return apiGeneratorService.generate(apiGeneratorModel);
+    public ApiGenResponse<Boolean> generate(ApiGeneratorModel apiGeneratorModel) throws IOException {
+        return new ApiGenResponse<>(apiGeneratorService.generate(apiGeneratorModel));
     }
 
 
@@ -38,8 +39,8 @@ public class ApiGeneratorRestController {
     @Path(ApiConstant.COPY_FRONT_END)
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Boolean copyFrontEndApi(FrontEndCopyModel frontEndCopyModel) throws IOException {
-        return apiGeneratorService.copyFrontEnd(frontEndCopyModel);
+    public ApiGenResponse<Boolean> copyFrontEndApi(FrontEndCopyModel frontEndCopyModel) throws IOException {
+        return new ApiGenResponse<>(apiGeneratorService.copyFrontEnd(frontEndCopyModel));
     }
 
 
@@ -47,9 +48,9 @@ public class ApiGeneratorRestController {
     @Path(ApiConstant.CLONE_BASIC_CONVERTER)
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public String cloneBasicConverter(FrontEndCopyModel frontEndCopyModel) throws IOException {
+    public ApiGenResponse<String> cloneBasicConverter(FrontEndCopyModel frontEndCopyModel) throws IOException {
         apiGeneratorService.cloneBasicConverter(frontEndCopyModel);
-        return "Ok meeeeeeeeen";
+        return new ApiGenResponse<>("Ok meeeeeeeeen");
     }
 
 

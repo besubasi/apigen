@@ -1,6 +1,7 @@
 package tr.havelsan.kovan.apigen.generator.changesetgenerator.controller;
 
 import tr.havelsan.kovan.apigen.common.constant.ApiConstant;
+import tr.havelsan.kovan.apigen.common.model.ApiGenResponse;
 import tr.havelsan.kovan.apigen.generator.changesetgenerator.model.MenuChangesetModel;
 import tr.havelsan.kovan.apigen.generator.changesetgenerator.model.OauthChangesetModel;
 import tr.havelsan.kovan.apigen.generator.changesetgenerator.service.ChangesetGeneratorService;
@@ -28,16 +29,16 @@ public class ChangesetGeneratorRestController {
     @Path(ApiConstant.GENERATE_OAUTH)
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public String generateOauthChangeset(OauthChangesetModel oauthChangesetModel) throws IOException {
-        return changeSetGeneratorService.generateOauthChangeset(oauthChangesetModel);
+    public ApiGenResponse<String> generateOauthChangeset(OauthChangesetModel oauthChangesetModel) throws IOException {
+        return new ApiGenResponse<>(changeSetGeneratorService.generateOauthChangeset(oauthChangesetModel));
     }
 
     @POST
     @Path(ApiConstant.GENERATE_MENU)
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public String generateMenuChangeset(MenuChangesetModel menuChangesetModel) throws IOException {
-        return changeSetGeneratorService.generateMenuChangeset(menuChangesetModel);
+    public ApiGenResponse<String> generateMenuChangeset(MenuChangesetModel menuChangesetModel) throws IOException {
+        return new ApiGenResponse<>(changeSetGeneratorService.generateMenuChangeset(menuChangesetModel));
     }
 
 }

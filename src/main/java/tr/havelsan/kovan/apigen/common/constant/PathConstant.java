@@ -19,10 +19,10 @@ public interface PathConstant {
     String LOGISTIC_GENERAL_FRONTEND_PATH = "/hvl-kovan-ng/projects/logistic-general";
     String LOGISTIC_GENERAL_FRONTEND_SHARED_PATH = "/hvl-kovan-ng/projects/logistic-public-shared";
     String LOGISTIC_GENERAL_CONFIGURATION_CONSTANT = "GeneralConfigurationConstant";
+    String LOGISTIC_GENERAL_MENU_CHANGELOG_PATH = "/hvl-kovan-logistic/modules/maintenance-management/service/src/main/resources/db/changelog/logistic/maintenance.management/db.changelog-logistic-maintenance-menu-v2.0.xml";
+    String LOGISTIC_GENERAL_OAUTH_CHANGELOG_PATH = "/hvl-kovan-logistic/modules/maintenance-management/service/src/main/resources/db/changelog/logistic/maintenance.management/db.changelog-logistic-maintenance-oauth-v2.0.xml";
     String CONTROL_CLASS_ORGANIZATION_PATH = "CONTROL_CLASS_ORGANIZATION_PATH";
     String CONTROL_CLASS_LOGISTIC_GENERAL_PATH = "CONTROL_CLASS_LOGISTIC_GENERAL_PATH";
-    String LOGISTIC_GENERAL_MENU_CHANGELOG_PATH = "/hvl-kovan-logistic/modules/logistic-general/service/src/main/resources/db/changelog/logistic/general/db.changelog-logistic-menu-system-data-2.1.0.xml";
-    String LOGISTIC_GENERAL_OAUTH_CHANGELOG_PATH = "/hvl-kovan-logistic/modules/logistic-general/service/src/main/resources/db/changelog/logistic/general/db.changelog-logistic-menu-oauth-data-2.1.0.xml";
 
     String MATERIAL_MANAGEMENT_MICROSERVICE_NAME = "materialManagement";
     String MATERIAL_MANAGEMENT_MODULE_MATERIAL_IDENTIFICATION = "materialIdentification";
@@ -39,6 +39,8 @@ public interface PathConstant {
     String MATERIAL_MANAGEMENT_FRONTEND_PATH = "/hvl-kovan-ng/projects/logistic-material-management";
     String MATERIAL_MANAGEMENT_FRONTEND_SHARED_PATH = "/hvl-kovan-ng/projects/logistic-material-management-shared";
     String MATERIAL_MANAGEMENT_CONFIGURATION_CONSTANTS = "MaterialManagementConfigurationConstants";
+    String MATERIAL_MANAGEMENT_MENU_CHANGELOG_PATH = "/hvl-kovan-logistic/modules/material-management/service/src/main/resources/db/changelog/logistic/material.management/db.changelog-logistic-material-menu-v2.0.xml";
+    String MATERIAL_MANAGEMENT_OAUTH_CHANGELOG_PATH = "/hvl-kovan-logistic/modules/material-management/service/src/main/resources/db/changelog/logistic/material.management/db.changelog-logistic-material-oauth-v2.0.xml";
     String CONTROL_CLASS_MATERIAL_IDENTIFICATION_PATH = "CONTROL_CLASS_MATERIAL_IDENTIFICATION_PATH";
     String CONTROL_CLASS_PURCHASING_PATH = "CONTROL_CLASS_PURCHASING_PATH";
     String CONTROL_CLASS_STOCK_PATH = "CONTROL_CLASS_STOCK_PATH";
@@ -59,6 +61,8 @@ public interface PathConstant {
     String MAINTENANCE_MANAGEMENT_FRONTEND_PATH = "/hvl-kovan-ng/projects/logistic-maintenance-management";
     String MAINTENANCE_MANAGEMENT_FRONTEND_SHARED_PATH = "/hvl-kovan-ng/projects/logistic-maintenance-management-shared";
     String MAINTENANCE_MANAGEMENT_CONFIGURATION_CONSTANTS = "MaintenanceConfigurationConstants";
+    String MAINTENANCE_MANAGEMENT_MENU_CHANGELOG_PATH = "/hvl-kovan-logistic/modules/maintenance-management/service/src/main/resources/db/changelog/logistic/maintenance.management/db.changelog-logistic-maintenance-menu-v2.0.xml";
+    String MAINTENANCE_MANAGEMENT_OAUTH_CHANGELOG_PATH = "/hvl-kovan-logistic/modules/maintenance-management/service/src/main/resources/db/changelog/logistic/maintenance.management/db.changelog-logistic-maintenance-oauth-v2.0.xml";
     String CONTROL_CLASS_MAINTENANCE_ENGINEERING_PATH = "CONTROL_CLASS_MAINTENANCE_ENGINEERING_PATH";
     String CONTROL_CLASS_MAINTENANCE_ASSETS_MANAGEMENT_PATH = "CONTROL_CLASS_MAINTENANCE_ASSETS_MANAGEMENT_PATH";
     String CONTROL_CLASS_MAINTENANCE_REPAIR_APPLICATION_PATH = "CONTROL_CLASS_MAINTENANCE_REPAIR_APPLICATION_PATH";

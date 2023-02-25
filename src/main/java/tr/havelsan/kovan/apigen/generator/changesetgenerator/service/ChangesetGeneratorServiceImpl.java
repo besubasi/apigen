@@ -12,10 +12,11 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 
-import static tr.havelsan.kovan.apigen.common.constant.TemplateConstant.HELPER;
-import static tr.havelsan.kovan.apigen.common.constant.TemplateConstant.MODEL;
+import static tr.havelsan.kovan.apigen.common.constant.TemplateConstant.*;
 import static tr.havelsan.kovan.apigen.common.util.PathUtil.getMenuChangeLogPath;
 import static tr.havelsan.kovan.apigen.common.util.PathUtil.getOauthChangeLogPath;
 
@@ -28,7 +29,7 @@ public class ChangesetGeneratorServiceImpl implements ChangesetGeneratorService 
     public String generateOauthChangeset(OauthChangesetModel oauthChangesetModel) throws IOException {
         String oauthChangeSet = TemplateUtil.getContent(Templates.OAUTH_CHANGESET, Map.of(MODEL, oauthChangesetModel, HELPER, new HelperModel()));
 
-        Path path = Paths.get(getOauthChangeLogPath());
+        Path path = Paths.get(getOauthChangeLogPath(oauthChangesetModel.getMicroservice()));
         String content = Files.readString(path);
         content = content.replace(DATABASE_CHANGE_LOG_CLOSE_TAG, oauthChangeSet + DATABASE_CHANGE_LOG_CLOSE_TAG);
 
@@ -37,15 +38,20 @@ public class ChangesetGeneratorServiceImpl implements ChangesetGeneratorService 
     }
 
     @Override
-    public String generateMenuChangeset(MenuChangesetModel menuChangesetModel) throws IOException {
-        String menuChangeSet = TemplateUtil.getContent(Templates.MENU_CHANGESET, Map.of(MODEL, menuChangesetModel, HELPER, new HelperModel()));
+    public String generateMenuListChangeset(List<MenuChangesetModel> menuChangesetModelList) throws IOException {
+        String menuChangeSet = TemplateUtil.getContent(Templates.MENU_CHANGESET, Map.of(MODEL_LIST, menuChangesetModelList, HELPER, new HelperModel()));
 
-        Path path = Paths.get(getMenuChangeLogPath());
+        Path path = Paths.get(getMenuChangeLogPath(menuChangesetModelList.get(0).getMicroservice()));
         String content = Files.readString(path);
         content = content.replace(DATABASE_CHANGE_LOG_CLOSE_TAG, menuChangeSet + DATABASE_CHANGE_LOG_CLOSE_TAG);
 
         FileUtil.writeFile(path, content);
         return menuChangeSet;
+    }
+
+    @Override
+    public String generateMenuChangeset(MenuChangesetModel menuChangesetModel) throws IOException {
+        return this.generateMenuListChangeset(Collections.singletonList(menuChangesetModel));
     }
 
 }

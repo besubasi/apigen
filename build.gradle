@@ -15,6 +15,9 @@ dependencies {
     implementation 'io.quarkus:quarkus-resteasy-reactive-jackson'
 
     implementation group: 'org.freemarker', name: 'freemarker', version: '2.3.32'
+    // JDBC driver dependencies
+    implementation("io.quarkus:quarkus-jdbc-postgresql")
+    implementation("io.quarkus:quarkus-hibernate-orm-panache")
 
     compileOnly 'org.projectlombok:lombok:1.18.26'
     annotationProcessor 'org.projectlombok:lombok:1.18.26'

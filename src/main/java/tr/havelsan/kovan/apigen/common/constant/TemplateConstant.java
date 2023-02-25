@@ -3,10 +3,10 @@ package tr.havelsan.kovan.apigen.common.constant;
 public interface TemplateConstant {
 
     String MODEL = "model";
+    String MODEL_LIST = "modelList";
     String CONF = "conf";
     String HELPER = "helper";
     String STATICS = "statics";
-    String PACKAGE_NAME = "packageName";
 
     String TEMPLATE_DIRECTORY = "templates";
 

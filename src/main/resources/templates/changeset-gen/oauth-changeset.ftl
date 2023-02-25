@@ -6,7 +6,7 @@
             <column name="created_at" valueDate="$${NOW}"/>
             <column name="updated_at" valueDate="$${NOW}"/>
             <column name="updated_by" value="logistic"/>
-            <column name="uuid" value="${helper.authorityUuid}"/>
+            <column name="uuid" value="${statics["java.util.UUID"].randomUUID()}"/>
             <column name="obj_version" valueNumeric="0"/>
             <column name="deleted" valueNumeric="0"/>
             <column name="deleted_at"/>
