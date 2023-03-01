@@ -21,6 +21,8 @@ public class PathUtil {
             return repositoryPath + PathConstant.MATERIAL_MANAGEMENT_FRONTEND_PATH;
         else if (EnumMicroservice.MAINTENANCE_MANAGEMENT == microservice)
             return repositoryPath + PathConstant.MAINTENANCE_MANAGEMENT_FRONTEND_PATH;
+        else if (EnumMicroservice.QUALITY == microservice)
+            return repositoryPath + PathConstant.QUALITY_FRONTEND_PATH;
 
         return "";
     }
@@ -32,6 +34,8 @@ public class PathUtil {
             return repositoryPath + PathConstant.MATERIAL_MANAGEMENT_FRONTEND_SHARED_PATH;
         else if (EnumMicroservice.MAINTENANCE_MANAGEMENT == microservice)
             return repositoryPath + PathConstant.MAINTENANCE_MANAGEMENT_FRONTEND_SHARED_PATH;
+        else if (EnumMicroservice.QUALITY == microservice)
+            return repositoryPath + PathConstant.QUALITY_FRONTEND_SHARED_PATH;
 
         return "";
     }
@@ -52,7 +56,7 @@ public class PathUtil {
 
 
     public static String getPublicApiTsPath(EnumMicroservice microservice) {
-        return getFrontendSharedPath(microservice) + PathConstant.PUBLIC_API_TS;
+        return getFrontendSharedPath(microservice) + (EnumMicroservice.QUALITY == microservice ?  PathConstant.PUBLIC_API_TS2 : PathConstant.PUBLIC_API_TS);
     }
 
     public static String getYmlPath(EnumMicroservice microservice) {
@@ -62,6 +66,8 @@ public class PathUtil {
             return repositoryPath + PathConstant.MATERIAL_MANAGEMENT_YML_PATH;
         else if (EnumMicroservice.MAINTENANCE_MANAGEMENT == microservice)
             return repositoryPath + PathConstant.MAINTENANCE_MANAGEMENT_YML_PATH;
+        else if (EnumMicroservice.QUALITY == microservice)
+            return repositoryPath + PathConstant.QUALITY_YML_PATH;
 
         return "";
     }
@@ -73,6 +79,8 @@ public class PathUtil {
             return repositoryPath + PathConstant.MATERIAL_MANAGEMENT_COMMON_PATH;
         else if (EnumMicroservice.MAINTENANCE_MANAGEMENT == microservice)
             return repositoryPath + PathConstant.MAINTENANCE_MANAGEMENT_COMMON_PATH;
+        else if (EnumMicroservice.QUALITY == microservice)
+            return repositoryPath + PathConstant.QUALITY_COMMON_PATH;
 
         return "";
     }
@@ -84,6 +92,8 @@ public class PathUtil {
             return repositoryPath + PathConstant.MATERIAL_MANAGEMENT_SERVICE_PATH;
         else if (EnumMicroservice.MAINTENANCE_MANAGEMENT == microservice)
             return repositoryPath + PathConstant.MAINTENANCE_MANAGEMENT_SERVICE_PATH;
+        else if (EnumMicroservice.QUALITY == microservice)
+            return repositoryPath + PathConstant.QUALITY_SERVICE_PATH;
 
         return "";
     }
@@ -95,6 +105,8 @@ public class PathUtil {
             return repositoryPath + PathConstant.MATERIAL_MANAGEMENT_GROOVY_PATH;
         else if (EnumMicroservice.MAINTENANCE_MANAGEMENT == microservice)
             return repositoryPath + PathConstant.MAINTENANCE_MANAGEMENT_GROOVY_PATH;
+        else if (EnumMicroservice.QUALITY == microservice)
+            return repositoryPath + PathConstant.QUALITY_GROOVY_PATH;
 
         return "";
     }
@@ -106,6 +118,8 @@ public class PathUtil {
             return PathConstant.MATERIAL_MANAGEMENT_MICROSERVICE_NAME;
         else if (EnumMicroservice.MAINTENANCE_MANAGEMENT == microservice)
             return PathConstant.MAINTENANCE_MANAGEMENT_MICROSERVICE_NAME;
+        else if (EnumMicroservice.QUALITY == microservice)
+            return PathConstant.QUALITY_MICROSERVICE_NAME;
 
         return "";
     }
@@ -129,6 +143,8 @@ public class PathUtil {
             return PathConstant.MATERIAL_MANAGEMENT_COMMON_PACKAGE;
         else if (EnumMicroservice.MAINTENANCE_MANAGEMENT == microservice)
             return PathConstant.MAINTENANCE_MANAGEMENT_COMMON_PACKAGE;
+        else if (EnumMicroservice.QUALITY == microservice)
+            return PathConstant.QUALITY_COMMON_PACKAGE;
 
         return "";
     }
@@ -140,6 +156,8 @@ public class PathUtil {
             return PathConstant.MATERIAL_MANAGEMENT_SERVICE_PACKAGE;
         else if (EnumMicroservice.MAINTENANCE_MANAGEMENT == microservice)
             return PathConstant.MAINTENANCE_MANAGEMENT_SERVICE_PACKAGE;
+        else if (EnumMicroservice.QUALITY == microservice)
+            return PathConstant.QUALITY_SERVICE_PACKAGE;
 
         return "";
     }
@@ -151,6 +169,8 @@ public class PathUtil {
             return PathConstant.MATERIAL_MANAGEMENT_GROOVY_PACKAGE;
         else if (EnumMicroservice.MAINTENANCE_MANAGEMENT == microservice)
             return PathConstant.MAINTENANCE_MANAGEMENT_GROOVY_PACKAGE;
+        else if (EnumMicroservice.QUALITY == microservice)
+            return PathConstant.QUALITY_GROOVY_PACKAGE;
 
         return "";
     }
@@ -186,6 +206,8 @@ public class PathUtil {
             return PathConstant.MAINTENANCE_MANAGEMENT_MODULE_MAINTENANCE_REPAIR_APPLICATION;
         else if (EnumModule.PREVENTIVE_MAINTENANCE == module)
             return PathConstant.MAINTENANCE_MANAGEMENT_MODULE_PREVENTIVE_MAINTENANCE;
+        else if (EnumModule.QUALITY_CUSTOMISATION == module)
+            return PathConstant.QUALITY_MODULE_CUSTOMISATION;
 
         return "";
     }
@@ -221,6 +243,8 @@ public class PathUtil {
             return PathConstant.CONTROL_CLASS_MAINTENANCE_REPAIR_APPLICATION_PATH;
         else if (EnumModule.PREVENTIVE_MAINTENANCE == module)
             return PathConstant.CONTROL_CLASS_PREVENTIVE_MAINTENANCE_PATH;
+        else if (EnumModule.QUALITY_CUSTOMISATION == module)
+            return PathConstant.CONTROL_CLASS_QUALITY_CUSTOMISATION_PATH;
 
         return "";
     }
@@ -232,6 +256,8 @@ public class PathUtil {
             return PathConstant.MATERIAL_MANAGEMENT_CONFIGURATION_CONSTANTS;
         else if (EnumMicroservice.MAINTENANCE_MANAGEMENT == microservice)
             return PathConstant.MAINTENANCE_MANAGEMENT_CONFIGURATION_CONSTANTS;
+        else if (EnumMicroservice.QUALITY == microservice)
+            return PathConstant.QUALITY_CONFIGURATION_CONSTANTS;
 
         return "";
     }
@@ -243,6 +269,8 @@ public class PathUtil {
             return repositoryPath + PathConstant.MATERIAL_MANAGEMENT_MENU_CHANGELOG_PATH;
         else if (EnumMicroservice.MAINTENANCE_MANAGEMENT == microservice)
             return repositoryPath + PathConstant.MAINTENANCE_MANAGEMENT_MENU_CHANGELOG_PATH;
+        else if (EnumMicroservice.QUALITY == microservice)
+            return repositoryPath + PathConstant.QUALITY_MENU_CHANGELOG_PATH;
 
         return "";
     }
@@ -254,6 +282,8 @@ public class PathUtil {
             return repositoryPath + PathConstant.MATERIAL_MANAGEMENT_OAUTH_CHANGELOG_PATH;
         else if (EnumMicroservice.MAINTENANCE_MANAGEMENT == microservice)
             return repositoryPath + PathConstant.MAINTENANCE_MANAGEMENT_OAUTH_CHANGELOG_PATH;
+        else if (EnumMicroservice.QUALITY == microservice)
+            return repositoryPath + PathConstant.QUALITY_OAUTH_CHANGELOG_PATH;
 
         return "";
     }

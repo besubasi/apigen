@@ -12,8 +12,8 @@ import javax.validation.Valid;
 import java.util.List;
 
 import static org.springframework.http.MediaType.*;
-<#assign FEIGN_CLIENT_PATH = '{application.module.logistic.${conf.microServiceName}.services.${model.apiPackage}.${model.apiName?uncap_first}.path}'>
-<#assign FEIGN_CLIENT_URL = '{application.module.logistic.${conf.microServiceName}.services.${model.apiPackage}.${model.apiName?uncap_first}.url}'>
+<#assign FEIGN_CLIENT_PATH = '{application.module.logistic.${conf.microServiceName}.services.${conf.moduleName}.${model.apiName?uncap_first}.path}'>
+<#assign FEIGN_CLIENT_URL = '{application.module.logistic.${conf.microServiceName}.services.${conf.moduleName}.${model.apiName?uncap_first}.url}'>
 
 @HvlPublicFeignRestService
 @FeignClient(name = "${model.apiName}PublicRestService",

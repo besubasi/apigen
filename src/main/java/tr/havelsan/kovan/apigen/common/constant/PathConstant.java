@@ -70,9 +70,26 @@ public interface PathConstant {
     String CONTROL_CLASS_PREVENTIVE_MAINTENANCE_PATH = "CONTROL_CLASS_PREVENTIVE_MAINTENANCE_PATH";
 
 
+    String QUALITY_MICROSERVICE_NAME = "quality";
+    String QUALITY_MODULE_CUSTOMISATION = "customisation";
+    String QUALITY_YML_PATH = "/hvl-kovan-logistic/resources/configuration/modules/quality-application.yml";
+    String QUALITY_COMMON_PATH = "/hvl-kovan-logistic/modules/quality/client/src/main/java";
+    String QUALITY_COMMON_PACKAGE = "tr.com.havelsan.kovan.logistic.quality.client";
+    String QUALITY_SERVICE_PATH = "/hvl-kovan-logistic/modules/quality/service/src/main/java";
+    String QUALITY_SERVICE_PACKAGE = "tr.com.havelsan.kovan.logistic.quality.service";
+    String QUALITY_GROOVY_PATH = "hvl-kovan-logistic/modules/quality/service/src/main/resources/groovy";
+    String QUALITY_GROOVY_PACKAGE = "tr.com.havelsan.kovan.logistic.quality.rule";
+    String QUALITY_FRONTEND_PATH = "/hvl-kovan-ng/projects/logistic-quality";
+    String QUALITY_FRONTEND_SHARED_PATH = "/hvl-kovan-ng/projects/logistic-quality-shared";
+    String QUALITY_CONFIGURATION_CONSTANTS = "QualityConfigurationConstant";
+    String QUALITY_MENU_CHANGELOG_PATH = "/hvl-kovan-logistic/modules/quality/service/src/main/resources/db/changelog/logistic/quality/db.changelog-quality-system-2.1.xml";
+    String QUALITY_OAUTH_CHANGELOG_PATH = "/hvl-kovan-logistic/modules/quality/service/src/main/resources/db/changelog/logistic/quality/db.changelog-quality-oauth-2.1.xml";
+    String CONTROL_CLASS_QUALITY_CUSTOMISATION_PATH = "CONTROL_CLASS_QUALITY_CUSTOMISATION_PATH";
+
     String i18n_TR_PATH = "/src/assets/i18n/tr";
     String i18n_EN_PATH = "/src/assets/i18n/en";
     String PUBLIC_API_TS = "/src/public.api.ts";
+    String PUBLIC_API_TS2 = "/src/public-api.ts";
     String SRC_LIB = "/src/lib";
 
 }

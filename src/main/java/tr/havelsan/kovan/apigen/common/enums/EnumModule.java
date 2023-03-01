@@ -18,5 +18,7 @@ public enum EnumModule {
     MATERIAL_IDENTIFICATION,
     PURCHASING,
     STOCK,
-    WAREHOUSE;
+    WAREHOUSE,
+
+    QUALITY_CUSTOMISATION;
 }
