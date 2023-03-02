@@ -20,9 +20,13 @@
             <column name="app_name_id"
                     valueComputed="(select id from system.sys_app_name where uuid = 'SYS_APP_NAME_UUID_LOG')"/>
             <column name="path_type" valueNumeric="1"/>
+            <#if model.parentUuid?? >
             <column name="parent_id"
-                    valueComputed="(select t.id from system.sys_menu_item t where t.uuid = '${model.parentUuid}')"/>
+                        valueComputed="(select t.id from system.sys_menu_item t where t.uuid = '${model.parentUuid}')"/>
+            </#if>
+            <#if model.path?? >
             <column name="path" value="${model.path}"/>
+            </#if>
         </insert>
         <#if model.authorityCode?? >
         <insert schemaName="system" tableName="sys_menu_item_authority">
