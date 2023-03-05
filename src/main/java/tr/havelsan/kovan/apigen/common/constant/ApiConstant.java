@@ -6,12 +6,13 @@ public interface ApiConstant {
     String APIGEN_API = APIGEN + "/api";
     String APIGEN_ENUM = APIGEN + "/enum";
     String APIGEN_CHANGESET = APIGEN + "/changeset";
+    String APIGEN_FRONT_END = APIGEN + "/frontend";
 
     String GENERATE = "/generate";
     String SAY_MY_NAME = "/sayMyName";
 
     String CLONE_BASIC_CONVERTER = "/cloneBasicConverter";
-    String COPY_FRONT_END = "/copyFrontEnd";
+    String COPY = "/copy";
 
     String GENERATE_MENU = GENERATE + "/menu";
     String GENERATE_OAUTH = GENERATE + "/oauth";

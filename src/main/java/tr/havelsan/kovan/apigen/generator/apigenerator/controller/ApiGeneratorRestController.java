@@ -3,7 +3,7 @@ package tr.havelsan.kovan.apigen.generator.apigenerator.controller;
 import tr.havelsan.kovan.apigen.common.constant.ApiConstant;
 import tr.havelsan.kovan.apigen.common.model.ApiGenResponse;
 import tr.havelsan.kovan.apigen.generator.apigenerator.model.ApiGeneratorModel;
-import tr.havelsan.kovan.apigen.generator.apigenerator.model.FrontEndCopyModel;
+import tr.havelsan.kovan.apigen.generator.apigenerator.model.CloneBasicConverterModel;
 import tr.havelsan.kovan.apigen.generator.apigenerator.service.ApiGeneratorService;
 
 import javax.inject.Inject;
@@ -36,20 +36,11 @@ public class ApiGeneratorRestController {
 
 
     @POST
-    @Path(ApiConstant.COPY_FRONT_END)
-    @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.APPLICATION_JSON)
-    public ApiGenResponse<Boolean> copyFrontEndApi(FrontEndCopyModel frontEndCopyModel) throws IOException {
-        return new ApiGenResponse<>(apiGeneratorService.copyFrontEnd(frontEndCopyModel));
-    }
-
-
-    @POST
     @Path(ApiConstant.CLONE_BASIC_CONVERTER)
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public ApiGenResponse<String> cloneBasicConverter(FrontEndCopyModel frontEndCopyModel) throws IOException {
-        apiGeneratorService.cloneBasicConverter(frontEndCopyModel);
+    public ApiGenResponse<String> cloneBasicConverter(CloneBasicConverterModel cloneBasicConverter) throws IOException {
+        apiGeneratorService.cloneBasicConverter(cloneBasicConverter);
         return new ApiGenResponse<>("Ok meeeeeeeeen");
     }
 

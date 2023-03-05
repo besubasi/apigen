@@ -6,7 +6,7 @@ import tr.havelsan.kovan.apigen.common.util.PathUtil;
 import tr.havelsan.kovan.apigen.common.util.TemplateUtil;
 import tr.havelsan.kovan.apigen.config.freemarker.Templates;
 import tr.havelsan.kovan.apigen.generator.apigenerator.model.ApiGeneratorModel;
-import tr.havelsan.kovan.apigen.generator.apigenerator.model.FrontEndCopyModel;
+import tr.havelsan.kovan.apigen.generator.apigenerator.model.CloneBasicConverterModel;
 
 import javax.inject.Singleton;
 import java.io.File;
@@ -159,30 +159,17 @@ public class ApiGeneratorServiceImpl extends AbstractApiGeneratorService {
     }
 
     @Override
-    public Boolean copyFrontEnd(FrontEndCopyModel frontEndCopyModel) throws IOException {
-        List<Path> sourcePathList;
-        try (Stream<Path> walk = Files.walk(Paths.get(frontEndCopyModel.getSourcePath()))) {
-            sourcePathList = walk.collect(Collectors.toList());
-        }
-        for (Path sourcePath : sourcePathList)
-            createTarget(sourcePath, frontEndCopyModel);
-
-        return Boolean.TRUE;
-    }
-
-    @Override
-    public Boolean cloneBasicConverter(FrontEndCopyModel frontEndCopyModel) throws IOException {
+    public void cloneBasicConverter(CloneBasicConverterModel cloneBasicConverter) throws IOException {
         List<Path> pathList;
-        try (Stream<Path> walk = Files.walk(Paths.get(frontEndCopyModel.getSourcePath()))
+        try (Stream<Path> walk = Files.walk(Paths.get(cloneBasicConverter.getSourcePath()))
                 .filter(path -> path.toString().endsWith("Converter.java") || path.toString().endsWith("ConverterImpl.java"))) {
             pathList = walk.collect(Collectors.toList());
         }
 
         for (Path path : pathList) {
             Path basicPath = Paths.get(path.toString().replace("Converter", "BasicConverter"));
-            FileUtil.writeFile(basicPath, getTargetContent(path, frontEndCopyModel));
+            FileUtil.writeFile(basicPath, getTargetContent(path, cloneBasicConverter));
         }
-        return Boolean.TRUE;
     }
 
     public static String getCommonPackagePath(ApiGeneratorModel apiGeneratorModel, String subPackage) {
@@ -205,27 +192,9 @@ public class ApiGeneratorServiceImpl extends AbstractApiGeneratorService {
                         + File.separator + apiGeneratorModel.getApiPackage());
     }
 
-    public static void createTarget(Path sourcePath, FrontEndCopyModel frontEndCopyModel) throws IOException {
-        Path targetPath = getTargetPath(sourcePath, frontEndCopyModel);
-        if (Files.isDirectory(sourcePath))
-            FileUtil.createDirectory(targetPath);
-        else
-            FileUtil.writeFile(targetPath, getTargetContent(sourcePath, frontEndCopyModel));
-    }
-
-    public static Path getTargetPath(Path path, FrontEndCopyModel frontEndCopyModel) {
-        String targetFileName = path.toString().replace(frontEndCopyModel.getSourcePath(), frontEndCopyModel.getTargetPath());
-
-        Map<String, String> keyMap = frontEndCopyModel.getKeyMap();
-        for (String key : keyMap.keySet())
-            targetFileName = targetFileName.replaceAll(key, keyMap.get(key));
-
-        return Paths.get(targetFileName);
-    }
-
-    public static String getTargetContent(Path path, FrontEndCopyModel frontEndCopyModel) throws IOException {
+    public static String getTargetContent(Path path, CloneBasicConverterModel cloneBasicConverter) throws IOException {
         var content = Files.readString(path);
-        for (Map.Entry<String, String> entry : frontEndCopyModel.getKeyMap().entrySet())
+        for (Map.Entry<String, String> entry : cloneBasicConverter.getKeyMap().entrySet())
             content = content.replaceAll(entry.getKey(), entry.getValue());
 
         return content;

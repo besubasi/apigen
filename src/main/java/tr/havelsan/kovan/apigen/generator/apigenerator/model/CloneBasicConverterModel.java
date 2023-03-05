@@ -9,9 +9,9 @@ import java.util.Map;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class FrontEndCopyModel {
+public class CloneBasicConverterModel {
 
-    private String sourcePath, targetPath;
+    private String sourcePath;
     private Map<String, String> keyMap;
 
 }
