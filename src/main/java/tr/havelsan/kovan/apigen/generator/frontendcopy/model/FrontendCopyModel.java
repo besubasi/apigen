@@ -9,9 +9,9 @@ import java.util.Map;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class FrontEndCopyModel {
+public class FrontendCopyModel {
 
     private String sourcePath, targetPath;
-    private Map<String, String> keyMap;
+    private Map<String, String> keyValueMap;
 
 }
