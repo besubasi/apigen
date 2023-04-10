@@ -1,5 +1,5 @@
 <#assign NOW = '{now}'>
-    <changeSet author="${helper.author}" id="${helper.changesetId}" failOnError="false">
+    <changeSet author="${helper.author}" id="${helper.changesetId}">
         <#if modelList?has_content>
         <#list modelList as model>
         <#assign MENU_ITEM_UUID =  statics["java.util.UUID"].randomUUID()>

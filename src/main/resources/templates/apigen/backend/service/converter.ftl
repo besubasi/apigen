@@ -16,8 +16,8 @@ import java.util.Map;
 <#else >
 import org.mapstruct.Mapper;
 import tr.com.havelsan.javarch.data.model.mapper.HvlGenericMapStructMapper;
-import ${conf.commonPackage}.${model.apiPackage}.model.${model.apiName}Model;
-import ${conf.servicePackage}.${model.apiPackage}.entity.${model.apiName}Entity;
+import ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.model.${model.apiName}Model;
+import ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.entity.${model.apiName}Entity;
 </#if>
 
 <#assign TAG_MODEL_ENTITY = "<${model.apiName}Model, ${model.apiName}Entity>">

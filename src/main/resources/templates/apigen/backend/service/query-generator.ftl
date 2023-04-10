@@ -36,7 +36,6 @@ public class ${model.apiName}QueryGenerator extends HvlEntityQueryGenerator${TAG
         <#list model.propertyList as property>
         //ofNullable(queryModel.get${property.name?cap_first}()).ifPresent(param -> expressionBuilder.and(query.${property.name}.eq(param)));
         </#list>
-
     }
 }
 

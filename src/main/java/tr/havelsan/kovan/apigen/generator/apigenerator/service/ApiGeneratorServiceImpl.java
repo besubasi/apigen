@@ -133,7 +133,7 @@ public class ApiGeneratorServiceImpl extends AbstractApiGeneratorService {
         String apiYml = TemplateUtil.getContent(Templates.YML_UPDATE, Map.of(MODEL, apiGeneratorModel, CONF, confModel));
         Path ymlPath = Paths.get(getYmlPath(apiGeneratorModel.getMicroservice()));
         String ymlContent = Files.readString(ymlPath);
-        ymlContent = ymlContent.replace(confModel.getModuleName() + ":", apiYml);
+        ymlContent = ymlContent.replace("          " + confModel.getModuleName() + ":", apiYml);
         FileUtil.writeFile(ymlPath, ymlContent);
     }
 
@@ -188,8 +188,7 @@ public class ApiGeneratorServiceImpl extends AbstractApiGeneratorService {
 
     public static String getGroovyPackagePath(ApiGeneratorModel apiGeneratorModel) {
         return PathUtil.getGroovyPackagePath(apiGeneratorModel.getMicroservice()) + File.separator +
-                convertPackageToPath(File.separator + getModuleName(apiGeneratorModel.getModule())
-                        + File.separator + apiGeneratorModel.getApiPackage());
+                convertPackageToPath(getModuleName(apiGeneratorModel.getModule()));
     }
 
     public static String getTargetContent(Path path, CloneBasicConverterModel cloneBasicConverter) throws IOException {

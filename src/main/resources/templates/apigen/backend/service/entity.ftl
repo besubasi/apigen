@@ -29,7 +29,11 @@ import java.util.Map;
 import static tr.com.havelsan.kovan.logistic.core.constant.GeneralConstants.LANGUAGE_LOCALIZED;
 </#if>
 import static ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.entity.${model.apiName}Constant.*;
+<#if conf.microServiceName == "quality">
+import static ${conf.servicePackage}.constant.CommonConstant.SCHEMA_NAME;
+<#else >
 import static ${conf.servicePackage}.constants.CommonConstants.SCHEMA_NAME;
+</#if>
 
 @Entity
 @Table(schema = SCHEMA_NAME, name = TABLE_NAME)

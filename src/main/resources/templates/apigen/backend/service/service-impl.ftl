@@ -3,6 +3,7 @@ package ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.service;
 import com.querydsl.core.types.Predicate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import tr.com.havelsan.javarch.data.commons.pageable.HvlPage;
 import tr.com.havelsan.javarch.data.jpa.annotation.HvlTransactionalRollbackForCheckedException;
 import tr.com.havelsan.kovan.logistic.core.exception.LogisticNotFoundException;
@@ -34,11 +35,13 @@ public class ${model.apiName}ServiceImpl implements ${model.apiName}Service {
     private final BusinessRuleService businessRuleService;
     </#if>
     @Autowired
-    public ${model.apiName}ServiceImpl(${model.apiName}Repository repository
-                                        , ${model.apiName}Converter converter
-                                        , ${model.apiName}QueryGenerator queryGenerator
-                                    <#if model.hasBusinessRule>
-                                        , ${model.apiName}RuleService ${model.apiName?uncap_first}RuleService
+    public ${model.apiName}ServiceImpl(${model.apiName}Repository repository,
+                                       ${model.apiName}Converter converter,
+                                    <#if !model.hasBusinessRule>
+                                       ${model.apiName}QueryGenerator queryGenerator
+                                    <#else >
+                                       ${model.apiName}QueryGenerator queryGenerator,
+                                       ${model.apiName}RuleService ${model.apiName?uncap_first}RuleService
                                     </#if>
     ) {
         this.repository = repository;
@@ -77,35 +80,42 @@ public class ${model.apiName}ServiceImpl implements ${model.apiName}Service {
         repository.deleteById(id);
     }
 
+    @Transactional(readOnly = true)
     public List${TAG_MODEL} queryList(${model.apiName}QueryModel queryModel) {
         SortUtil.checkUnsorted(queryModel, SortUtil.DESC_DATE_CREATED);
         Predicate predicate = queryGenerator.generate(queryModel, ${model.apiName}EntityQuery.${model.apiName?uncap_first}Entity);
         return this.converter.convertToModelList(repository.findAll(predicate, queryModel.getPageable().getSort()));
     }
 
+    @Transactional(readOnly = true)
     public HvlPage${TAG_MODEL} queryPage(${model.apiName}QueryModel queryModel) {
         SortUtil.checkUnsorted(queryModel, SortUtil.DESC_DATE_CREATED);
         Predicate predicate = this.queryGenerator.generate(queryModel, ${model.apiName}EntityQuery.${model.apiName?uncap_first}Entity);
         return converter.convertToHvlPageModel(this.repository.findAll(predicate, queryModel.getPageable()));
     }
 
+    @Transactional(readOnly = true)
     public boolean exists(${model.apiName}QueryModel queryModel) {
         Predicate predicate = queryGenerator.generate(queryModel, ${model.apiName}EntityQuery.${model.apiName?uncap_first}Entity);
         return repository.exists(predicate);
     }
 
+    @Transactional(readOnly = true)
     public boolean existsById(Long id) {
         return repository.existsById(id);
     }
 
+    @Transactional(readOnly = true)
     public boolean existsByUuid(String uuid) {
         return repository.existsByUuid(uuid);
     }
 
+    @Transactional(readOnly = true)
     public ${model.apiName}Model getById(Long id) {
         return converter.convertToModel(repository.getById(id));
     }
 
+    @Transactional(readOnly = true)
     public ${model.apiName}Model getByUuid(String uuid) {
         return converter.convertToModel(repository.getByUuid(uuid));
     }

@@ -1,4 +1,4 @@
-package ${conf.groovyPackage}.${conf.moduleName}.${model.apiPackage};
+package ${conf.groovyPackage}.${conf.moduleName}
 
 import ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.model.${model.apiName}Model
 import ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.repository.${model.apiName}Repository

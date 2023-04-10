@@ -100,13 +100,13 @@ public class PathUtil {
 
     public static String getGroovyPath(EnumMicroservice microservice) {
         if (EnumMicroservice.LOGISTIC_GENERAL == microservice)
-            return repositoryPath + PathConstant.LOGISTIC_GENERAL_GROOVY_PATH;
+            return repositoryPath + File.separator + PathConstant.LOGISTIC_GENERAL_GROOVY_PATH;
         else if (EnumMicroservice.MATERIAL_MANAGEMENT == microservice)
-            return repositoryPath + PathConstant.MATERIAL_MANAGEMENT_GROOVY_PATH;
+            return repositoryPath + File.separator + PathConstant.MATERIAL_MANAGEMENT_GROOVY_PATH;
         else if (EnumMicroservice.MAINTENANCE_MANAGEMENT == microservice)
-            return repositoryPath + PathConstant.MAINTENANCE_MANAGEMENT_GROOVY_PATH;
+            return repositoryPath + File.separator + PathConstant.MAINTENANCE_MANAGEMENT_GROOVY_PATH;
         else if (EnumMicroservice.QUALITY == microservice)
-            return repositoryPath + PathConstant.QUALITY_GROOVY_PATH;
+            return repositoryPath + File.separator + PathConstant.QUALITY_GROOVY_PATH;
 
         return "";
     }
@@ -208,6 +208,8 @@ public class PathUtil {
             return PathConstant.MAINTENANCE_MANAGEMENT_MODULE_PREVENTIVE_MAINTENANCE;
         else if (EnumModule.QUALITY_CUSTOMISATION == module)
             return PathConstant.QUALITY_MODULE_CUSTOMISATION;
+        else if (EnumModule.QUALITY_APPLICATION == module)
+            return PathConstant.QUALITY_MODULE_APPLICATION;
 
         return "";
     }
@@ -244,6 +246,8 @@ public class PathUtil {
         else if (EnumModule.PREVENTIVE_MAINTENANCE == module)
             return PathConstant.CONTROL_CLASS_PREVENTIVE_MAINTENANCE_PATH;
         else if (EnumModule.QUALITY_CUSTOMISATION == module)
+            return PathConstant.CONTROL_CLASS_QUALITY_CUSTOMISATION_PATH;
+        else if (EnumModule.QUALITY_APPLICATION == module)
             return PathConstant.CONTROL_CLASS_QUALITY_CUSTOMISATION_PATH;
 
         return "";
