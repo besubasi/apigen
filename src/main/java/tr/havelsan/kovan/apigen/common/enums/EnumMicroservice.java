@@ -5,6 +5,7 @@ public enum EnumMicroservice {
     LOGISTIC_GENERAL,
     MATERIAL_MANAGEMENT,
     MAINTENANCE_MANAGEMENT,
+    PRODUCTION,
     QUALITY;
 
 }

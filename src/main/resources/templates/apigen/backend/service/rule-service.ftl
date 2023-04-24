@@ -10,7 +10,7 @@ import ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.repository.
 
 import javax.validation.constraints.NotNull;
 
-<#if conf.microServiceName == "quality">
+<#if conf.microServiceName == "production" || conf.microServiceName == "quality">
 import static ${conf.servicePackage}.constant.${conf.configurationConstant}.${conf.groovyPathConstant};
 <#else >
 import static ${conf.servicePackage}.constants.${conf.configurationConstant}.${conf.groovyPathConstant};

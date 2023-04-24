@@ -42,7 +42,6 @@ public class ${model.apiName}Model extends HvlModel {
     private String definition;
     private Map${TAG_STRING_DEF_MODEL} definitionMap = new HashMap<>();
 </#if>
-
     /*** Getter & Setter ***/
 <#list model.propertyList as property>
 

@@ -18,11 +18,10 @@ import ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.generator.$
 import ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.repository.${model.apiName}Repository;
 
 import java.util.List;
-
 <#if model.hasBusinessRule>
+
 import static tr.com.havelsan.kovan.logistic.core.constant.GeneralConstants.*;
 </#if>
-
 
 @Service
 @HvlTransactionalRollbackForCheckedException

@@ -10,7 +10,11 @@ import tr.com.havelsan.javarch.domain.model.entity.HvlLocalizedEntity;
 
 import static org.hibernate.annotations.CacheConcurrencyStrategy.TRANSACTIONAL;
 import static ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.entity.${model.apiName}Constant.*;
+<#if conf.microServiceName == "production" || conf.microServiceName == "quality">
+import static ${conf.servicePackage}.constant.CommonConstant.*;
+<#else >
 import static ${conf.servicePackage}.constants.CommonConstants.*;
+</#if>
 import static tr.com.havelsan.kovan.logistic.core.constant.GeneralConstants.DEFINITION_MAX_SIZE;
 
 <#assign FK_DEFINITION_KEY = 'FK_${model.tableName}_L_TO_${model.tableName}'>

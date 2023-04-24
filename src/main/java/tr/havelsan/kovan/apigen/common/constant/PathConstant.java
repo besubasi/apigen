@@ -69,6 +69,23 @@ public interface PathConstant {
     String CONTROL_CLASS_CONFIGURATION_MANAGEMENT_PATH = "CONTROL_CLASS_CONFIGURATION_MANAGEMENT_PATH";
     String CONTROL_CLASS_PREVENTIVE_MAINTENANCE_PATH = "CONTROL_CLASS_PREVENTIVE_MAINTENANCE_PATH";
 
+    String PRODUCTION_MICROSERVICE_NAME = "production";
+    String PRODUCTION_MODULE_CUSTOMISATION = "customisation";
+    String PRODUCTION_YML_PATH = "/hvl-kovan-logistic/resources/configuration/modules/production-application.yml";
+    String PRODUCTION_COMMON_PATH = "/hvl-kovan-logistic/modules/production/client/src/main/java";
+    String PRODUCTION_COMMON_PACKAGE = "tr.com.havelsan.kovan.logistic.production.client";
+    String PRODUCTION_SERVICE_PATH = "/hvl-kovan-logistic/modules/production/service/src/main/java";
+    String PRODUCTION_SERVICE_PACKAGE = "tr.com.havelsan.kovan.logistic.production.service";
+    String PRODUCTION_GROOVY_PATH = "hvl-kovan-logistic/modules/production/service/src/main/resources/groovy";
+    String PRODUCTION_GROOVY_PACKAGE = "tr.com.havelsan.kovan.logistic.production.service";
+    String PRODUCTION_FRONTEND_PATH = "/hvl-kovan-ng/projects/logistic-production";
+    String PRODUCTION_FRONTEND_SHARED_PATH = "/hvl-kovan-ng/projects/logistic-production-shared";
+    String PRODUCTION_CONFIGURATION_CONSTANTS = "ProductionConfigurationConstant";
+    String PRODUCTION_MENU_CHANGELOG_PATH = "/hvl-kovan-logistic/modules/production/service/src/main/resources/db/changelog/logistic/production/db.changelog-production-system-2.1.xml";
+    String PRODUCTION_OAUTH_CHANGELOG_PATH = "/hvl-kovan-logistic/modules/production/service/src/main/resources/db/changelog/logistic/production/db.changelog-production-oauth-2.1.xml";
+    String CONTROL_CLASS_PRODUCTION_CUSTOMISATION_PATH = "CONTROL_CLASS_PRODUCTION_CUSTOMISATION_PATH";
+    String CONTROL_CLASS_PRODUCTION_APPLICATION_PATH = "CONTROL_CLASS_PRODUCTION_APPLICATION_PATH";
+
 
     String QUALITY_MICROSERVICE_NAME = "quality";
     String QUALITY_MODULE_CUSTOMISATION = "customisation";

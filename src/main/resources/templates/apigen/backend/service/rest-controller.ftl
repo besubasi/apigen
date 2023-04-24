@@ -18,9 +18,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
-<#if conf.microServiceName == "quality">
-import static tr.com.havelsan.kovan.logistic.quality.service.constant.QualityAuthorityConstant.HAS_${model.tableName}_AUTH;
-</#if>
+import static tr.com.havelsan.kovan.logistic.${conf.microServiceName}.service.constant.${conf.microServiceName?cap_first}AuthorityConstant.HAS_${model.tableName}_AUTH;
 
 <#assign CONTROLLER_PATH = '{application.module.logistic.${conf.microServiceName}.services.${conf.moduleName}.${model.apiName?uncap_first}.controllerPath}'>
 

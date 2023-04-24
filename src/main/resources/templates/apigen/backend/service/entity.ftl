@@ -6,16 +6,13 @@ import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 </#if>
-
 <#if model.extendedName == 'KovanActivable'>
+import tr.com.havelsan.javarch.hibernate.annotations.HvlEntitySequence;
 import tr.com.havelsan.kovan.logistic.core.activibility.entity.KovanActivableEntity;
 <#else >
 import tr.com.havelsan.javarch.domain.model.entity.${model.extendedName}Entity;
-</#if>
-
-
 import tr.com.havelsan.javarch.hibernate.annotations.HvlEntitySequence;
-
+</#if>
 
 import javax.persistence.*;
 import javax.validation.Valid;
@@ -29,7 +26,7 @@ import java.util.Map;
 import static tr.com.havelsan.kovan.logistic.core.constant.GeneralConstants.LANGUAGE_LOCALIZED;
 </#if>
 import static ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.entity.${model.apiName}Constant.*;
-<#if conf.microServiceName == "quality">
+<#if conf.microServiceName == "production" || conf.microServiceName == "quality">
 import static ${conf.servicePackage}.constant.CommonConstant.SCHEMA_NAME;
 <#else >
 import static ${conf.servicePackage}.constants.CommonConstants.SCHEMA_NAME;
