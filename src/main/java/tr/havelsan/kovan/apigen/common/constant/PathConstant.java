@@ -100,8 +100,8 @@ public interface PathConstant {
     String QUALITY_FRONTEND_PATH = "/hvl-kovan-ng/projects/logistic-quality";
     String QUALITY_FRONTEND_SHARED_PATH = "/hvl-kovan-ng/projects/logistic-quality-shared";
     String QUALITY_CONFIGURATION_CONSTANTS = "QualityConfigurationConstant";
-    String QUALITY_MENU_CHANGELOG_PATH = "/hvl-kovan-logistic/modules/quality/service/src/main/resources/db/changelog/logistic/quality/db.changelog-quality-system-2.1.xml";
-    String QUALITY_OAUTH_CHANGELOG_PATH = "/hvl-kovan-logistic/modules/quality/service/src/main/resources/db/changelog/logistic/quality/db.changelog-quality-oauth-2.1.xml";
+    String QUALITY_MENU_CHANGELOG_PATH = "/hvl-kovan-logistic/modules/quality/service/src/main/resources/db/changelog/logistic/quality/2.1.0/db.changelog-quality-system-2.1.0.xml";
+    String QUALITY_OAUTH_CHANGELOG_PATH = "/hvl-kovan-logistic/modules/quality/service/src/main/resources/db/changelog/logistic/quality/2.1.0/db.changelog-quality-oauth-2.1.0.xml";
     String CONTROL_CLASS_QUALITY_CUSTOMISATION_PATH = "CONTROL_CLASS_QUALITY_CUSTOMISATION_PATH";
     String CONTROL_CLASS_QUALITY_APPLICATION_PATH = "CONTROL_CLASS_QUALITY_APPLICATION_PATH";
 
