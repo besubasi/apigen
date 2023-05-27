@@ -16,11 +16,10 @@ import javax.validation.Valid;
         path = "$${FEIGN_CLIENT_PATH}",
         url = "$${FEIGN_CLIENT_URL}")
 public interface ${model.apiName}PrivateRestService {
-<#assign TAG_LONG = '<Long>'>
 <#assign TAG_MODEL = '<${model.apiName}Model>'>
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    HvlResponse${TAG_LONG} create(@Valid @RequestBody ${model.apiName}Model ${model.apiName?uncap_first}Model);
+    HvlResponse${TAG_MODEL} create(@Valid @RequestBody ${model.apiName}Model ${model.apiName?uncap_first}Model);
 
     @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     HvlResponse${TAG_MODEL} update(@Valid @RequestBody ${model.apiName}Model ${model.apiName?uncap_first}Model) throws IllegalAccessException;

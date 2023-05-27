@@ -34,14 +34,13 @@ public class ${model.apiName}RestController implements ${model.apiName}PublicRes
     public ${model.apiName}RestController(${model.apiName}Service service) {
         this.service = service;
     }
-    <#assign TAG_LONG = '<Long>'>
     <#assign TAG_BOOLEAN = '<Boolean>'>
     <#assign TAG_MODEL = '<${model.apiName}Model>'>
     <#assign TAG_LIST_MODEL = '<List<${model.apiName}Model>>'>
     <#assign TAG_PAGE_MODEL = '<HvlPage<${model.apiName}Model>>'>
 
     @Override
-    public HvlResponse${TAG_LONG} create(@NotNull ${model.apiName}Model model) {
+    public HvlResponse${TAG_MODEL} create(@NotNull ${model.apiName}Model model) {
         return new HvlResponse<>(service.create(model));
     }
 

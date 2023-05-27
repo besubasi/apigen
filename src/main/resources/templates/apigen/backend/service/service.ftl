@@ -14,7 +14,7 @@ import java.util.List;
 public interface ${model.apiName}Service {
 
     <#assign TAG_MODEL = '<${model.apiName}Model>'>
-    Long create(@Valid @NotNull ${model.apiName}Model model);
+    ${model.apiName}Model create(@Valid @NotNull ${model.apiName}Model model);
 
     ${model.apiName}Model update(@Valid @NotNull ${model.apiName}Model model);
 

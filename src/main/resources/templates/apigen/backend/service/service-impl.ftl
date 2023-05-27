@@ -52,11 +52,11 @@ public class ${model.apiName}ServiceImpl implements ${model.apiName}Service {
     }
 
 <#assign TAG_MODEL = '<${model.apiName}Model>'>
-    public Long create(${model.apiName}Model model) {
+    public ${model.apiName}Model create(${model.apiName}Model model) {
         <#if model.hasBusinessRule>
         this.businessRuleService.executeBusinessRule(model, BEFORE_CREATE);
         </#if>
-        return repository.save(converter.convertToEntity(model)).getId();
+        return converter.convertToModel(repository.save(converter.convertToEntity(model)));
     }
 
     public ${model.apiName}Model update(${model.apiName}Model model) {
