@@ -228,6 +228,8 @@ public class PathUtil {
             return PathConstant.MAINTENANCE_MANAGEMENT_MODULE_PREVENTIVE_MAINTENANCE;
         else if (EnumModule.PRODUCTION_CUSTOMISATION == module)
             return PathConstant.PRODUCTION_MODULE_CUSTOMISATION;
+        else if (EnumModule.PRODUCTION_APPLICATION == module)
+            return PathConstant.PRODUCTION_MODULE_APPLICATION;
         else if (EnumModule.QUALITY_CUSTOMISATION == module)
             return PathConstant.QUALITY_MODULE_CUSTOMISATION;
         else if (EnumModule.QUALITY_APPLICATION == module)
@@ -269,6 +271,8 @@ public class PathUtil {
             return PathConstant.CONTROL_CLASS_PREVENTIVE_MAINTENANCE_PATH;
         else if (EnumModule.PRODUCTION_CUSTOMISATION == module)
             return PathConstant.CONTROL_CLASS_PRODUCTION_CUSTOMISATION_PATH;
+        else if (EnumModule.PRODUCTION_APPLICATION == module)
+            return PathConstant.CONTROL_CLASS_PRODUCTION_APPLICATION_PATH;
         else if (EnumModule.QUALITY_CUSTOMISATION == module)
             return PathConstant.CONTROL_CLASS_QUALITY_CUSTOMISATION_PATH;
         else if (EnumModule.QUALITY_APPLICATION == module)
