@@ -10,5 +10,5 @@ import lombok.NoArgsConstructor;
 public class PropertyModel {
 
     private String type, name, dbName;
-    private boolean notNull;
+    private boolean notNull, useQueryParameter = true;
 }

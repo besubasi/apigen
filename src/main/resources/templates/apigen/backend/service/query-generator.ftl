@@ -34,7 +34,9 @@ public class ${model.apiName}QueryGenerator extends HvlEntityQueryGenerator${TAG
         ofNullable(queryModel.getDefinition()).filter(StringUtils::isNotEmpty).ifPresent(param -> expressionBuilder.and(query.definitionMap.get(locale.getLanguage()).definition.containsIgnoreCase(param.toLowerCase(locale))));
         </#if>
         <#list model.propertyList as property>
+            <#if property.useQueryParameter>
         //ofNullable(queryModel.get${property.name?cap_first}()).ifPresent(param -> expressionBuilder.and(query.${property.name}.eq(param)));
+            </#if>
         </#list>
     }
 }

@@ -2,6 +2,7 @@ package tr.havelsan.kovan.apigen.generator.apigenerator.constant;
 
 public interface ApiGeneratorConstant {
 
+    String PACKAGE_CONSTANT = "constant";
     String PACKAGE_ENTITY = "entity";
     String PACKAGE_ENTITY_QUERY = "entity.query";
     String PACKAGE_MODEL = "model";

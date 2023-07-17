@@ -1,4 +1,4 @@
-package ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.entity;
+package ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.constant;
 
 import static tr.com.havelsan.kovan.logistic.core.constant.GeneralConstants.*;
 
@@ -17,9 +17,7 @@ public interface ${model.apiName}Constant {
 	String MAPPED_BY = "${model.apiName?uncap_first}";
 
 	<#assign FK_DEFINITION_KEY = 'FK_${model.tableName}_L_TO_${model.tableName}'>
-
 	<#if model.hasDefEntity>
 	String ${FK_DEFINITION_KEY} = "${FK_DEFINITION_KEY}";
 	</#if>
-
 }

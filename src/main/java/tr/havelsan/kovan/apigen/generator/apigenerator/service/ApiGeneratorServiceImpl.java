@@ -29,8 +29,8 @@ import static tr.havelsan.kovan.apigen.generator.apigenerator.constant.ApiGenera
 public class ApiGeneratorServiceImpl extends AbstractApiGeneratorService {
 
     @Override
-    void createConstraint() throws IOException {
-        this.createServiceFile(Templates.CONSTANT, PACKAGE_ENTITY, END_FIX_CONSTANT);
+    void createConstant() throws IOException {
+        this.createServiceFile(Templates.CONSTANT, PACKAGE_CONSTANT, END_FIX_CONSTANT);
     }
 
     @Override

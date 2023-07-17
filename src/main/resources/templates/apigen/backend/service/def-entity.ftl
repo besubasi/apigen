@@ -34,7 +34,7 @@ public class ${model.apiName}DefEntity extends HvlLocalizedEntity {
     @JoinColumn(name = COLUMN_ID, foreignKey = @ForeignKey(name = ${FK_DEFINITION_KEY}))
     private ${model.apiName}Entity ${model.apiName?uncap_first};
 
-    /*** Getter & Setter ***/
+    /**** Getter & Setter ****/
 
     public String getDefinition() {
         return definition;

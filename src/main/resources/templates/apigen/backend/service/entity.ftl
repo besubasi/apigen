@@ -18,14 +18,14 @@ import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.math.BigDecimal;
-import java.time.OffsetDateTime;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 
 <#if model.hasDefEntity>
 import static tr.com.havelsan.kovan.logistic.core.constant.GeneralConstants.LANGUAGE_LOCALIZED;
 </#if>
-import static ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.entity.${model.apiName}Constant.*;
+import static ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.constant.${model.apiName}Constant.*;
 <#if conf.microServiceName == "production" || conf.microServiceName == "quality">
 import static ${conf.servicePackage}.constant.CommonConstant.SCHEMA_NAME;
 <#else >
@@ -39,7 +39,11 @@ public class ${model.apiName}Entity extends ${model.extendedName}Entity {
 
 <#list model.propertyList as property>
     <#if property.notNull>
+        <#if property.type == "String">
+    @NotBlank
+        <#else>
     @NotNull
+        </#if>
     </#if>
     @Column(name = COLUMN_${property.dbName})
     <#if property.type?starts_with("Enum")  >
@@ -48,7 +52,6 @@ public class ${model.apiName}Entity extends ${model.extendedName}Entity {
     private ${property.type} ${property.name};
 
 </#list>
-
 <#assign TAG_STRING_DEF_ENTITY = '<String, ${model.apiName}DefEntity>'>
 <#if model.hasDefEntity>
     @NotEmpty
@@ -58,9 +61,9 @@ public class ${model.apiName}Entity extends ${model.extendedName}Entity {
     @Fetch(FetchMode.SUBSELECT)
     @Cache(usage = CacheConcurrencyStrategy.TRANSACTIONAL)
     private Map${TAG_STRING_DEF_ENTITY} definitionMap = new HashMap<>();
-</#if>
 
-    /*** Getter & Setter ***/
+</#if>
+    /**** Getter & Setter ****/
 <#list model.propertyList as property>
 
     public ${property.type} get${property.name?cap_first}() {

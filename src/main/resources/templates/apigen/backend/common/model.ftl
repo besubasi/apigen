@@ -8,7 +8,7 @@ import java.util.Map;
 import javax.validation.constraints.Size;
 </#if>
 
-import java.time.OffsetDateTime;
+import java.time.LocalDate;
 
 <#if model.extendedName == 'KovanActivable'>
 import tr.com.havelsan.kovan.logistic.core.activibility.dto.KovanActivableModel;
@@ -18,8 +18,8 @@ import tr.com.havelsan.javarch.dto.model.HvlModel;
 <#if model.hasDefEntity>
 import tr.com.havelsan.kovan.logistic.core.dto.DefinitionModel;
 </#if>
-
 <#if model.hasDefEntity>
+
 import static tr.com.havelsan.kovan.logistic.core.constant.GeneralConstants.*;
 </#if>
 
@@ -31,7 +31,11 @@ public class ${model.apiName}Model extends HvlModel {
 
 <#list model.propertyList as property>
     <#if property.notNull>
+        <#if property.type == "String">
+    @NotBlank
+        <#else>
     @NotNull
+        </#if>
     </#if>
     private ${property.type} ${property.name};
 </#list>
@@ -42,7 +46,7 @@ public class ${model.apiName}Model extends HvlModel {
     private String definition;
     private Map${TAG_STRING_DEF_MODEL} definitionMap = new HashMap<>();
 </#if>
-    /*** Getter & Setter ***/
+    /**** Getter & Setter ****/
 <#list model.propertyList as property>
 
     public ${property.type} get${property.name?cap_first}() {

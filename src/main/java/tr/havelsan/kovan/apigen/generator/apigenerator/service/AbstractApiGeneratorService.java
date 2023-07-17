@@ -6,7 +6,8 @@ import tr.havelsan.kovan.apigen.generator.apigenerator.model.ApiGeneratorModel;
 import java.io.IOException;
 import java.util.Map;
 
-import static tr.havelsan.kovan.apigen.common.constant.TemplateConstant.*;
+import static tr.havelsan.kovan.apigen.common.constant.TemplateConstant.CONF;
+import static tr.havelsan.kovan.apigen.common.constant.TemplateConstant.MODEL;
 
 public abstract class AbstractApiGeneratorService implements ApiGeneratorService {
 
@@ -17,49 +18,69 @@ public abstract class AbstractApiGeneratorService implements ApiGeneratorService
     @Override
     public Boolean generate(ApiGeneratorModel apiGeneratorModel) throws IOException {
         this.apiGeneratorModel = apiGeneratorModel;
-        this.apiGeneratorModel.setApiPackage(apiGeneratorModel.getApiName().toLowerCase());
         this.confModel = new ConfModel(apiGeneratorModel.getMicroservice(), apiGeneratorModel.getModule());
 
         this.map = Map.of(MODEL, apiGeneratorModel, CONF, confModel);
 
-        this.createConstraint();
-        this.createEntity();
-        this.createEntityQuery();
+        if (apiGeneratorModel.isCreateConstant())
+            this.createConstant();
+        if (apiGeneratorModel.isCreateEntity())
+            this.createEntity();
+        if (apiGeneratorModel.isCreateEntityQuery())
+            this.createEntityQuery();
 
         if (Boolean.TRUE.equals(this.apiGeneratorModel.isHasDefEntity())) {
-            this.createDefEntity();
-            this.createDefEntityQuery();
+            if (apiGeneratorModel.isCreateDefEntity())
+                this.createDefEntity();
+            if (apiGeneratorModel.isCreateDefEntityQuery())
+                this.createDefEntityQuery();
         }
 
-        this.createModel();
-        this.createQueryModel();
-        this.createQueryGenerator();
+        if (apiGeneratorModel.isCreateModel())
+            this.createModel();
+        if (apiGeneratorModel.isCreateQueryModel())
+            this.createQueryModel();
+        if (apiGeneratorModel.isCreateQueryGenerator())
+            this.createQueryGenerator();
 
-        this.createConverter();
-        this.createConverterImpl();
-        this.createBasicConverter();
-        this.createBasicConverterImpl();
+        if (apiGeneratorModel.isCreateConverter())
+            this.createConverter();
+        if (apiGeneratorModel.isCreateConverterImpl())
+            this.createConverterImpl();
+        if (apiGeneratorModel.isCreateBasicConverter())
+            this.createBasicConverter();
+        if (apiGeneratorModel.isCreateBasicConverterImpl())
+            this.createBasicConverterImpl();
 
-        this.createRepository();
+        if (apiGeneratorModel.isCreateRepository())
+            this.createRepository();
 
         if (Boolean.TRUE.equals(this.apiGeneratorModel.isHasBusinessRule())) {
-            this.createRules();
-            this.createRuleService();
+            if (apiGeneratorModel.isCreateRules())
+                this.createRules();
+            if (apiGeneratorModel.isCreateRuleService())
+                this.createRuleService();
         }
 
-        this.createService();
-        this.createServiceImpl();
+        if (apiGeneratorModel.isCreateService())
+            this.createService();
+        if (apiGeneratorModel.isCreateServiceImpl())
+            this.createServiceImpl();
 
-        this.createPrivateRestService();
-        this.createPublicRestService();
-        this.createRestController();
+        if (apiGeneratorModel.isCreatePrivateRestService())
+            this.createPrivateRestService();
+        if (apiGeneratorModel.isCreatePublicRestService())
+            this.createPublicRestService();
+        if (apiGeneratorModel.isCreateRestController())
+            this.createRestController();
 
-        this.updateYml();
+        if (apiGeneratorModel.isUpdateYml())
+            this.updateYml();
 
         return Boolean.TRUE;
     }
 
-    abstract void createConstraint() throws IOException;
+    abstract void createConstant() throws IOException;
 
     abstract void createEntity() throws IOException;
 
