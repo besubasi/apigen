@@ -6,6 +6,7 @@ public enum EnumMicroservice {
     MATERIAL_MANAGEMENT,
     MAINTENANCE_MANAGEMENT,
     PRODUCTION,
-    QUALITY;
-
+    QUALITY,
+    SALES,
+    PROGRESS;
 }

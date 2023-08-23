@@ -25,6 +25,10 @@ public class PathUtil {
             return repositoryPath + PathConstant.PRODUCTION_FRONTEND_PATH;
         else if (EnumMicroservice.QUALITY == microservice)
             return repositoryPath + PathConstant.QUALITY_FRONTEND_PATH;
+        else if (EnumMicroservice.SALES == microservice)
+            return repositoryPath + PathConstant.SALES_FRONTEND_PATH;
+        else if (EnumMicroservice.PROGRESS == microservice)
+            return repositoryPath + PathConstant.PROGRESS_FRONTEND_PATH;
 
         return "";
     }
@@ -40,6 +44,10 @@ public class PathUtil {
             return repositoryPath + PathConstant.PRODUCTION_FRONTEND_SHARED_PATH;
         else if (EnumMicroservice.QUALITY == microservice)
             return repositoryPath + PathConstant.QUALITY_FRONTEND_SHARED_PATH;
+        else if (EnumMicroservice.SALES == microservice)
+            return repositoryPath + PathConstant.SALES_FRONTEND_SHARED_PATH;
+        else if (EnumMicroservice.PROGRESS == microservice)
+            return repositoryPath + PathConstant.PROGRESS_FRONTEND_SHARED_PATH;
 
         return "";
     }
@@ -74,6 +82,10 @@ public class PathUtil {
             return repositoryPath + PathConstant.PRODUCTION_YML_PATH;
         else if (EnumMicroservice.QUALITY == microservice)
             return repositoryPath + PathConstant.QUALITY_YML_PATH;
+        else if (EnumMicroservice.SALES == microservice)
+            return repositoryPath + PathConstant.SALES_YML_PATH;
+        else if (EnumMicroservice.PROGRESS == microservice)
+            return repositoryPath + PathConstant.PROGRESS_YML_PATH;
 
         return "";
     }
@@ -89,6 +101,10 @@ public class PathUtil {
             return repositoryPath + PathConstant.PRODUCTION_COMMON_PATH;
         else if (EnumMicroservice.QUALITY == microservice)
             return repositoryPath + PathConstant.QUALITY_COMMON_PATH;
+        else if (EnumMicroservice.SALES == microservice)
+            return repositoryPath + PathConstant.SALES_COMMON_PATH;
+        else if (EnumMicroservice.PROGRESS == microservice)
+            return repositoryPath + PathConstant.PROGRESS_COMMON_PATH;
 
         return "";
     }
@@ -104,6 +120,10 @@ public class PathUtil {
             return repositoryPath + PathConstant.PRODUCTION_SERVICE_PATH;
         else if (EnumMicroservice.QUALITY == microservice)
             return repositoryPath + PathConstant.QUALITY_SERVICE_PATH;
+        else if (EnumMicroservice.SALES == microservice)
+            return repositoryPath + PathConstant.SALES_SERVICE_PATH;
+        else if (EnumMicroservice.PROGRESS == microservice)
+            return repositoryPath + PathConstant.PROGRESS_SERVICE_PATH;
 
         return "";
     }
@@ -119,6 +139,10 @@ public class PathUtil {
             return repositoryPath + File.separator + PathConstant.PRODUCTION_GROOVY_PATH;
         else if (EnumMicroservice.QUALITY == microservice)
             return repositoryPath + File.separator + PathConstant.QUALITY_GROOVY_PATH;
+        else if (EnumMicroservice.SALES == microservice)
+            return repositoryPath + File.separator + PathConstant.SALES_GROOVY_PATH;
+        else if (EnumMicroservice.PROGRESS == microservice)
+            return repositoryPath + File.separator + PathConstant.PROGRESS_GROOVY_PATH;
 
         return "";
     }
@@ -134,6 +158,10 @@ public class PathUtil {
             return PathConstant.PRODUCTION_MICROSERVICE_NAME;
         else if (EnumMicroservice.QUALITY == microservice)
             return PathConstant.QUALITY_MICROSERVICE_NAME;
+        else if (EnumMicroservice.SALES == microservice)
+            return PathConstant.SALES_MICROSERVICE_NAME;
+        else if (EnumMicroservice.PROGRESS == microservice)
+            return PathConstant.PROGRESS_MICROSERVICE_NAME;
 
         return "";
     }
@@ -161,6 +189,10 @@ public class PathUtil {
             return PathConstant.PRODUCTION_COMMON_PACKAGE;
         else if (EnumMicroservice.QUALITY == microservice)
             return PathConstant.QUALITY_COMMON_PACKAGE;
+        else if (EnumMicroservice.SALES == microservice)
+            return PathConstant.SALES_COMMON_PACKAGE;
+        else if (EnumMicroservice.PROGRESS == microservice)
+            return PathConstant.PROGRESS_COMMON_PACKAGE;
 
         return "";
     }
@@ -176,6 +208,10 @@ public class PathUtil {
             return PathConstant.PRODUCTION_SERVICE_PACKAGE;
         else if (EnumMicroservice.QUALITY == microservice)
             return PathConstant.QUALITY_SERVICE_PACKAGE;
+        else if (EnumMicroservice.SALES == microservice)
+            return PathConstant.SALES_SERVICE_PACKAGE;
+        else if (EnumMicroservice.PROGRESS == microservice)
+            return PathConstant.PROGRESS_SERVICE_PACKAGE;
 
         return "";
     }
@@ -191,6 +227,10 @@ public class PathUtil {
             return PathConstant.PRODUCTION_GROOVY_PACKAGE;
         else if (EnumMicroservice.QUALITY == microservice)
             return PathConstant.QUALITY_GROOVY_PACKAGE;
+        else if (EnumMicroservice.SALES == microservice)
+            return PathConstant.SALES_GROOVY_PACKAGE;
+        else if (EnumMicroservice.PROGRESS == microservice)
+            return PathConstant.PROGRESS_GROOVY_PACKAGE;
 
         return "";
     }
@@ -234,6 +274,14 @@ public class PathUtil {
             return PathConstant.QUALITY_MODULE_CUSTOMISATION;
         else if (EnumModule.QUALITY_APPLICATION == module)
             return PathConstant.QUALITY_MODULE_APPLICATION;
+        else if (EnumModule.SALES_CUSTOMISATION == module)
+            return PathConstant.SALES_MODULE_CUSTOMISATION;
+        else if (EnumModule.SALES_APPLICATION == module)
+            return PathConstant.SALES_MODULE_APPLICATION;
+        else if (EnumModule.PROGRESS_CUSTOMISATION == module)
+            return PathConstant.PROGRESS_MODULE_CUSTOMISATION;
+        else if (EnumModule.PROGRESS_APPLICATION == module)
+            return PathConstant.PROGRESS_MODULE_APPLICATION;
 
         return "";
     }
@@ -277,6 +325,14 @@ public class PathUtil {
             return PathConstant.CONTROL_CLASS_QUALITY_CUSTOMISATION_PATH;
         else if (EnumModule.QUALITY_APPLICATION == module)
             return PathConstant.CONTROL_CLASS_QUALITY_APPLICATION_PATH;
+        else if (EnumModule.SALES_CUSTOMISATION == module)
+            return PathConstant.CONTROL_CLASS_SALES_CUSTOMISATION_PATH;
+        else if (EnumModule.SALES_APPLICATION == module)
+            return PathConstant.CONTROL_CLASS_SALES_APPLICATION_PATH;
+        else if (EnumModule.PROGRESS_CUSTOMISATION == module)
+            return PathConstant.CONTROL_CLASS_PROGRESS_CUSTOMISATION_PATH;
+        else if (EnumModule.PROGRESS_APPLICATION == module)
+            return PathConstant.CONTROL_CLASS_PROGRESS_APPLICATION_PATH;
 
         return "";
     }
@@ -292,6 +348,10 @@ public class PathUtil {
             return PathConstant.PRODUCTION_CONFIGURATION_CONSTANTS;
         else if (EnumMicroservice.QUALITY == microservice)
             return PathConstant.QUALITY_CONFIGURATION_CONSTANTS;
+        else if (EnumMicroservice.SALES == microservice)
+            return PathConstant.SALES_CONFIGURATION_CONSTANTS;
+        else if (EnumMicroservice.PROGRESS == microservice)
+            return PathConstant.PROGRESS_CONFIGURATION_CONSTANTS;
 
         return "";
     }
@@ -307,6 +367,10 @@ public class PathUtil {
             return repositoryPath + PathConstant.PRODUCTION_MENU_CHANGELOG_PATH;
         else if (EnumMicroservice.QUALITY == microservice)
             return repositoryPath + PathConstant.QUALITY_MENU_CHANGELOG_PATH;
+        else if (EnumMicroservice.SALES == microservice)
+            return repositoryPath + PathConstant.SALES_MENU_CHANGELOG_PATH;
+        else if (EnumMicroservice.PROGRESS == microservice)
+            return repositoryPath + PathConstant.PROGRESS_MENU_CHANGELOG_PATH;
 
         return "";
     }
@@ -322,6 +386,10 @@ public class PathUtil {
             return repositoryPath + PathConstant.PRODUCTION_OAUTH_CHANGELOG_PATH;
         else if (EnumMicroservice.QUALITY == microservice)
             return repositoryPath + PathConstant.QUALITY_OAUTH_CHANGELOG_PATH;
+        else if (EnumMicroservice.SALES == microservice)
+            return repositoryPath + PathConstant.SALES_OAUTH_CHANGELOG_PATH;
+        else if (EnumMicroservice.PROGRESS == microservice)
+            return repositoryPath + PathConstant.PROGRESS_OAUTH_CHANGELOG_PATH;
 
         return "";
     }
