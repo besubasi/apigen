@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+    <component name="AutoImportSettings">
+        <option name="autoReloadType" value="SELECTIVE" />
+    </component>
+    <component name="ChangeListManager">
+        <list default="true" id="1058d422-1857-40f2-a8e8-53f20a25aeef" name="Changes" comment=" api generator için yapılan işlemler parameterik hale getirildi" />
+        <option name="SHOW_DIALOG" value="false" />
+        <option name="HIGHLIGHT_CONFLICTS" value="true" />
+        <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+        <option name="LAST_RESOLUTION" value="IGNORE" />
+    </component>
+    <component name="ExternalProjectsData">
+        <projectState path="$PROJECT_DIR$">
+            <ProjectState />
+        </projectState>
+    </component>
+    <component name="ExternalProjectsManager">
+        <system id="GRADLE">
+            <state>
+                <task path="$PROJECT_DIR$">
+                    <activation />
+                </task>
+                <projects_view>
+                    <tree_state>
+                        <expand />
+                        <select />
+                    </tree_state>
+                </projects_view>
+            </state>
+        </system>
+    </component>
+    <component name="FileTemplateManagerImpl">
+        <option name="RECENT_TEMPLATES">
+            <list>
+                <option value="Enum" />
+                <option value="Interface" />
+                <option value="Class" />
+            </list>
+        </option>
+    </component>
+    <component name="Git.Rebase.Settings">
+        <option name="NEW_BASE" value="origin/develop" />
+    </component>
+    <component name="Git.Settings">
+        <option name="RECENT_BRANCH_BY_REPOSITORY">
+            <map>
+                <entry key="$PROJECT_DIR$" value="bekirovic" />
+            </map>
+        </option>
+        <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    </component>
+    <component name="JpbToolWindowState">
+        <option name="isToolWindowVisible" value="false" />
+    </component>
+    <component name="MarkdownSettingsMigration">
+        <option name="stateVersion" value="1" />
+    </component>
+    <component name="ProjectId" id="2ElGoxWE8BRhb8y7vE3q1pGtM9S" />
+    <component name="ProjectLevelVcsManager">
+        <ConfirmationsSetting value="2" id="Add" />
+    </component>
+    <component name="ProjectViewState">
+        <option name="hideEmptyMiddlePackages" value="true" />
+        <option name="showLibraryContents" value="true" />
+    </component>
+    <component name="PropertiesComponent">{
+        &quot;keyToString&quot;: {
+        &quot;ExpandQuarkusEnvironmentOptionsPanel&quot;: &quot;true&quot;,
+        &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+        &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+        &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+        &quot;last_opened_file_path&quot;: &quot;/home/bsubasi/repository/hvl-kovan-apigen&quot;,
+        &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+        &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+        &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+        &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+        &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+        &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+        &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+        &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+        &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;,
+        &quot;ts.external.directory.path&quot;: &quot;/snap/intellij-idea-ultimate/396/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external&quot;,
+        &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+        }
+        }</component>
+    <component name="RecentsManager">
+        <key name="CopyFile.RECENT_KEYS">
+            <recent name="$PROJECT_DIR$/src/main/java/tr/havelsan/kovan/apigen/generator/menugen" />
+            <recent name="$PROJECT_DIR$/src/main/java/tr/havelsan/kovan/apigen/generator/enumgen" />
+            <recent name="$PROJECT_DIR$/src/main/java/tr/havelsan/kovan/apigen/generator/copygen" />
+            <recent name="$PROJECT_DIR$/src/main/resources/templates" />
+        </key>
+        <key name="MoveFile.RECENT_KEYS">
+            <recent name="$PROJECT_DIR$/src/main/resources/data" />
+            <recent name="$PROJECT_DIR$/src/main/resources/META-INF/resources" />
+            <recent name="$PROJECT_DIR$/src/main/resources" />
+            <recent name="$PROJECT_DIR$/src/main/resources/templates/changeset-gen" />
+            <recent name="$PROJECT_DIR$/src/main/resources/templates/enumgen/backend" />
+        </key>
+        <key name="CopyClassDialog.RECENTS_KEY">
+            <recent name="tr.havelsan.kovan.apigen.generator.apigenerator.model" />
+        </key>
+    </component>
+    <component name="RunDashboard">
+        <option name="configurationTypes">
+            <set>
+                <option value="QuarkusRunConfigurationType" />
+            </set>
+        </option>
+    </component>
+    <component name="RunManager" selected="Quarkus.apigen">
+        <configuration default="true" type="JetRunConfigurationType">
+            <module name="hvl-kovan-logistic-api-gen" />
+            <method v="2">
+                <option name="Make" enabled="true" />
+            </method>
+        </configuration>
+        <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+            <module name="hvl-kovan-logistic-api-gen" />
+            <option name="filePath" />
+            <method v="2">
+                <option name="Make" enabled="true" />
+            </method>
+        </configuration>
+        <configuration name="apigen" type="QuarkusRunConfigurationType" factoryName="Quarkus">
+            <module name="hvl-kovan-apigen.main" />
+            <QsGradleRunConfiguration>
+                <ExternalSystemSettings>
+                    <option name="executionName" />
+                    <option name="externalProjectPath" value="$PROJECT_DIR$" />
+                    <option name="externalSystemIdString" value="GRADLE" />
+                    <option name="scriptParameters" />
+                    <option name="taskDescriptions">
+                        <list />
+                    </option>
+                    <option name="taskNames">
+                        <list />
+                    </option>
+                    <option name="vmOptions" />
+                </ExternalSystemSettings>
+                <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+                <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+                <DebugAllEnabled>false</DebugAllEnabled>
+                <RunAsTest>false</RunAsTest>
+            </QsGradleRunConfiguration>
+            <method v="2">
+                <option name="Make" enabled="true" />
+            </method>
+        </configuration>
+        <configuration name="hvl-kovan-apigen.integrationTest" type="QuarkusRunConfigurationType" factoryName="Quarkus" nameIsGenerated="true">
+            <module name="hvl-kovan-apigen.integrationTest" />
+            <QsGradleRunConfiguration>
+                <ExternalSystemSettings>
+                    <option name="executionName" />
+                    <option name="externalProjectPath" value="$PROJECT_DIR$" />
+                    <option name="externalSystemIdString" value="GRADLE" />
+                    <option name="scriptParameters" />
+                    <option name="taskDescriptions">
+                        <list />
+                    </option>
+                    <option name="taskNames">
+                        <list />
+                    </option>
+                    <option name="vmOptions" />
+                </ExternalSystemSettings>
+                <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+                <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+                <DebugAllEnabled>false</DebugAllEnabled>
+                <RunAsTest>false</RunAsTest>
+            </QsGradleRunConfiguration>
+            <method v="2">
+                <option name="Make" enabled="true" />
+            </method>
+        </configuration>
+        <configuration name="hvl-kovan-apigen.test" type="QuarkusRunConfigurationType" factoryName="Quarkus" nameIsGenerated="true">
+            <module name="hvl-kovan-apigen.test" />
+            <QsGradleRunConfiguration>
+                <ExternalSystemSettings>
+                    <option name="executionName" />
+                    <option name="externalProjectPath" value="$PROJECT_DIR$" />
+                    <option name="externalSystemIdString" value="GRADLE" />
+                    <option name="scriptParameters" />
+                    <option name="taskDescriptions">
+                        <list />
+                    </option>
+                    <option name="taskNames">
+                        <list />
+                    </option>
+                    <option name="vmOptions" />
+                </ExternalSystemSettings>
+                <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+                <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+                <DebugAllEnabled>false</DebugAllEnabled>
+                <RunAsTest>false</RunAsTest>
+            </QsGradleRunConfiguration>
+            <method v="2">
+                <option name="Make" enabled="true" />
+            </method>
+        </configuration>
+    </component>
+    <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+    <component name="TaskManager">
+        <task active="true" id="Default" summary="Default task">
+            <changelist id="1058d422-1857-40f2-a8e8-53f20a25aeef" name="Changes" comment="" />
+            <created>1663162935379</created>
+            <option name="number" value="Default" />
+            <option name="presentableId" value="Default" />
+            <updated>1663162935379</updated>
+            <workItem from="1663162937533" duration="1470000" />
+            <workItem from="1663227514316" duration="2774000" />
+            <workItem from="1663311774589" duration="1213000" />
+            <workItem from="1663910714156" duration="5830000" />
+            <workItem from="1665485284668" duration="2880000" />
+            <workItem from="1665553334528" duration="1202000" />
+            <workItem from="1665564796981" duration="9424000" />
+            <workItem from="1665733548910" duration="1220000" />
+            <workItem from="1665981227874" duration="4689000" />
+            <workItem from="1666079974491" duration="599000" />
+            <workItem from="1666163407456" duration="603000" />
+            <workItem from="1666241804950" duration="599000" />
+            <workItem from="1666290894580" duration="983000" />
+            <workItem from="1666554211776" duration="607000" />
+            <workItem from="1666586085449" duration="878000" />
+            <workItem from="1666682421482" duration="599000" />
+            <workItem from="1667555462508" duration="1307000" />
+            <workItem from="1669577314065" duration="6970000" />
+            <workItem from="1669611179759" duration="21095000" />
+            <workItem from="1669722856725" duration="142000" />
+            <workItem from="1669726668277" duration="1341000" />
+            <workItem from="1669784902213" duration="4071000" />
+            <workItem from="1669868582061" duration="599000" />
+            <workItem from="1669876134993" duration="647000" />
+            <workItem from="1669920881767" duration="1453000" />
+            <workItem from="1669978681698" duration="668000" />
+            <workItem from="1670216402010" duration="1291000" />
+            <workItem from="1670311596359" duration="599000" />
+            <workItem from="1670784449633" duration="599000" />
+            <workItem from="1670819309564" duration="599000" />
+            <workItem from="1670908015417" duration="598000" />
+            <workItem from="1670929679926" duration="1259000" />
+            <workItem from="1670956482144" duration="599000" />
+            <workItem from="1670997571726" duration="615000" />
+            <workItem from="1671269454923" duration="38404000" />
+            <workItem from="1673132224829" duration="1332000" />
+            <workItem from="1675596403061" duration="4816000" />
+            <workItem from="1675789892772" duration="4533000" />
+            <workItem from="1675832551939" duration="19577000" />
+            <workItem from="1675917317127" duration="5969000" />
+            <workItem from="1675970150153" duration="7920000" />
+            <workItem from="1676003802672" duration="5242000" />
+            <workItem from="1676018911736" duration="3105000" />
+            <workItem from="1676401404060" duration="690000" />
+            <workItem from="1676477017795" duration="1373000" />
+            <workItem from="1676610592505" duration="5595000" />
+            <workItem from="1676757818946" duration="5655000" />
+            <workItem from="1676875097049" duration="316000" />
+            <workItem from="1676924195790" duration="1050000" />
+            <workItem from="1677054711009" duration="29131000" />
+            <workItem from="1677097299730" duration="1536000" />
+            <workItem from="1677098848416" duration="680000" />
+            <workItem from="1677099542183" duration="24705000" />
+            <workItem from="1677226937573" duration="27227000" />
+            <workItem from="1677473089873" duration="8833000" />
+            <workItem from="1677567708650" duration="258000" />
+            <workItem from="1677594533022" duration="611000" />
+            <workItem from="1677598854869" duration="6737000" />
+            <workItem from="1677655456241" duration="776000" />
+            <workItem from="1677678500284" duration="1604000" />
+            <workItem from="1677685674540" duration="599000" />
+            <workItem from="1677732869995" duration="62000" />
+            <workItem from="1678037189133" duration="3295000" />
+            <workItem from="1678076515518" duration="2737000" />
+            <workItem from="1678083277565" duration="4929000" />
+            <workItem from="1680693736117" duration="2229000" />
+            <workItem from="1680756637354" duration="9096000" />
+            <workItem from="1680843668284" duration="2300000" />
+            <workItem from="1681117663546" duration="692000" />
+            <workItem from="1681188208593" duration="439000" />
+            <workItem from="1681195786695" duration="13305000" />
+            <workItem from="1681273509804" duration="599000" />
+            <workItem from="1681287863510" duration="274000" />
+            <workItem from="1681380456669" duration="2463000" />
+            <workItem from="1682323482358" duration="241000" />
+            <workItem from="1683872411063" duration="1992000" />
+            <workItem from="1683913256918" duration="380000" />
+            <workItem from="1684126983057" duration="488000" />
+            <workItem from="1684837751523" duration="1810000" />
+            <workItem from="1685129885173" duration="1483000" />
+            <workItem from="1685706521973" duration="1204000" />
+            <workItem from="1685822889043" duration="1206000" />
+            <workItem from="1685941848987" duration="599000" />
+            <workItem from="1686028513130" duration="599000" />
+            <workItem from="1686079678524" duration="599000" />
+            <workItem from="1686122692854" duration="599000" />
+            <workItem from="1686204352418" duration="599000" />
+            <workItem from="1686751875284" duration="565000" />
+            <workItem from="1686804569130" duration="599000" />
+            <workItem from="1687500657834" duration="652000" />
+            <workItem from="1688992910145" duration="14865000" />
+            <workItem from="1689231079221" duration="1836000" />
+            <workItem from="1689325460376" duration="835000" />
+            <workItem from="1689569352490" duration="1342000" />
+            <workItem from="1690989237261" duration="907000" />
+            <workItem from="1691038185836" duration="599000" />
+            <workItem from="1691125799896" duration="599000" />
+            <workItem from="1691240070963" duration="599000" />
+            <workItem from="1691319553701" duration="694000" />
+            <workItem from="1691383362087" duration="599000" />
+            <workItem from="1691653074351" duration="617000" />
+            <workItem from="1691696206035" duration="617000" />
+            <workItem from="1691733466648" duration="600000" />
+            <workItem from="1692706202064" duration="715000" />
+            <workItem from="1692772728040" duration="524000" />
+        </task>
+        <task id="LOCAL-00001" summary="Basic converter template eklendi. Mevcuttaki tüm converterların basic converterlarını oluşturan cloneBasicConverter apisi yazıldı">
+            <created>1663917340029</created>
+            <option name="number" value="00001" />
+            <option name="presentableId" value="LOCAL-00001" />
+            <option name="project" value="LOCAL" />
+            <updated>1663917340029</updated>
+        </task>
+        <task id="LOCAL-00002" summary="bug fix">
+            <created>1665668130108</created>
+            <option name="number" value="00002" />
+            <option name="presentableId" value="LOCAL-00002" />
+            <option name="project" value="LOCAL" />
+            <updated>1665668130108</updated>
+        </task>
+        <task id="LOCAL-00003" summary="rest controller ve feign client için path konfigürasyon değerleri eklendi">
+            <created>1665992246807</created>
+            <option name="number" value="00003" />
+            <option name="presentableId" value="LOCAL-00003" />
+            <option name="project" value="LOCAL" />
+            <updated>1665992246807</updated>
+        </task>
+        <task id="LOCAL-00004" summary="enum generator apisi yazıldı. quarkus ve freemarker versiyonları yükseltildi">
+            <created>1669633329527</created>
+            <option name="number" value="00004" />
+            <option name="presentableId" value="LOCAL-00004" />
+            <option name="project" value="LOCAL" />
+            <updated>1669633329527</updated>
+        </task>
+        <task id="LOCAL-00005" summary="menu script oluşturan api yazıldı">
+            <created>1669722991139</created>
+            <option name="number" value="00005" />
+            <option name="presentableId" value="LOCAL-00005" />
+            <option name="project" value="LOCAL" />
+            <updated>1669722991139</updated>
+        </task>
+        <task id="LOCAL-00006" summary="Tüm mikroservisleri aynı anda karşılayacak konfigürasyonlar ve geliştirmelere yapıldı">
+            <created>1671458993013</created>
+            <option name="number" value="00006" />
+            <option name="presentableId" value="LOCAL-00006" />
+            <option name="project" value="LOCAL" />
+            <updated>1671458993013</updated>
+        </task>
+        <task id="LOCAL-00007" summary="cors fix">
+            <created>1675606619742</created>
+            <option name="number" value="00007" />
+            <option name="presentableId" value="LOCAL-00007" />
+            <option name="project" value="LOCAL" />
+            <updated>1675606619742</updated>
+        </task>
+        <task id="LOCAL-00008" summary="menu changeset ftl dosyaları eklendi">
+            <created>1675917438482</created>
+            <option name="number" value="00008" />
+            <option name="presentableId" value="LOCAL-00008" />
+            <option name="project" value="LOCAL" />
+            <updated>1675917438482</updated>
+        </task>
+        <task id="LOCAL-00009" summary="api package altında controller,repository,service vb package eklendi">
+            <created>1676030440465</created>
+            <option name="number" value="00009" />
+            <option name="presentableId" value="LOCAL-00009" />
+            <option name="project" value="LOCAL" />
+            <updated>1676030440465</updated>
+        </task>
+        <task id="LOCAL-00010" summary="api package bilgisi kullanıcıdan alınmıyor, api name küçük harfe çevrilerek tespit belirleniyor">
+            <created>1676619082093</created>
+            <option name="number" value="00010" />
+            <option name="presentableId" value="LOCAL-00010" />
+            <option name="project" value="LOCAL" />
+            <updated>1676619082093</updated>
+        </task>
+        <task id="LOCAL-00011" summary="menu changeset ve oauth changeset oluşturabilme yeteneği geliştirildi">
+            <created>1677085771444</created>
+            <option name="number" value="00011" />
+            <option name="presentableId" value="LOCAL-00011" />
+            <option name="project" value="LOCAL" />
+            <updated>1677085771444</updated>
+        </task>
+        <task id="LOCAL-00012" summary="freemarker ve quarkus versiyonları yükseltildi, freemarker konfigürasyon ayarları son versiyona göre yapıldı">
+            <created>1677096044590</created>
+            <option name="number" value="00012" />
+            <option name="presentableId" value="LOCAL-00012" />
+            <option name="project" value="LOCAL" />
+            <updated>1677096044590</updated>
+        </task>
+        <task id="LOCAL-00013" summary="lombok kütüphanesi eklendi">
+            <created>1677102792358</created>
+            <option name="number" value="00013" />
+            <option name="presentableId" value="LOCAL-00013" />
+            <option name="project" value="LOCAL" />
+            <updated>1677102792358</updated>
+        </task>
+        <task id="LOCAL-00014" summary="FileUtil kullanıma alındı, template içerisindeki packageName kullanımları konfigürasyon modeline devredildi">
+            <created>1677107503905</created>
+            <option name="number" value="00014" />
+            <option name="presentableId" value="LOCAL-00014" />
+            <option name="project" value="LOCAL" />
+            <updated>1677107503905</updated>
+        </task>
+        <task id="LOCAL-00015" summary="yetki oluşturma ftl empty check">
+            <created>1677111622958</created>
+            <option name="number" value="00015" />
+            <option name="presentableId" value="LOCAL-00015" />
+            <option name="project" value="LOCAL" />
+            <updated>1677111622958</updated>
+        </task>
+        <task id="LOCAL-00016" summary="apigen-ng için menü oluşturma işlemleri eklendi">
+            <created>1677158461136</created>
+            <option name="number" value="00016" />
+            <option name="presentableId" value="LOCAL-00016" />
+            <option name="project" value="LOCAL" />
+            <updated>1677158461136</updated>
+        </task>
+        <task id="LOCAL-00017" summary="postgresql ve hibernate panache bağımlılıkları eklendi. Veritabanındaki menu-item ve menu-item-authority tabloları için apiler yazıldı">
+            <created>1677364831878</created>
+            <option name="number" value="00017" />
+            <option name="presentableId" value="LOCAL-00017" />
+            <option name="project" value="LOCAL" />
+            <updated>1677364831878</updated>
+        </task>
+        <task id="LOCAL-00018" summary="lojistik kalite mikroservisi entegre edildi">
+            <created>1677678564314</created>
+            <option name="number" value="00018" />
+            <option name="presentableId" value="LOCAL-00018" />
+            <option name="project" value="LOCAL" />
+            <updated>1677678564315</updated>
+        </task>
+        <task id="LOCAL-00019" summary="menu changeset de parent ve path bilgileri nullable yapıldı">
+            <created>1677732924960</created>
+            <option name="number" value="00019" />
+            <option name="presentableId" value="LOCAL-00019" />
+            <option name="project" value="LOCAL" />
+            <updated>1677732924960</updated>
+        </task>
+        <task id="LOCAL-00020" summary="Front End kopyalama işlemi ayrıldı">
+            <created>1678040463261</created>
+            <option name="number" value="00020" />
+            <option name="presentableId" value="LOCAL-00020" />
+            <option name="project" value="LOCAL" />
+            <updated>1678040463261</updated>
+        </task>
+        <task id="LOCAL-00021" summary="Front End kopyalama işlemi ayrıldı">
+            <created>1678083592875</created>
+            <option name="number" value="00021" />
+            <option name="presentableId" value="LOCAL-00021" />
+            <option name="project" value="LOCAL" />
+            <updated>1678083592875</updated>
+        </task>
+        <task id="LOCAL-00022" summary="kalite tarafı için geliştirmeler">
+            <created>1681127258959</created>
+            <option name="number" value="00022" />
+            <option name="presentableId" value="LOCAL-00022" />
+            <option name="project" value="LOCAL" />
+            <updated>1681127258959</updated>
+        </task>
+        <task id="LOCAL-00023" summary="üretim mikroservisi eklendi">
+            <created>1682323697627</created>
+            <option name="number" value="00023" />
+            <option name="presentableId" value="LOCAL-00023" />
+            <option name="project" value="LOCAL" />
+            <updated>1682323697627</updated>
+        </task>
+        <task id="LOCAL-00024" summary="kalite liquibase dosya yolu güncellendi, out paketi ignore edildi">
+            <created>1684127463137</created>
+            <option name="number" value="00024" />
+            <option name="presentableId" value="LOCAL-00024" />
+            <option name="project" value="LOCAL" />
+            <updated>1684127463137</updated>
+        </task>
+        <task id="LOCAL-00025" summary="create metodu Long yerine Model dönecek yapıya çevrildi">
+            <created>1685224795253</created>
+            <option name="number" value="00025" />
+            <option name="presentableId" value="LOCAL-00025" />
+            <option name="project" value="LOCAL" />
+            <updated>1685224795253</updated>
+        </task>
+        <task id="LOCAL-00026" summary="production-application microservis bağlantıları eklendi">
+            <option name="closed" value="true" />
+            <created>1689049562965</created>
+            <option name="number" value="00026" />
+            <option name="presentableId" value="LOCAL-00026" />
+            <option name="project" value="LOCAL" />
+            <updated>1689049562965</updated>
+        </task>
+        <task id="LOCAL-00027" summary=" api generator için yapılan işlemler parameterik hale getirildi">
+            <option name="closed" value="true" />
+            <created>1689578343590</created>
+            <option name="number" value="00027" />
+            <option name="presentableId" value="LOCAL-00027" />
+            <option name="project" value="LOCAL" />
+            <updated>1689578343590</updated>
+        </task>
+        <option name="localTasksCounter" value="28" />
+        <servers />
+    </component>
+    <component name="TypeScriptGeneratedFilesManager">
+        <option name="version" value="3" />
+    </component>
+    <component name="Vcs.Log.History.Properties">
+        <option name="COLUMN_ID_ORDER">
+            <list>
+                <option value="Default.Root" />
+                <option value="Default.Author" />
+                <option value="Default.Date" />
+                <option value="Default.Subject" />
+                <option value="Space.CommitStatus" />
+            </list>
+        </option>
+    </component>
+    <component name="Vcs.Log.Tabs.Properties">
+        <option name="TAB_STATES">
+            <map>
+                <entry key="MAIN">
+                    <value>
+                        <State />
+                    </value>
+                </entry>
+            </map>
+        </option>
+    </component>
+    <component name="VcsManagerConfiguration">
+        <MESSAGE value="bug fix" />
+        <MESSAGE value="rest controller ve feign client için path konfigürasyon değerleri eklendi" />
+        <MESSAGE value="enum generator apisi yazıldı. quarkus ve freemarker versiyonları yükseltildi" />
+        <MESSAGE value="menu script oluşturan api yazıldı" />
+        <MESSAGE value="Tüm mikroservisleri aynı anda karşılayacak konfigürasyonlar ve geliştirmelere yapıldı" />
+        <MESSAGE value="cors fix" />
+        <MESSAGE value="menu changeset ftl dosyaları eklendi" />
+        <MESSAGE value="api package altında controller,repository,service vb package eklendi" />
+        <MESSAGE value="api package bilgisi kullanıcıdan alınmıyor, api name küçük harfe çevrilerek tespit belirleniyor" />
+        <MESSAGE value="menu changeset ve oauth changeset oluşturabilme yeteneği geliştirildi" />
+        <MESSAGE value="freemarker ve quarkus versiyonları yükseltildi, freemarker konfigürasyon ayarları son versiyona göre yapıldı" />
+        <MESSAGE value="lombok kütüphanesi eklendi" />
+        <MESSAGE value="FileUtil kullanıma alındı, template içerisindeki packageName kullanımları konfigürasyon modeline devredildi" />
+        <MESSAGE value="yetki oluşturma ftl empty check" />
+        <MESSAGE value="apigen-ng için menü oluşturma işlemleri eklendi" />
+        <MESSAGE value="postgresql ve hibernate panache bağımlılıkları eklendi. Veritabanındaki menu-item ve menu-item-authority tabloları için apiler yazıldı" />
+        <MESSAGE value="lojistik kalite mikroservisi entegre edildi" />
+        <MESSAGE value="menu changeset de parent ve path bilgileri nullable yapıldı" />
+        <MESSAGE value="Front End kopyalama işlemi ayrıldı" />
+        <MESSAGE value="kalite tarafı için geliştirmeler" />
+        <MESSAGE value="üretim mikroservisi eklendi" />
+        <MESSAGE value="kalite liquibase dosya yolu güncellendi, out paketi ignore edildi" />
+        <MESSAGE value="create metodu Long yerine Model dönecek yapıya çevrildi" />
+        <MESSAGE value="production-application microservis bağlantıları eklendi" />
+        <MESSAGE value=" api generator için yapılan işlemler parameterik hale getirildi" />
+        <option name="LAST_COMMIT_MESSAGE" value=" api generator için yapılan işlemler parameterik hale getirildi" />
+    </component>
+    <component name="XDebuggerManager">
+        <breakpoint-manager>
+            <breakpoints>
+                <line-breakpoint enabled="true" type="java-line">
+                    <url>file://$PROJECT_DIR$/src/main/java/tr/havelsan/kovan/apigen/generator/frontendcopy/service/FrontendCopyServiceImpl.java</url>
+                    <line>22</line>
+                    <option name="timeStamp" value="9" />
+                </line-breakpoint>
+            </breakpoints>
+        </breakpoint-manager>
+    </component>
+    <component name="XSLT-Support.FileAssociations.UIState">
+        <expand />
+        <select />
+    </component>
+</project>
