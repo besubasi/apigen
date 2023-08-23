@@ -9,7 +9,7 @@ import ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.model.${mode
 
 import javax.validation.Valid;
 <#assign FEIGN_CLIENT_PATH = '{application.module.logistic.${conf.microServiceName}.services.${conf.moduleName}.${model.apiName?uncap_first}.path}'>
-<#assign FEIGN_CLIENT_URL = '{application.module.logistic.${conf.microServiceName}.services.${conf.moduleName}.${model.apiName?uncap_first}.url}'>
+<#assign FEIGN_CLIENT_URL = '{application.module.logistic.${conf.microServiceName}.services.url}'>
 
 @HvlPrivateFeignRestService
 @FeignClient(name = "${model.apiName}PrivateRestService",
@@ -22,7 +22,7 @@ public interface ${model.apiName}PrivateRestService {
     HvlResponse${TAG_MODEL} create(@Valid @RequestBody ${model.apiName}Model ${model.apiName?uncap_first}Model);
 
     @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    HvlResponse${TAG_MODEL} update(@Valid @RequestBody ${model.apiName}Model ${model.apiName?uncap_first}Model) throws IllegalAccessException;
+    HvlResponse${TAG_MODEL} update(@Valid @RequestBody ${model.apiName}Model ${model.apiName?uncap_first}Model);
 
     @DeleteMapping(path = "/{id}")
     void delete(@PathVariable("id") Long id);

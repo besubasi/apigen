@@ -9,8 +9,8 @@ import org.hibernate.annotations.Cache;
 import tr.com.havelsan.javarch.domain.model.entity.HvlLocalizedEntity;
 
 import static org.hibernate.annotations.CacheConcurrencyStrategy.TRANSACTIONAL;
-import static ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.entity.${model.apiName}Constant.*;
-<#if conf.microServiceName == "production" || conf.microServiceName == "quality">
+import static ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.constant.${model.apiName}Constant.*;
+<#if conf.microServiceName == "production" || conf.microServiceName == "quality" || conf.microServiceName == "sales" || conf.microServiceName == "progress">
 import static ${conf.servicePackage}.constant.CommonConstant.*;
 <#else >
 import static ${conf.servicePackage}.constants.CommonConstants.*;

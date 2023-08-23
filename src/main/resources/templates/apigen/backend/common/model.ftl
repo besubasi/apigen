@@ -1,5 +1,6 @@
 package ${conf.commonPackage}.${conf.moduleName}.${model.apiPackage}.model;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 <#if model.hasDefEntity>
@@ -66,7 +67,6 @@ public class ${model.apiName}Model extends HvlModel {
     public void setDefinition(String definition) {
         this.definition = definition;
     }
-
 
     public Map${TAG_STRING_DEF_MODEL} getDefinitionMap() {
         return definitionMap;

@@ -32,6 +32,7 @@ public class ${model.apiName}QueryModel extends HvlQueryModel {
     public void setDefinition(String definition) {
     this.definition = definition;
     }
+
 </#if>
 <#list model.propertyList as property>
     <#if property.useQueryParameter>

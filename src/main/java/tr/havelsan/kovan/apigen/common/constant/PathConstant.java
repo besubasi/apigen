@@ -118,9 +118,9 @@ public interface PathConstant {
     String SALES_GROOVY_PACKAGE = "tr.com.havelsan.kovan.logistic.sales.service";
     String SALES_FRONTEND_PATH = "/hvl-kovan-ng/projects/logistic-sales";
     String SALES_FRONTEND_SHARED_PATH = "/hvl-kovan-ng/projects/logistic-sales-shared";
-    String SALES_CONFIGURATION_CONSTANTS = "QualityConfigurationConstant";
-    String SALES_MENU_CHANGELOG_PATH = "/hvl-kovan-logistic/modules/sales/service/src/main/resources/db/changelog/logistic/sales/2.1.0/db.changelog-sales-system-2.1.0.xml";
-    String SALES_OAUTH_CHANGELOG_PATH = "/hvl-kovan-logistic/modules/sales/service/src/main/resources/db/changelog/logistic/sales/2.1.0/db.changelog-sales-oauth-2.1.0.xml";
+    String SALES_CONFIGURATION_CONSTANTS = "SalesConfigurationConstant";
+    String SALES_MENU_CHANGELOG_PATH = "/hvl-kovan-logistic/modules/sales/service/src/main/resources/db/changelog/logistic/sales/3.0/db.changelog-sales-system-3.0.xml";
+    String SALES_OAUTH_CHANGELOG_PATH = "/hvl-kovan-logistic/modules/sales/service/src/main/resources/db/changelog/logistic/sales/3.0/db.changelog-sales-oauth-3.0.xml";
     String CONTROL_CLASS_SALES_CUSTOMISATION_PATH = "CONTROL_CLASS_SALES_CUSTOMISATION_PATH";
     String CONTROL_CLASS_SALES_APPLICATION_PATH = "CONTROL_CLASS_SALES_APPLICATION_PATH";
 
@@ -136,9 +136,9 @@ public interface PathConstant {
     String PROGRESS_GROOVY_PACKAGE = "tr.com.havelsan.kovan.logistic.progress.service";
     String PROGRESS_FRONTEND_PATH = "/hvl-kovan-ng/projects/logistic-progress";
     String PROGRESS_FRONTEND_SHARED_PATH = "/hvl-kovan-ng/projects/logistic-progress-shared";
-    String PROGRESS_CONFIGURATION_CONSTANTS = "QualityConfigurationConstant";
-    String PROGRESS_MENU_CHANGELOG_PATH = "/hvl-kovan-logistic/modules/progress/service/src/main/resources/db/changelog/logistic/progress/2.1.0/db.changelog-progress-system-2.1.0.xml";
-    String PROGRESS_OAUTH_CHANGELOG_PATH = "/hvl-kovan-logistic/modules/progress/service/src/main/resources/db/changelog/logistic/progress/2.1.0/db.changelog-progress-oauth-2.1.0.xml";
+    String PROGRESS_CONFIGURATION_CONSTANTS = "ProgressConfigurationConstant";
+    String PROGRESS_MENU_CHANGELOG_PATH = "/hvl-kovan-logistic/modules/progress/service/src/main/resources/db/changelog/logistic/progress/3.0/db.changelog-progress-system-3.0.xml";
+    String PROGRESS_OAUTH_CHANGELOG_PATH = "/hvl-kovan-logistic/modules/progress/service/src/main/resources/db/changelog/logistic/progress/3.0/db.changelog-progress-oauth-3.0.xml";
     String CONTROL_CLASS_PROGRESS_CUSTOMISATION_PATH = "CONTROL_CLASS_PROGRESS_CUSTOMISATION_PATH";
     String CONTROL_CLASS_PROGRESS_APPLICATION_PATH = "CONTROL_CLASS_PROGRESS_APPLICATION_PATH";
 
