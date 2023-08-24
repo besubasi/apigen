@@ -1,5 +1,5 @@
 <#assign NOW = '{now}'>
-    <changeSet author="${helper.author}" id="${helper.changesetId}">
+    <changeSet author="${helper.author}" id="${helper.changesetId}" failOnError="false">
         <insert schemaName="oauth" tableName="kys_authority">
             <column name="id" valueSequenceNext="kys_authority_seq"/>
             <column name="created_by" value="logistic"/>
