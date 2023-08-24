@@ -16,8 +16,8 @@ import static ${conf.servicePackage}.constant.${conf.configurationConstant}.${co
 import static ${conf.servicePackage}.constants.${conf.configurationConstant}.${conf.groovyPathConstant};
 </#if>
 
-@HvlTransactionalRollbackForCheckedException
 @Component
+@HvlTransactionalRollbackForCheckedException
 public class ${model.apiName}RuleService extends GroovyBusinessRuleService {
 
     public static final String GROOVY_CLASS_NAME = "${model.apiName}Rules.groovy";

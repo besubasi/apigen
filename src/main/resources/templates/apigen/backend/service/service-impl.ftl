@@ -33,6 +33,7 @@ public class ${model.apiName}ServiceImpl implements ${model.apiName}Service {
     <#if model.hasBusinessRule>
     private final BusinessRuleService businessRuleService;
     </#if>
+
     @Autowired
     public ${model.apiName}ServiceImpl(${model.apiName}Repository repository,
                                        ${model.apiName}Converter converter,
