@@ -37,9 +37,8 @@ public interface ${model.apiName}Converter extends HvlGenericMapStructMapper${TA
     @AfterMapping
     default void convertToModelAfterMapping(@MappingTarget ${model.apiName}Model model, ${model.apiName}Entity entity) {
         String activeLang = HvlSessionContextHolder.currentSession().getLocale().getLanguage();
-        if(entity.getDefinitionMap()!=null && entity.getDefinitionMap().get(activeLang) != null && entity.getDefinitionMap().get(activeLang).getDefinition() != null){
+        if (entity.getDefinitionMap() != null && entity.getDefinitionMap().get(activeLang) != null)
             model.setDefinition(entity.getDefinitionMap().get(activeLang).getDefinition());
-        }
     }
 </#if>
 
