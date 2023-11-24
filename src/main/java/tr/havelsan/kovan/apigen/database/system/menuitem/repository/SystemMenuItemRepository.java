@@ -13,4 +13,13 @@ public class SystemMenuItemRepository implements PanacheRepository<SystemMenuIte
         return list("parent_id", parentId);
     }
 
+
+    public List<SystemMenuItem> getParentIdIsNull(){
+        return list("parent_id is null");
+    }
+
+    public List<SystemMenuItem> getLogisticParentMenu(){
+        return list("created_by ='logistic' and length(path) = 0");
+    }
+
 }

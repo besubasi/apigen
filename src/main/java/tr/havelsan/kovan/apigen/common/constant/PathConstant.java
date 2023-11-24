@@ -10,8 +10,8 @@ public interface PathConstant {
     String LOGISTIC_GENERAL_MODULE_ORGANIZATION = "organization";
     String LOGISTIC_GENERAL_MODULE_PARAMETERS = "parameters";
     String LOGISTIC_GENERAL_YML_PATH = "/hvl-kovan-logistic/resources/configuration/modules/general-application.yml";
-    String LOGISTIC_GENERAL_COMMON_PATH = "/hvl-kovan-logistic/modules/logistic-general/common/src/main/java";
-    String LOGISTIC_GENERAL_COMMON_PACKAGE = "tr.com.havelsan.kovan.logistic.general.common";
+    String LOGISTIC_GENERAL_CLIENT_PATH = "/hvl-kovan-logistic/modules/logistic-general/client/src/main/java";
+    String LOGISTIC_GENERAL_CLIENT_PACKAGE = "tr.com.havelsan.kovan.logistic.general.client";
     String LOGISTIC_GENERAL_SERVICE_PATH = "/hvl-kovan-logistic/modules/logistic-general/service/src/main/java";
     String LOGISTIC_GENERAL_SERVICE_PACKAGE = "tr.com.havelsan.kovan.logistic.general.service";
     String LOGISTIC_GENERAL_GROOVY_PATH = "/hvl-kovan-logistic/modules/logistic-general/service/src/main/resources/groovy";
@@ -30,8 +30,8 @@ public interface PathConstant {
     String MATERIAL_MANAGEMENT_MODULE_STOCK = "stock";
     String MATERIAL_MANAGEMENT_MODULE_WAREHOUSE = "warehouse";
     String MATERIAL_MANAGEMENT_YML_PATH = "/hvl-kovan-logistic/resources/configuration/modules/material-management-application.yml";
-    String MATERIAL_MANAGEMENT_COMMON_PATH = "/hvl-kovan-logistic/modules/material-management/common/src/main/java";
-    String MATERIAL_MANAGEMENT_COMMON_PACKAGE = "tr.com.havelsan.kovan.logistic.materialManagement.common";
+    String MATERIAL_MANAGEMENT_CLIENT_PATH = "/hvl-kovan-logistic/modules/material-management/client/src/main/java";
+    String MATERIAL_MANAGEMENT_CLIENT_PACKAGE = "tr.com.havelsan.kovan.logistic.materialManagement.client";
     String MATERIAL_MANAGEMENT_SERVICE_PATH = "/hvl-kovan-logistic/modules/material-management/service/src/main/java";
     String MATERIAL_MANAGEMENT_SERVICE_PACKAGE = "tr.com.havelsan.kovan.logistic.materialManagement.service";
     String MATERIAL_MANAGEMENT_GROOVY_PATH = "/hvl-kovan-logistic/modules/material-management/service/src/main/resources/groovy";
@@ -52,8 +52,8 @@ public interface PathConstant {
     String MAINTENANCE_MANAGEMENT_MODULE_MAINTENANCE_REPAIR_APPLICATION = "maintenanceRepairApplication";
     String MAINTENANCE_MANAGEMENT_MODULE_PREVENTIVE_MAINTENANCE = "preventiveMaintenance";
     String MAINTENANCE_MANAGEMENT_YML_PATH = "/hvl-kovan-logistic/resources/configuration/modules/maintenance-management-application.yml";
-    String MAINTENANCE_MANAGEMENT_COMMON_PATH = "/hvl-kovan-logistic/modules/maintenance-management/client/src/main/java";
-    String MAINTENANCE_MANAGEMENT_COMMON_PACKAGE = "tr.com.havelsan.kovan.logistic.maintenanceManagement.client";
+    String MAINTENANCE_MANAGEMENT_CLIENT_PATH = "/hvl-kovan-logistic/modules/maintenance-management/client/src/main/java";
+    String MAINTENANCE_MANAGEMENT_CLIENT_PACKAGE = "tr.com.havelsan.kovan.logistic.maintenanceManagement.client";
     String MAINTENANCE_MANAGEMENT_SERVICE_PATH = "/hvl-kovan-logistic/modules/maintenance-management/service/src/main/java";
     String MAINTENANCE_MANAGEMENT_SERVICE_PACKAGE = "tr.com.havelsan.kovan.logistic.maintenanceManagement.service";
     String MAINTENANCE_MANAGEMENT_GROOVY_PATH = "hvl-kovan-logistic/modules/maintenance-management/service/src/main/resources/groovy";
@@ -73,8 +73,8 @@ public interface PathConstant {
     String PRODUCTION_MODULE_CUSTOMISATION = "customisation";
     String PRODUCTION_MODULE_APPLICATION = "application";
     String PRODUCTION_YML_PATH = "/hvl-kovan-logistic/resources/configuration/modules/production-application.yml";
-    String PRODUCTION_COMMON_PATH = "/hvl-kovan-logistic/modules/production-management/client/src/main/java";
-    String PRODUCTION_COMMON_PACKAGE = "tr.com.havelsan.kovan.logistic.production.client";
+    String PRODUCTION_CLIENT_PATH = "/hvl-kovan-logistic/modules/production-management/client/src/main/java";
+    String PRODUCTION_CLIENT_PACKAGE = "tr.com.havelsan.kovan.logistic.production.client";
     String PRODUCTION_SERVICE_PATH = "/hvl-kovan-logistic/modules/production-management/service/src/main/java";
     String PRODUCTION_SERVICE_PACKAGE = "tr.com.havelsan.kovan.logistic.production.service";
     String PRODUCTION_GROOVY_PATH = "hvl-kovan-logistic/modules/production-management/service/src/main/resources/groovy";
@@ -92,8 +92,8 @@ public interface PathConstant {
     String QUALITY_MODULE_CUSTOMISATION = "customisation";
     String QUALITY_MODULE_APPLICATION = "application";
     String QUALITY_YML_PATH = "/hvl-kovan-logistic/resources/configuration/modules/quality-application.yml";
-    String QUALITY_COMMON_PATH = "/hvl-kovan-logistic/modules/quality/client/src/main/java";
-    String QUALITY_COMMON_PACKAGE = "tr.com.havelsan.kovan.logistic.quality.client";
+    String QUALITY_CLIENT_PATH = "/hvl-kovan-logistic/modules/quality/client/src/main/java";
+    String QUALITY_CLIENT_PACKAGE = "tr.com.havelsan.kovan.logistic.quality.client";
     String QUALITY_SERVICE_PATH = "/hvl-kovan-logistic/modules/quality/service/src/main/java";
     String QUALITY_SERVICE_PACKAGE = "tr.com.havelsan.kovan.logistic.quality.service";
     String QUALITY_GROOVY_PATH = "hvl-kovan-logistic/modules/quality/service/src/main/resources/groovy";
@@ -110,8 +110,8 @@ public interface PathConstant {
     String SALES_MODULE_CUSTOMISATION = "customisation";
     String SALES_MODULE_APPLICATION = "application";
     String SALES_YML_PATH = "/hvl-kovan-logistic/resources/configuration/modules/sales-application.yml";
-    String SALES_COMMON_PATH = "/hvl-kovan-logistic/modules/sales/client/src/main/java";
-    String SALES_COMMON_PACKAGE = "tr.com.havelsan.kovan.logistic.sales.client";
+    String SALES_CLIENT_PATH = "/hvl-kovan-logistic/modules/sales/client/src/main/java";
+    String SALES_CLIENT_PACKAGE = "tr.com.havelsan.kovan.logistic.sales.client";
     String SALES_SERVICE_PATH = "/hvl-kovan-logistic/modules/sales/service/src/main/java";
     String SALES_SERVICE_PACKAGE = "tr.com.havelsan.kovan.logistic.sales.service";
     String SALES_GROOVY_PATH = "hvl-kovan-logistic/modules/sales/service/src/main/resources/groovy";
@@ -128,8 +128,8 @@ public interface PathConstant {
     String PROGRESS_MODULE_CUSTOMISATION = "customisation";
     String PROGRESS_MODULE_APPLICATION = "application";
     String PROGRESS_YML_PATH = "/hvl-kovan-logistic/resources/configuration/modules/progress-application.yml";
-    String PROGRESS_COMMON_PATH = "/hvl-kovan-logistic/modules/progress/client/src/main/java";
-    String PROGRESS_COMMON_PACKAGE = "tr.com.havelsan.kovan.logistic.progress.client";
+    String PROGRESS_CLIENT_PATH = "/hvl-kovan-logistic/modules/progress/client/src/main/java";
+    String PROGRESS_CLIENT_PACKAGE = "tr.com.havelsan.kovan.logistic.progress.client";
     String PROGRESS_SERVICE_PATH = "/hvl-kovan-logistic/modules/progress/service/src/main/java";
     String PROGRESS_SERVICE_PACKAGE = "tr.com.havelsan.kovan.logistic.progress.service";
     String PROGRESS_GROOVY_PATH = "hvl-kovan-logistic/modules/progress/service/src/main/resources/groovy";

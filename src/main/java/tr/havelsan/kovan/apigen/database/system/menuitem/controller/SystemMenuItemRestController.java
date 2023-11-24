@@ -3,6 +3,7 @@ package tr.havelsan.kovan.apigen.database.system.menuitem.controller;
 import org.jboss.resteasy.reactive.RestPath;
 import tr.havelsan.kovan.apigen.database.system.menuitem.entity.SystemMenuItem;
 import tr.havelsan.kovan.apigen.database.system.menuitem.service.SystemMenuItemService;
+import tr.havelsan.kovan.apigen.menu.model.TreeNode;
 
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -32,6 +33,32 @@ public class SystemMenuItemRestController {
     @Consumes(MediaType.APPLICATION_JSON)
     public List<SystemMenuItem> findByParentId(@RestPath Long parentId) {
         return systemMenuItemService.findByParentId(parentId);
+    }
+
+
+    @GET
+    @Path("/getParentIdIsNull/")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public List<SystemMenuItem> getParentIdIsNull() {
+        return systemMenuItemService.getParentIdIsNull();
+    }
+
+    @GET
+    @Path("/getLogisticParentMenu/")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public List<SystemMenuItem> getLogisticParentMenu() {
+        return systemMenuItemService.getLogisticParentMenu();
+    }
+
+
+    @GET
+    @Path("/getLogisticParentNode/")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public List<TreeNode<SystemMenuItem>> getLogisticParentNode() {
+        return systemMenuItemService.getLogisticParentNode();
     }
 
 

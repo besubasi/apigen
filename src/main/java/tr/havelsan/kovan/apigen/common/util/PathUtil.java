@@ -92,19 +92,19 @@ public class PathUtil {
 
     public static String getCommonPath(EnumMicroservice microservice) {
         if (EnumMicroservice.LOGISTIC_GENERAL == microservice)
-            return repositoryPath + PathConstant.LOGISTIC_GENERAL_COMMON_PATH;
+            return repositoryPath + PathConstant.LOGISTIC_GENERAL_CLIENT_PATH;
         else if (EnumMicroservice.MATERIAL_MANAGEMENT == microservice)
-            return repositoryPath + PathConstant.MATERIAL_MANAGEMENT_COMMON_PATH;
+            return repositoryPath + PathConstant.MATERIAL_MANAGEMENT_CLIENT_PATH;
         else if (EnumMicroservice.MAINTENANCE_MANAGEMENT == microservice)
-            return repositoryPath + PathConstant.MAINTENANCE_MANAGEMENT_COMMON_PATH;
+            return repositoryPath + PathConstant.MAINTENANCE_MANAGEMENT_CLIENT_PATH;
         else if (EnumMicroservice.PRODUCTION == microservice)
-            return repositoryPath + PathConstant.PRODUCTION_COMMON_PATH;
+            return repositoryPath + PathConstant.PRODUCTION_CLIENT_PATH;
         else if (EnumMicroservice.QUALITY == microservice)
-            return repositoryPath + PathConstant.QUALITY_COMMON_PATH;
+            return repositoryPath + PathConstant.QUALITY_CLIENT_PATH;
         else if (EnumMicroservice.SALES == microservice)
-            return repositoryPath + PathConstant.SALES_COMMON_PATH;
+            return repositoryPath + PathConstant.SALES_CLIENT_PATH;
         else if (EnumMicroservice.PROGRESS == microservice)
-            return repositoryPath + PathConstant.PROGRESS_COMMON_PATH;
+            return repositoryPath + PathConstant.PROGRESS_CLIENT_PATH;
 
         return "";
     }
@@ -180,19 +180,19 @@ public class PathUtil {
 
     public static String getCommonPackage(EnumMicroservice microservice) {
         if (EnumMicroservice.LOGISTIC_GENERAL == microservice)
-            return PathConstant.LOGISTIC_GENERAL_COMMON_PACKAGE;
+            return PathConstant.LOGISTIC_GENERAL_CLIENT_PACKAGE;
         else if (EnumMicroservice.MATERIAL_MANAGEMENT == microservice)
-            return PathConstant.MATERIAL_MANAGEMENT_COMMON_PACKAGE;
+            return PathConstant.MATERIAL_MANAGEMENT_CLIENT_PACKAGE;
         else if (EnumMicroservice.MAINTENANCE_MANAGEMENT == microservice)
-            return PathConstant.MAINTENANCE_MANAGEMENT_COMMON_PACKAGE;
+            return PathConstant.MAINTENANCE_MANAGEMENT_CLIENT_PACKAGE;
         else if (EnumMicroservice.PRODUCTION == microservice)
-            return PathConstant.PRODUCTION_COMMON_PACKAGE;
+            return PathConstant.PRODUCTION_CLIENT_PACKAGE;
         else if (EnumMicroservice.QUALITY == microservice)
-            return PathConstant.QUALITY_COMMON_PACKAGE;
+            return PathConstant.QUALITY_CLIENT_PACKAGE;
         else if (EnumMicroservice.SALES == microservice)
-            return PathConstant.SALES_COMMON_PACKAGE;
+            return PathConstant.SALES_CLIENT_PACKAGE;
         else if (EnumMicroservice.PROGRESS == microservice)
-            return PathConstant.PROGRESS_COMMON_PACKAGE;
+            return PathConstant.PROGRESS_CLIENT_PACKAGE;
 
         return "";
     }
