@@ -86,9 +86,6 @@
         }</component>
     <component name="RecentsManager">
         <key name="CopyFile.RECENT_KEYS">
-            <recent name="$PROJECT_DIR$/src/main/java/tr/havelsan/kovan/apigen/generator/menugen" />
-            <recent name="$PROJECT_DIR$/src/main/java/tr/havelsan/kovan/apigen/generator/enumgen" />
-            <recent name="$PROJECT_DIR$/src/main/java/tr/havelsan/kovan/apigen/generator/copygen" />
             <recent name="$PROJECT_DIR$/src/main/resources/templates" />
         </key>
         <key name="MoveFile.RECENT_KEYS">
@@ -99,7 +96,7 @@
             <recent name="$PROJECT_DIR$/src/main/resources/templates/enumgen/backend" />
         </key>
         <key name="CopyClassDialog.RECENTS_KEY">
-            <recent name="tr.havelsan.kovan.apigen.generator.apigenerator.model" />
+            <recent name="tr.subasi.apigen.generator.apigenerator.model" />
         </key>
     </component>
     <component name="RunDashboard">
@@ -564,7 +561,7 @@
         <breakpoint-manager>
             <breakpoints>
                 <line-breakpoint enabled="true" type="java-line">
-                    <url>file://$PROJECT_DIR$/src/main/java/tr/havelsan/kovan/apigen/generator/frontendcopy/service/FrontendCopyServiceImpl.java</url>
+                    <url>file://$PROJECT_DIR$/src/main/java/tr/subasi/apigen/generator/frontendcopy/service/FrontendCopyServiceImpl.java</url>
                     <line>22</line>
                     <option name="timeStamp" value="9" />
                 </line-breakpoint>
