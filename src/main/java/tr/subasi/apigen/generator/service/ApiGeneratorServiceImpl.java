@@ -1,66 +1,118 @@
 package tr.subasi.apigen.generator.service;
 
 import jakarta.inject.Singleton;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
+import tr.subasi.apigen.common.constant.TemplateConstant;
+import tr.subasi.apigen.common.model.ConfModel;
 import tr.subasi.apigen.common.util.FileUtil;
 import tr.subasi.apigen.config.freemarker.Templates;
+import tr.subasi.apigen.generator.model.ApiGeneratorModel;
 
 import java.io.IOException;
+import java.util.Map;
+
+import static tr.subasi.apigen.common.constant.ApiConstant.*;
+import static tr.subasi.apigen.generator.constant.ApiGeneratorConstant.ENV_SERVICE_PACKAGE;
 
 @Singleton
-public class ApiGeneratorServiceImpl extends AbstractApiGeneratorService {
+public class ApiGeneratorServiceImpl implements ApiGeneratorService {
+
+    @ConfigProperty(name = ENV_SERVICE_PACKAGE)
+    String servicePackage;
+
+    protected ApiGeneratorModel model;
+    protected ConfModel confModel;
+    protected Map<String, Object> map;
 
     @Override
-    void createConstant() throws IOException {
-        if (apiGeneratorModel.isCreateConstant())
-            FileUtil.generateFile(Templates.CONSTANT, apiGeneratorModel, map);
+    public Boolean generate(ApiGeneratorModel apiGeneratorModel) throws IOException {
+        this.model = apiGeneratorModel;
+        this.confModel = this.prepareConfModel();
+        this.map = Map.of(TemplateConstant.MODEL, apiGeneratorModel, TemplateConstant.CONF, confModel);
+
+        this.createConstant();
+        this.createEntity();
+        this.createModel();
+        this.createSearchModel();
+        this.createMapper();
+        this.createRepository();
+        this.createService();
+        this.createServiceImpl();
+        this.createRestController();
+
+        return Boolean.TRUE;
     }
 
-    @Override
-    void createEntity() throws IOException {
-        if (apiGeneratorModel.isCreateEntity())
-            FileUtil.generateFile(Templates.ENTITY, apiGeneratorModel, map);
+
+    private void createConstant() throws IOException {
+        if (model.isCreateConstant())
+            FileUtil.generateFile(Templates.CONSTANT, model, map);
     }
 
-    @Override
-    void createModel() throws IOException {
-        if (apiGeneratorModel.isCreateModel())
-            FileUtil.generateFile(Templates.MODEL, apiGeneratorModel, map);
+    private void createEntity() throws IOException {
+        if (model.isCreateEntity())
+            FileUtil.generateFile(Templates.ENTITY, model, map);
     }
 
-    @Override
-    void createSearchModel() throws IOException {
-        if (apiGeneratorModel.isCreateSearchModel())
-            FileUtil.generateFile(Templates.SEARCH_MODEL, apiGeneratorModel, map);
+    private void createModel() throws IOException {
+        if (model.isCreateModel())
+            FileUtil.generateFile(Templates.MODEL, model, map);
     }
 
-    @Override
-    void createMapper() throws IOException {
-        if (apiGeneratorModel.isCreateMapper())
-            FileUtil.generateFile(Templates.MAPPER, apiGeneratorModel, map);
+    private void createSearchModel() throws IOException {
+        if (model.isCreateSearchModel())
+            FileUtil.generateFile(Templates.SEARCH_MODEL, model, map);
     }
 
-    @Override
-    void createRepository() throws IOException {
-        if (apiGeneratorModel.isCreateRepository())
-            FileUtil.generateFile(Templates.REPOSITORY, apiGeneratorModel, map);
+    private void createMapper() throws IOException {
+        if (model.isCreateMapper())
+            FileUtil.generateFile(Templates.MAPPER, model, map);
     }
 
-    @Override
-    void createService() throws IOException {
-        if (apiGeneratorModel.isCreateService())
-            FileUtil.generateFile(Templates.SERVICE, apiGeneratorModel, map);
+    private void createRepository() throws IOException {
+        if (model.isCreateRepository())
+            FileUtil.generateFile(Templates.REPOSITORY, model, map);
     }
 
-    @Override
-    void createServiceImpl() throws IOException {
-        if (apiGeneratorModel.isCreateServiceImpl())
-            FileUtil.generateFile(Templates.SERVICE_IMPL, apiGeneratorModel, map);
+    private void createService() throws IOException {
+        if (model.isCreateService())
+            FileUtil.generateFile(Templates.SERVICE, model, map);
     }
 
-    @Override
-    void createRestController() throws IOException {
-        if (apiGeneratorModel.isCreateRestController())
-            FileUtil.generateFile(Templates.REST_CONTROLLER, apiGeneratorModel, map);
+    private void createServiceImpl() throws IOException {
+        if (model.isCreateServiceImpl())
+            FileUtil.generateFile(Templates.SERVICE_IMPL, model, map);
+    }
+
+    private void createRestController() throws IOException {
+        if (model.isCreateRestController())
+            FileUtil.generateFile(Templates.REST_CONTROLLER, model, map);
+    }
+
+    private ConfModel prepareConfModel() {
+        ConfModel confModel = new ConfModel(servicePackage);
+        confModel.setImportNotBlank(this.hasPropertyTypeNotNullString());
+        confModel.setImportBigDecimal(this.hasPropertyType(PROPERTY_TYPE_BIG_DECIMAL));
+        confModel.setImportLocalDate(this.hasPropertyType(PROPERTY_TYPE_LOCAL_DATE));
+        confModel.setImportLocalDateTime(this.hasPropertyType(PROPERTY_TYPE_LOCAL_DATE_TIME));
+
+        confModel.setImportBigDecimalSearchModel(this.hasSearchPropertyType(PROPERTY_TYPE_BIG_DECIMAL));
+        confModel.setImportLocalDateSearchModel(this.hasSearchPropertyType(PROPERTY_TYPE_LOCAL_DATE));
+        confModel.setImportLocalDateTimeSearchModel(this.hasSearchPropertyType(PROPERTY_TYPE_LOCAL_DATE_TIME));
+
+        return confModel;
+    }
+
+    private boolean hasPropertyTypeNotNullString() {
+        return this.model.getPropertyList().stream().anyMatch(x -> x.getType().equals(PROPERTY_TYPE_STRING) && x.isNotNull());
+    }
+
+    private boolean hasPropertyType(String propertyType) {
+        return this.model.getPropertyList().stream().anyMatch(x -> x.getType().equals(propertyType));
+    }
+
+    private boolean hasSearchPropertyType(String propertyType) {
+        return this.model.getPropertyList().stream().anyMatch(x -> x.isUseSearchParameter() && x.getType().equals(propertyType));
     }
 
 }

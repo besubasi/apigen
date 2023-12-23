@@ -12,4 +12,10 @@ public interface ApiConstant {
     String MENU_ITEMS = "/menu-items";
     String DATA_LIST = "/data/list";
 
+
+    String PROPERTY_TYPE_STRING = "String";
+    String PROPERTY_TYPE_BIG_DECIMAL = "BigDecimal";
+    String PROPERTY_TYPE_LOCAL_DATE = "LocalDate";
+    String PROPERTY_TYPE_LOCAL_DATE_TIME = "LocalDateTime";
+
 }
