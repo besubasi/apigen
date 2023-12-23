@@ -23,5 +23,6 @@ public interface ApiGeneratorConstant {
     String FILE_JAVA = ".java";
 
     String ENV_REPOSITORY_PATH = "repository.path";
+    String ENV_SERVICE_PACKAGE = "service.package";
 
 }

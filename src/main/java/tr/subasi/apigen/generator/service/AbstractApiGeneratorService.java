@@ -16,23 +16,19 @@ public abstract class AbstractApiGeneratorService implements ApiGeneratorService
     @Override
     public Boolean generate(ApiGeneratorModel apiGeneratorModel) throws IOException {
         this.apiGeneratorModel = apiGeneratorModel;
-        this.confModel = new ConfModel(apiGeneratorModel.getMicroservice(), apiGeneratorModel.getModule());
+        this.confModel = new ConfModel("");
 
         this.map = Map.of(TemplateConstant.MODEL, apiGeneratorModel, TemplateConstant.CONF, confModel);
 
-        if (apiGeneratorModel.isCreateConstant()) this.createConstant();
-        if (apiGeneratorModel.isCreateEntity()) this.createEntity();
-        if (apiGeneratorModel.isCreateModel()) this.createModel();
-        if (apiGeneratorModel.isCreateQueryModel()) this.createSearchModel();
-
-        if (apiGeneratorModel.isCreateMapper()) this.createMapper();
-
-        if (apiGeneratorModel.isCreateRepository()) this.createRepository();
-
-        if (apiGeneratorModel.isCreateService()) this.createService();
-        if (apiGeneratorModel.isCreateServiceImpl()) this.createServiceImpl();
-
-        if (apiGeneratorModel.isCreateRestController()) this.createRestController();
+        this.createConstant();
+        this.createEntity();
+        this.createModel();
+        this.createSearchModel();
+        this.createMapper();
+        this.createRepository();
+        this.createService();
+        this.createServiceImpl();
+        this.createRestController();
 
         return Boolean.TRUE;
     }

@@ -9,6 +9,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class PropertyModel {
 
-    private String type, name, dbName;
-    private boolean notNull, useQueryParameter = true;
+    private String type;
+    private String name;
+    private String dbName;
+    private boolean notNull;
+    private boolean useSearchParameter;
+
 }
