@@ -2,6 +2,11 @@ package tr.subasi.apigen.generator.constant;
 
 public interface ApiGeneratorConstant {
 
+
+    String ENV_REPOSITORY_PATH = "repository.path";
+    String ENV_SERVICE_PACKAGE = "service.package";
+
+
     String PACKAGE_CONSTANT = "constant";
     String PACKAGE_ENTITY = "entity";
     String PACKAGE_MODEL = "model";
@@ -19,10 +24,5 @@ public interface ApiGeneratorConstant {
     String END_FIX_SERVICE = "Service";
     String END_FIX_SERVICE_IMPL = "ServiceImpl";
     String END_FIX_REST_CONTROLLER = "RestController";
-
-    String FILE_JAVA = ".java";
-
-    String ENV_REPOSITORY_PATH = "repository.path";
-    String ENV_SERVICE_PACKAGE = "service.package";
 
 }

@@ -1,12 +1,12 @@
-package ${conf.servicePackage}.${conf.moduleName}.${model.apiPackage}.constant;
+package ${conf.servicePackage}.${model.apiPackage}.constant;
 
 import ${conf.servicePackage}.common.constant.CommonConstant;
 
 public interface ${model.apiName}Constant extends CommonConstant {
 
-String REQUEST_MAPPING = "/guide/${model.apiName}";
-String TABLE_NAME = "${model.tableName}";
-String TABLE_SEQ_NAME = TABLE_NAME + SEQUENCE_SUFFIX;
+	String REQUEST_MAPPING = "/${model.apiName?lower_case}";
+
+	String TABLE_NAME = "${model.tableName}";
 
 <#list model.propertyList as property>
 	String COLUMN_${property.dbName?upper_case} = "${property.dbName?upper_case}";

@@ -6,7 +6,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.event.Observes;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.jboss.logging.Logger;
-import tr.subasi.apigen.common.util.PathUtil;
+import tr.subasi.apigen.common.util.FileUtil;
 import tr.subasi.apigen.config.freemarker.Templates;
 
 import java.io.IOException;
@@ -27,8 +27,8 @@ public class ApiGenApplication {
 
     void onStart(@Observes StartupEvent ev) throws IOException {
         Templates.initTemplates();
-        PathUtil.setRepositoryPath(repositoryPath);
-        PathUtil.setServicePackage(servicePackage);
+        FileUtil.setRepositoryPath(repositoryPath);
+        FileUtil.setServicePackage(servicePackage);
         LOGGER.info("Repository Path : " + repositoryPath);
         LOGGER.info("Service Package : " + servicePackage);
     }

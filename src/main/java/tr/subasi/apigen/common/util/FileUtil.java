@@ -1,11 +1,16 @@
 package tr.subasi.apigen.common.util;
 
 import freemarker.template.Template;
+import freemarker.template.TemplateException;
 import tr.subasi.apigen.config.freemarker.Templates;
+import tr.subasi.apigen.generator.model.ApiGeneratorModel;
 
+import java.io.File;
 import java.io.IOException;
+import java.io.StringWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Map;
 
 import static tr.subasi.apigen.generator.constant.ApiGeneratorConstant.*;
@@ -35,11 +40,41 @@ public class FileUtil {
             , Templates.REST_CONTROLLER, PACKAGE_CONTROLLER
     );
 
-    public static String getFileEndFix(Template template){
+    private static final String FILE_JAVA = ".java";
+
+    private static final String SRC_MAIN_JAVA = "\\src\\main\\java\\";
+    static String repositoryPath;
+    static String servicePackage;
+
+    public static void setRepositoryPath(String repositoryPath) {
+        FileUtil.repositoryPath = repositoryPath;
+    }
+
+    public static void setServicePackage(String servicePackage) {
+        FileUtil.servicePackage = servicePackage;
+    }
+
+    public static Path getFilePath(Template template, ApiGeneratorModel apiGeneratorModel) {
+        return Paths.get(getDirectoryPath(template, apiGeneratorModel) + File.separator + apiGeneratorModel.getApiName() + FileUtil.getFileEndFix(template) + FILE_JAVA);
+    }
+
+    public static String getDirectoryPath(Template template, ApiGeneratorModel apiGeneratorModel) {
+        return getProjectMainPath() + File.separator + convertPackageToPath(apiGeneratorModel.getApiPackage()) + File.separator + FileUtil.getSubPackage(template);
+    }
+
+    public static String getProjectMainPath() {
+        return repositoryPath + File.separator + SRC_MAIN_JAVA + File.separator + convertPackageToPath(servicePackage);
+    }
+
+    public static String convertPackageToPath(String packageName) {
+        return packageName.replaceAll("\\.", "\\" + File.separator);
+    }
+
+    public static String getFileEndFix(Template template) {
         return mapFileEndFix.get(template);
     }
 
-    public static String getSubPackage(Template template){
+    public static String getSubPackage(Template template) {
         return mapPackage.get(template);
     }
 
@@ -49,76 +84,26 @@ public class FileUtil {
     }
 
     public static void writeFile(Path path, String content) throws IOException {
+        createDirectory(path.getParent());
+
         if (Files.notExists(path))
             Files.createFile(path);
 
         Files.writeString(path, content);
     }
 
-/*
-    public static List<Path> listFiles(Path path) throws IOException {
-        List<Path> result;
-        try (Stream<Path> walk = Files.walk(path)) {
-            result = walk.filter(Files::isRegularFile)
-                    .collect(Collectors.toList());
-        }
-        return result;
+    public static void generateFile(Template template, ApiGeneratorModel apiGeneratorModel, Map<String, Object> map) throws IOException {
+        FileUtil.writeFile(getFilePath(template, apiGeneratorModel), getContent(template, map));
     }
 
-    public static List<Path> listFilesByDepth(Path path, int maxDepth) throws IOException {
-        List<Path> result;
-        try (Stream<Path> walk = Files.walk(path, maxDepth)) {
-            result = walk.filter(Files::isRegularFile)
-                    .collect(Collectors.toList());
+    public static String getContent(Template template, Map<String, Object> parameterMap) {
+        final StringWriter stringWriter = new StringWriter();
+        try {
+            template.process(parameterMap, stringWriter);
+        } catch (TemplateException | IOException e) {
+            stringWriter.getBuffer().setLength(0);
         }
-        return result;
-
+        return stringWriter.toString();
     }
-
-    public static List<Path> listDirectories(Path path) throws IOException {
-        List<Path> result;
-        try (Stream<Path> walk = Files.walk(path)) {
-            result = walk.filter(Files::isDirectory)
-                    .collect(Collectors.toList());
-        }
-        return result;
-    }
-
-    public static List<Path> findByFileExtension(Path path, String fileExtension)
-            throws IOException {
-        if (!Files.isDirectory(path)) {
-            throw new IllegalArgumentException("Path must be a directory!");
-        }
-
-        List<Path> result;
-        try (Stream<Path> walk = Files.walk(path)) {
-            result = walk
-                    .filter(Files::isRegularFile)   // is a file
-                    .filter(p -> p.getFileName().toString().endsWith(fileExtension))
-                    .collect(Collectors.toList());
-        }
-        return result;
-    }
-
-
-    public static List<Path> findByFileName(Path path, String fileName)
-            throws IOException {
-
-        if (!Files.isDirectory(path)) {
-            throw new IllegalArgumentException("Path must be a directory!");
-        }
-
-        List<Path> result;
-        // walk file tree, no more recursive loop
-        try (Stream<Path> walk = Files.walk(path)) {
-            result = walk
-                    .filter(Files::isReadable)      // read permission
-                    .filter(Files::isRegularFile)   // is a file
-                    .filter(p -> p.getFileName().toString().equalsIgnoreCase(fileName))
-                    .collect(Collectors.toList());
-        }
-        return result;
-    }
-*/
 
 }

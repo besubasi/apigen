@@ -1,13 +1,19 @@
 package tr.subasi.apigen.generator.service;
 
+import org.eclipse.microprofile.config.inject.ConfigProperty;
+import tr.subasi.apigen.common.constant.TemplateConstant;
 import tr.subasi.apigen.common.model.ConfModel;
 import tr.subasi.apigen.generator.model.ApiGeneratorModel;
-import tr.subasi.apigen.common.constant.TemplateConstant;
 
 import java.io.IOException;
 import java.util.Map;
 
+import static tr.subasi.apigen.generator.constant.ApiGeneratorConstant.ENV_SERVICE_PACKAGE;
+
 public abstract class AbstractApiGeneratorService implements ApiGeneratorService {
+
+    @ConfigProperty(name = ENV_SERVICE_PACKAGE)
+    String servicePackage;
 
     protected ApiGeneratorModel apiGeneratorModel;
     protected ConfModel confModel;
@@ -16,7 +22,7 @@ public abstract class AbstractApiGeneratorService implements ApiGeneratorService
     @Override
     public Boolean generate(ApiGeneratorModel apiGeneratorModel) throws IOException {
         this.apiGeneratorModel = apiGeneratorModel;
-        this.confModel = new ConfModel("");
+        this.confModel = new ConfModel(servicePackage);
 
         this.map = Map.of(TemplateConstant.MODEL, apiGeneratorModel, TemplateConstant.CONF, confModel);
 
