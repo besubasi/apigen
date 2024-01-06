@@ -14,7 +14,6 @@ import java.io.IOException;
 @Path(ApiConstant.APIGEN_API)
 public class ApiGeneratorRestController {
 
-
     @Inject
     ApiGeneratorService apiGeneratorService;
 
@@ -24,7 +23,6 @@ public class ApiGeneratorRestController {
     public String sayMyName() {
         return "Walter White";
     }
-
 
     @POST
     @Path(ApiConstant.GENERATE)

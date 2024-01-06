@@ -11,7 +11,7 @@ public interface ApiGeneratorConstant {
     String PACKAGE_ENTITY = "entity";
     String PACKAGE_MODEL = "model";
     String PACKAGE_REPOSITORY = "repository";
-    String PACKAGE_MAPPER = "mapper";
+    String PACKAGE_CONVERTER = "converter";
     String PACKAGE_SERVICE = "service";
     String PACKAGE_CONTROLLER = "controller";
 
@@ -20,9 +20,10 @@ public interface ApiGeneratorConstant {
     String END_FIX_MODEL = "Model";
     String END_FIX_SEARCH_MODEL = "SearchModel";
     String END_FIX_REPOSITORY = "Repository";
-    String END_FIX_MAPPER = "Mapper";
+    String END_FIX_CONVERTER = "Converter";
     String END_FIX_SERVICE = "Service";
     String END_FIX_SERVICE_IMPL = "ServiceImpl";
+    String END_FIX_REST_SERVICE = "RestService";
     String END_FIX_REST_CONTROLLER = "RestController";
 
 }

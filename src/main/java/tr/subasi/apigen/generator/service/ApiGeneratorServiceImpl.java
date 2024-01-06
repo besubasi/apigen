@@ -34,10 +34,11 @@ public class ApiGeneratorServiceImpl implements ApiGeneratorService {
         this.createEntity();
         this.createModel();
         this.createSearchModel();
-        this.createMapper();
+        this.createConverter();
         this.createRepository();
         this.createService();
         this.createServiceImpl();
+        this.createRestService();
         this.createRestController();
 
         return Boolean.TRUE;
@@ -64,9 +65,9 @@ public class ApiGeneratorServiceImpl implements ApiGeneratorService {
             FileUtil.generateFile(Templates.SEARCH_MODEL, model, map);
     }
 
-    private void createMapper() throws IOException {
-        if (model.isCreateMapper())
-            FileUtil.generateFile(Templates.MAPPER, model, map);
+    private void createConverter() throws IOException {
+        if (model.isCreateConverter())
+            FileUtil.generateFile(Templates.CONVERTER, model, map);
     }
 
     private void createRepository() throws IOException {
@@ -82,6 +83,11 @@ public class ApiGeneratorServiceImpl implements ApiGeneratorService {
     private void createServiceImpl() throws IOException {
         if (model.isCreateServiceImpl())
             FileUtil.generateFile(Templates.SERVICE_IMPL, model, map);
+    }
+
+    private void createRestService() throws IOException {
+        if (model.isCreateRestService())
+            FileUtil.generateFile(Templates.REST_SERVICE, model, map);
     }
 
     private void createRestController() throws IOException {

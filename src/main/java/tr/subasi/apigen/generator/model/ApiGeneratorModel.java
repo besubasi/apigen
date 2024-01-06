@@ -17,11 +17,11 @@ public class ApiGeneratorModel {
     private boolean createEntity = true;
     private boolean createModel = true;
     private boolean createSearchModel = true;
-    private boolean createMapper = true;
-    private boolean createMapperImpl = true;
+    private boolean createConverter = true;
     private boolean createRepository = true;
     private boolean createService = true;
     private boolean createServiceImpl = true;
+    private boolean createRestService = true;
     private boolean createRestController = true;
 
     private List<PropertyModel> propertyList;

@@ -22,9 +22,10 @@ public class FileUtil {
             , Templates.MODEL, END_FIX_MODEL
             , Templates.SEARCH_MODEL, END_FIX_SEARCH_MODEL
             , Templates.REPOSITORY, END_FIX_REPOSITORY
-            , Templates.MAPPER, END_FIX_MAPPER
+            , Templates.CONVERTER, END_FIX_CONVERTER
             , Templates.SERVICE, END_FIX_SERVICE
             , Templates.SERVICE_IMPL, END_FIX_SERVICE_IMPL
+            , Templates.REST_SERVICE, END_FIX_REST_SERVICE
             , Templates.REST_CONTROLLER, END_FIX_REST_CONTROLLER
     );
 
@@ -34,9 +35,10 @@ public class FileUtil {
             , Templates.MODEL, PACKAGE_MODEL
             , Templates.SEARCH_MODEL, PACKAGE_MODEL
             , Templates.REPOSITORY, PACKAGE_REPOSITORY
-            , Templates.MAPPER, PACKAGE_MAPPER
+            , Templates.CONVERTER, PACKAGE_CONVERTER
             , Templates.SERVICE, PACKAGE_SERVICE
             , Templates.SERVICE_IMPL, PACKAGE_SERVICE
+            , Templates.REST_SERVICE, PACKAGE_CONTROLLER
             , Templates.REST_CONTROLLER, PACKAGE_CONTROLLER
     );
 
