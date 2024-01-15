@@ -14,6 +14,7 @@ public interface TemplateConstant {
     String SEARCH_MODEL_FTL = "/model/search-model.ftl";
     String CONVERTER_FTL = "/converter/converter.ftl";
     String REPOSITORY_FTL = "/repository/repository.ftl";
+    String REPOSITORY_IMPL_FTL = "/repository/repository-impl.ftl";
     String SERVICE_FTL = "/service/service.ftl";
     String SERVICE_IMPL_FTL = "/service/service-impl.ftl";
     String REST_SERVICE_FTL = "/controller/rest-service.ftl";

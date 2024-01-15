@@ -23,6 +23,7 @@ public class Templates {
     public static Template SEARCH_MODEL;
     public static Template CONVERTER;
     public static Template REPOSITORY;
+    public static Template REPOSITORY_IMPL;
     public static Template SERVICE;
     public static Template SERVICE_IMPL;
     public static Template REST_SERVICE;
@@ -47,6 +48,7 @@ public class Templates {
         SEARCH_MODEL = configuration.getTemplate(SEARCH_MODEL_FTL);
         CONVERTER = configuration.getTemplate(CONVERTER_FTL);
         REPOSITORY = configuration.getTemplate(REPOSITORY_FTL);
+        REPOSITORY_IMPL = configuration.getTemplate(REPOSITORY_IMPL_FTL);
         SERVICE = configuration.getTemplate(SERVICE_FTL);
         SERVICE_IMPL = configuration.getTemplate(SERVICE_IMPL_FTL);
         REST_SERVICE = configuration.getTemplate(REST_SERVICE_FTL);

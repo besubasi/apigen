@@ -20,6 +20,7 @@ public interface ApiGeneratorConstant {
     String END_FIX_MODEL = "Model";
     String END_FIX_SEARCH_MODEL = "SearchModel";
     String END_FIX_REPOSITORY = "Repository";
+    String END_FIX_REPOSITORY_IMPL = "RepositoryImpl";
     String END_FIX_CONVERTER = "Converter";
     String END_FIX_SERVICE = "Service";
     String END_FIX_SERVICE_IMPL = "ServiceImpl";

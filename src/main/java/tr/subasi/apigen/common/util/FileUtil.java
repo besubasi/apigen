@@ -13,33 +13,36 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Map;
 
+import static java.util.Map.entry;
 import static tr.subasi.apigen.generator.constant.ApiGeneratorConstant.*;
 
 public class FileUtil {
-    private static final Map<Template, String> mapFileEndFix = Map.of(
-            Templates.CONSTANT, END_FIX_CONSTANT
-            , Templates.ENTITY, END_FIX_ENTITY
-            , Templates.MODEL, END_FIX_MODEL
-            , Templates.SEARCH_MODEL, END_FIX_SEARCH_MODEL
-            , Templates.REPOSITORY, END_FIX_REPOSITORY
-            , Templates.CONVERTER, END_FIX_CONVERTER
-            , Templates.SERVICE, END_FIX_SERVICE
-            , Templates.SERVICE_IMPL, END_FIX_SERVICE_IMPL
-            , Templates.REST_SERVICE, END_FIX_REST_SERVICE
-            , Templates.REST_CONTROLLER, END_FIX_REST_CONTROLLER
+    private static final Map<Template, String> mapFileEndFix = Map.ofEntries(
+            entry(Templates.CONSTANT, END_FIX_CONSTANT)
+            , entry(Templates.ENTITY, END_FIX_ENTITY)
+            , entry(Templates.MODEL, END_FIX_MODEL)
+            , entry(Templates.SEARCH_MODEL, END_FIX_SEARCH_MODEL)
+            , entry(Templates.REPOSITORY, END_FIX_REPOSITORY)
+            , entry(Templates.REPOSITORY_IMPL, END_FIX_REPOSITORY_IMPL)
+            , entry(Templates.CONVERTER, END_FIX_CONVERTER)
+            , entry(Templates.SERVICE, END_FIX_SERVICE)
+            , entry(Templates.SERVICE_IMPL, END_FIX_SERVICE_IMPL)
+            , entry(Templates.REST_SERVICE, END_FIX_REST_SERVICE)
+            , entry(Templates.REST_CONTROLLER, END_FIX_REST_CONTROLLER)
     );
 
-    private static final Map<Template, String> mapPackage = Map.of(
-            Templates.CONSTANT, PACKAGE_CONSTANT
-            , Templates.ENTITY, PACKAGE_ENTITY
-            , Templates.MODEL, PACKAGE_MODEL
-            , Templates.SEARCH_MODEL, PACKAGE_MODEL
-            , Templates.REPOSITORY, PACKAGE_REPOSITORY
-            , Templates.CONVERTER, PACKAGE_CONVERTER
-            , Templates.SERVICE, PACKAGE_SERVICE
-            , Templates.SERVICE_IMPL, PACKAGE_SERVICE
-            , Templates.REST_SERVICE, PACKAGE_CONTROLLER
-            , Templates.REST_CONTROLLER, PACKAGE_CONTROLLER
+    private static final Map<Template, String> mapPackage = Map.ofEntries(
+            entry(Templates.CONSTANT, PACKAGE_CONSTANT)
+            , entry(Templates.ENTITY, PACKAGE_ENTITY)
+            , entry(Templates.MODEL, PACKAGE_MODEL)
+            , entry(Templates.SEARCH_MODEL, PACKAGE_MODEL)
+            , entry(Templates.REPOSITORY, PACKAGE_REPOSITORY)
+            , entry(Templates.REPOSITORY_IMPL, PACKAGE_REPOSITORY)
+            , entry(Templates.CONVERTER, PACKAGE_CONVERTER)
+            , entry(Templates.SERVICE, PACKAGE_SERVICE)
+            , entry(Templates.SERVICE_IMPL, PACKAGE_SERVICE)
+            , entry(Templates.REST_SERVICE, PACKAGE_CONTROLLER)
+            , entry(Templates.REST_CONTROLLER, PACKAGE_CONTROLLER)
     );
 
     private static final String FILE_JAVA = ".java";

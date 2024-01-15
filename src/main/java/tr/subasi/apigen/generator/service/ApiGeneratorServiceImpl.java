@@ -36,6 +36,7 @@ public class ApiGeneratorServiceImpl implements ApiGeneratorService {
         this.createSearchModel();
         this.createConverter();
         this.createRepository();
+        this.createRepositoryImpl();
         this.createService();
         this.createServiceImpl();
         this.createRestService();
@@ -73,6 +74,11 @@ public class ApiGeneratorServiceImpl implements ApiGeneratorService {
     private void createRepository() throws IOException {
         if (model.isCreateRepository())
             FileUtil.generateFile(Templates.REPOSITORY, model, map);
+    }
+
+    private void createRepositoryImpl() throws IOException {
+        if (model.isCreateRepositoryImpl())
+            FileUtil.generateFile(Templates.REPOSITORY_IMPL, model, map);
     }
 
     private void createService() throws IOException {

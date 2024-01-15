@@ -19,6 +19,7 @@ public class ApiGeneratorModel {
     private boolean createSearchModel = true;
     private boolean createConverter = true;
     private boolean createRepository = true;
+    private boolean createRepositoryImpl = true;
     private boolean createService = true;
     private boolean createServiceImpl = true;
     private boolean createRestService = true;
